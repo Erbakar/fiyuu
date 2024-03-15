@@ -7,8 +7,6 @@ export const useAnimation = (options={offset: 5}) => {
     } = {
         offset: 10
     }) {
-        console.log('hi');
-        
         let _elements;
 
         // Define a dobra superior, inferior e laterais da tela

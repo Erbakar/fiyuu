@@ -91,10 +91,9 @@ const Map = () => {
             <div data-animation="zoomIn" data-animation-delay="50ms"
                 className="count-card d-flex justify-content-center flex-column flex-lg-row justify-content-lg-between align-items-center mt-lg-5">
                 <p className="count-card__text">
-                    TFI – TAB Gıda Yatırımları’nın hızlı teslimat platformu olan fiyuu, 2016 yılından bu yana İstanbul,
-                    Adana, İzmir, Ankara başta olmak üzere <strong>63</strong> ilde <strong>4500’ü</strong> aşkın
-                    kuryesi ile <strong>1300’ü</strong> aşkın müşterisine
-                    hizmet vermektedir.
+               
+                    Türkiye’de 2016 yılında ilk siparişini taşıyan fiyuu, kendisini “yeni nesil bir son teslimat platformu” olarak tanımlamakta olup, müşterilerine en iyi “uçtan uca teslimat” deneyimini sunma amacıyla yola çıkmıştır. 2016 yılında Adana’da hizmete başlayan fiyuu, bugün Türkiye genelinde <strong>5.000 </strong>üzerinde kurye ile <strong>1.600</strong>’den fazla noktadan ürünleri alarak ayda <strong>3 milyondan</strong> fazla müşteriye teslimat gerçekleştirmektedir. 
+
                 </p>
                 <div className="count-card__items d-flex flex-column flex-sm-row justify-content-center align-items-center">
                     <div className="count-card__item" data-animation="zoomIn" data-animation-delay="50ms">

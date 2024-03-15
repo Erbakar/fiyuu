@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-const Contact = () => {
+const BlogDetail = () => {
     const { slug } = useParams();
 
     console.log(slug);
@@ -11,4 +11,4 @@ const Contact = () => {
     )
 }
 
-export default Contact;
+export default BlogDetail;

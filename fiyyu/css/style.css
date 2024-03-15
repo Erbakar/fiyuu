@@ -312,6 +312,7 @@ ul {
   border-radius: 90px;
   border: 1.5px solid var(--white);
   transition: .3s all ease;
+  background-color: var(--primary-blue) ;
 }
 
 .page-hero .hero-content .hero-btn span {

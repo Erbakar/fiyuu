@@ -21,7 +21,7 @@ const About = () => {
                             </h1>
     
                             <p className="page-banner__card-text mt-3" data-animation="slideInUp">
-                              fiyuu, Türkiye’nin en yeni “Hızlı Teslimat” platformudur.
+                            Türkiye’de 2016 yılında ilk siparişini taşıyan fiyuu, kendisini “yeni nesil bir son teslimat platformu” olarak tanımlamakta olup, müşterilerine en iyi “uçtan uca teslimat” deneyimini sunma amacıyla yola çıktı.
                             </p>
                         </div>
     
@@ -64,9 +64,7 @@ const About = () => {
                                             Esnek ve
                                             Verimli
                                         </span>
-                                        <p>
-                                            ilgili icerik buraya gelecek.
-                                        </p>
+                                      
                                     </div>
                                 </div>
                                 <div className="card-item d-flex justify-content-center align-items-center"
@@ -79,9 +77,7 @@ const About = () => {
                                             Online
                                             İzlenebilir
                                         </span>
-                                        <p>
-                                            ilgili icerik buraya gelecek.
-                                        </p>
+                                 
                                     </div>
                                 </div>
                                 <div className="card-item d-flex justify-content-center align-items-center"
@@ -94,9 +90,7 @@ const About = () => {
                                             Hızlı ve
                                             Zamanında
                                         </span>
-                                        <p>
-                                            ilgili icerik buraya gelecek.
-                                        </p>
+                                    
                                     </div>
                                 </div>
                                 <div className="card-item d-flex justify-content-center align-items-center"
@@ -110,9 +104,9 @@ const About = () => {
                                             Teslimat
                                             Çözümleri
                                         </span>
-                                        <p>
+                                        {/* <p>
                                             ilgili icerik buraya gelecek.
-                                        </p>
+                                        </p> */}
                                     </div>
                                 </div>
                             </div>

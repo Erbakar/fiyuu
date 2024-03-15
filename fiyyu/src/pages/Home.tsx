@@ -277,7 +277,7 @@ const Home = () => {
 
                     </div>
                     <div className="our-profession__img" data-animation="slideInLeft" data-animation-delay="50ms">
-                        <img src="./images/our-profession-right.png" alt="" />
+                        <img src="./images/our-profession-right2.png" alt="" />
                     </div>
                 </div>
             </div>
