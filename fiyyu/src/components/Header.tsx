@@ -20,9 +20,15 @@ const Header = () => (
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="./about-us.html">
+                    <NavLink
+                            to="/about"
+                            className={({ isActive }) => clx('nav-link', {
+                                'active': isActive
+                            })}
+                        >
                             Hakkımızda
-                        </a>
+                        </NavLink>
+            
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="./business-partner-form.html">

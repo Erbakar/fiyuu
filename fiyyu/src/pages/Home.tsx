@@ -2,9 +2,15 @@ import { useEffect } from 'react';
 import '../../js/splide.min.js'
 import Earnings from '../components/Earnings.js';
 import Map from '../components/Map.js';
+import News from '../components/News.js';
+import { useAnimation } from '../hooks/useAnimation.js';
 
 const Home = () => {
+    const animate = useAnimation()
+
     useEffect(() => {
+        animate()
+        
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
         const splideHero = new Splide('.splide-hero', {
@@ -275,7 +281,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-
+            <News />
         </div>
     )
 }
