@@ -18,6 +18,7 @@ const Blog = () => {
     useEffect(() => {
         setTimeout(() => {
             animate()
+            window.scrollTo(0, 0);
         }, 100);
 
         const cachedVal = localStorage.getItem('news')

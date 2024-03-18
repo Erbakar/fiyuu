@@ -9,6 +9,7 @@ import BlogDetail from "./pages/BlogDetail"
 import Partner from "./pages/Partner"
 import Contact from "./pages/Contact"
 import Kurye from "./pages/Kurye"
+import Kvk from "./pages/Kvk"
 
 
 const App = () => {
@@ -19,8 +20,9 @@ const App = () => {
         <Route index path="/" element={<Home />} />
         <Route index path="/about" element={<About />} />
         <Route index path="/partner" element={<Partner />} />
-        <Route index path="/kurye" element={<Kurye />} />
+        <Route index path="/career" element={<Kurye />} />
         <Route index path="/contact" element={<Contact />} />
+        <Route index path="/kisisel-verilerin-korunumu" element={<Kvk />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug/:index" element={<BlogDetail />} />
       </Routes>

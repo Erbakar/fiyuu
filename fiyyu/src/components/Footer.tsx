@@ -24,7 +24,7 @@ const Footer = () => (
                             <img src="./images/kurye.png" alt="" />
                         </div>
 
-                        <NavLink to="/kurye">
+                        <NavLink to="/career">
                             <span>
                                 Kurye Olmak Istiyorum
                             </span>
@@ -51,39 +51,39 @@ const Footer = () => (
                     </div>
                     <ul className="p-0 footer-content__top-links  m-0">
                         <li>
-                            <a href="./index.html">
+                            <NavLink to="/">
                                 Anasayfa
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="./about-us.html">
+                            <NavLink to="/about">
                                 Hakkımızda
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="./career.html">
+                            <NavLink to="/career">
                                 Kariyer
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="./business-partner-form.html">
+                            <NavLink to="/partner">
                                 İş Ortağımız Olun
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="./blog.html">
+                            <NavLink to="/blog">
                                 Fiyuu’dan Haberler
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="./contact.html">
+                            <NavLink to="/contact">
                                 İletişim
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                     <ul className="p-0 footer-content__top-social mt-5 mt-md-0 m-0">
                         <li>
-                            <a href="#">
+                            <a href="https://www.linkedin.com/company/fiyuu/" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
                                     fill="none">
                                     <g clipPath="url(#clip0_34_1881)">
@@ -108,7 +108,7 @@ const Footer = () => (
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.instagram.com/fiyuutr/" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22"
                                     fill="none">
                                     <g clipPath="url(#clip0_34_1886)">
@@ -132,7 +132,7 @@ const Footer = () => (
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.facebook.com/fiyuu/?locale=tr_TR" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
                                     fill="none">
                                     <g clipPath="url(#clip0_34_1879)">
@@ -149,7 +149,7 @@ const Footer = () => (
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://twitter.com/fiyuutr" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
                                     fill="none">
                                     <g clipPath="url(#clip0_34_1877)">
@@ -200,7 +200,7 @@ const Footer = () => (
                                 <h5>
                                     İletişim Adresi
                                 </h5>
-                                <a href="#">
+                                <a href="https://www.google.com/maps/place/Vadistanbul+Park+Site+Y%C3%B6netimi/@41.1118047,28.9409648,13z/data=!4m10!1m2!2m1!1s+Ayaza%C4%9Fa+Mahallesi+Kemerburgaz+Caddesi+Vadi+%C4%B0stanbul+Park+Sitesi,+7A+Blok+No:7B!3m6!1s0x14cab595e054f74d:0xc68d62447551be57!8m2!3d41.1125578!4d28.9843121!15sClBBeWF6YcSfYSBNYWhhbGxlc2kgS2VtZXJidXJnYXogQ2FkZGVzaSBWYWRpIMSwc3RhbmJ1bCBQYXJrIFNpdGVzaSwgN0EgQmxvayBObzo3QpIBEWFwYXJ0bWVudF9jb21wbGV44AEA!16s%2Fg%2F11fl454j5k?entry=ttu" target="_blank">
                                     Ayazağa Mahallesi Kemerburgaz Caddesi Vadi İstanbul Park Sitesi, 7A Blok No:7B İç
                                     Kapı No:26 Sarıyer/ İstanbul
                                 </a>
@@ -233,7 +233,7 @@ const Footer = () => (
                                 <h5>
                                     E-Mail
                                 </h5>
-                                <a href="#">
+                                <a href="mailto:info@fiyuu.com.tr">
                                     info@fiyuu.com.tr
                                 </a>
                             </div>
@@ -263,7 +263,7 @@ const Footer = () => (
                                 <h5>
                                     İletişim Hattı
                                 </h5>
-                                <a href="#">
+                                <a href="tel:08502207090">
                                     0850 220 70 90
                                 </a>
                             </div>
@@ -298,29 +298,29 @@ const Footer = () => (
 
                     <ul className="p-0 m-0 d-flex flex-column flex-lg-row">
                         <li>
-                            <a href="./kisisel-verilerin-korunumu.html">
+                            <NavLink to="/kisisel-verilerin-korunumu">
                                 Kişisel Verilerin Korunması
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="./kisisel-verilerin-korunumu.html">
+                            <NavLink to="/kisisel-verilerin-korunumu">
                                 Kişisel Verilerin İşlenmesi ve Aydınlatma Metni
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="./kisisel-verilerin-korunumu.html">
+                            <NavLink to="/kisisel-verilerin-korunumu">
                                 Kişisel Verilerin Korunması ve İşlenmesi Politikası
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="./kisisel-verilerin-korunumu.html">
+                            <NavLink to="/kisisel-verilerin-korunumu">
                                 Kvk Başvuru Formu
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="./kisisel-verilerin-korunumu.html">
+                            <NavLink to="/kisisel-verilerin-korunumu">
                                 Bilgi Toplumu Hizmetleri
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                 </div>
