@@ -5,9 +5,14 @@ const Header = () => (
     <nav className="navbar navbar-expand-lg w-100">
         <div className="container-fluid p-0 w-100 justify-content-between align-items-center">
             <div className="navbar-left d-flex flex-row justify-content-start align-items-center">
-                <a className="navbar-brand p-0 d-inline-block" href="./index.html">
+                <NavLink
+                            to="/"
+                            className={({ isActive }) => clx('navbar-brand p-0 d-inline-block', {
+                                'active': isActive
+                            })}
+                        >
                     <img src="images/logo-header.png" alt="" />
-                </a>
+                    </NavLink>
                 <ul className="navbar-nav d-none d-lg-flex p-0 m-0">
                     <li className="nav-item">
                         <NavLink
@@ -31,14 +36,24 @@ const Header = () => (
             
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="./business-partner-form.html">
-                            İş Ortağımız Olun
-                        </a>
+                        <NavLink
+                            to="/partner"
+                            className={({ isActive }) => clx('nav-link', {
+                                'active': isActive
+                            })}
+                        >
+                              İş Ortağımız Olun
+                        </NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="./blog.html">
+                        <NavLink
+                            to="/blog"
+                            className={({ isActive }) => clx('nav-link', {
+                                'active': isActive
+                            })}
+                        >
                             Haberler
-                        </a>
+                        </NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink

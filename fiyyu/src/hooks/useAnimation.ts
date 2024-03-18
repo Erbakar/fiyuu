@@ -8,7 +8,8 @@ export const useAnimation = (options={offset: 5}) => {
         offset: 10
     }) {
         let _elements;
-
+        console.log('Animation');
+        
         // Define a dobra superior, inferior e laterais da tela
         const windowTop = offset * window.innerHeight / 500;
         const windowBottom = window.innerHeight - windowTop;

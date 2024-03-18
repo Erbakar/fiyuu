@@ -6,6 +6,7 @@ const About = () => {
 
     useEffect(() => {
         animate()
+        window.scrollTo(0, 0);
     }, [])
 
     return (
@@ -14,13 +15,13 @@ const About = () => {
     
                 <div className="page-banner w-100 d-flex justify-content-center align-items-center">
                     <div
-                        className="page-container p-0 d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-center">
-                        <div className="page-banner__card">
-                            <h1 className="page-banner__card-title mb-4" data-animation="slideInDown" >
+                        className="page-container p-0 d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-center" >
+                        <div className="page-banner__card"  data-animation="slideInRight" >
+                            <h1 className="page-banner__card-title mb-4" >
                                 Hakkımızda
                             </h1>
     
-                            <p className="page-banner__card-text mt-3" data-animation="slideInUp">
+                            <p className="page-banner__card-text mt-3" >
                             Türkiye’de 2016 yılında ilk siparişini taşıyan fiyuu, kendisini “yeni nesil bir son teslimat platformu” olarak tanımlamakta olup, müşterilerine en iyi “uçtan uca teslimat” deneyimini sunma amacıyla yola çıktı.
                             </p>
                         </div>

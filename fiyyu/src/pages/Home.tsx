@@ -10,7 +10,7 @@ const Home = () => {
 
     useEffect(() => {
         animate()
-        
+        window.scrollTo(0, 0);
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
         const splideHero = new Splide('.splide-hero', {
@@ -277,7 +277,7 @@ const Home = () => {
 
                     </div>
                     <div className="our-profession__img" data-animation="slideInLeft" data-animation-delay="50ms">
-                        <img src="./images/our-profession-right2.png" alt="" />
+                        <img src="./images/our-profession-right.png" alt="" />
                     </div>
                 </div>
             </div>

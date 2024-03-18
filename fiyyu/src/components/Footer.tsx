@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 
 const Footer = () => (
     <div className="footer w-100 d-flex justify-content-center align-items-center">
@@ -5,7 +6,7 @@ const Footer = () => (
             <div data-animation="slideInUp" data-animation-delay="50ms"
                 className="footer-card d-flex flex-column justify-content-center align-items-center justify-content-lg-start align-items-lg-start">
                 <div className="logo mb-4 mb-lg-5 d-flex justify-content-center align-items-center">
-                    <img src="./images/footer-card-logo.png" alt=""/>
+                    <img src="./images/footer-card-logo.png" alt="" />
                 </div>
 
                 <p className="footer-card__text mb-4 mb-lg-5">
@@ -20,25 +21,24 @@ const Footer = () => (
                     <div
                         className="footer-card__button d-flex justify-content-center align-items-center mb-5 mb-lg-0 me-lg-5">
                         <div className="icon d-flex justify-content-center align-items-center">
-                            <img src="./images/kurye.png" alt=""/>
+                            <img src="./images/kurye.png" alt="" />
                         </div>
 
-                        <a href="./job-application-form.html">
+                        <NavLink to="/kurye">
                             <span>
                                 Kurye Olmak Istiyorum
                             </span>
-                        </a>
+                        </NavLink>
                     </div>
                     <div className="footer-card__button d-flex justify-content-center align-items-center">
                         <div className="icon d-flex justify-content-center align-items-center">
-                            <img src="./images/is-ortagi.png" alt=""/>
+                            <img src="./images/is-ortagi.png" alt="" />
                         </div>
-
-                        <a href="./business-partner-form.html">
+                        <NavLink to="/partner">
                             <span>
                                 İş Ortağımız Olun
                             </span>
-                        </a>
+                        </NavLink>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@ const Footer = () => (
                 <div
                     className="footer-content__top w-100 d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center">
                     <div className="footer-content__top-logo d-none d-lg-flex justify-content-center align-items-center">
-                        <img src="./images/footer-top-logo.png" alt=""/>
+                        <img src="./images/footer-top-logo.png" alt="" />
                     </div>
                     <ul className="p-0 footer-content__top-links  m-0">
                         <li>
@@ -277,7 +277,7 @@ const Footer = () => (
                         <div className="d-flex justify-content-center align-items-center">
                             <div className="d-flex justify-content-center align-items-center">
                                 <a href="#" className="whatsapp-btn">
-                                    <img src="./images/wp-icon.svg" alt=""/>
+                                    <img src="./images/wp-icon.svg" alt="" />
                                 </a>
                             </div>
                             <a href="./kisisel-verilerin-korunumu.html" className="btn-footer ms-3">
