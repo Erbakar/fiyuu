@@ -276,11 +276,11 @@ const Footer = () => (
 
                         <div className="d-flex justify-content-center align-items-center">
                             <div className="d-flex justify-content-center align-items-center">
-                                <a href="#" className="whatsapp-btn">
+                                <a  href="https://wa.me/905317637834" className="whatsapp-btn">
                                     <img src="./images/wp-icon.svg" alt="" />
                                 </a>
                             </div>
-                            <a href="./kisisel-verilerin-korunumu.html" className="btn-footer ms-3">
+                            <a  href="https://wa.me/905317637834" className="btn-footer ms-3">
                                 <span>
                                     Fiyuu İnsan Kaynakları
                                 </span>

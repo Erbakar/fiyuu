@@ -68,10 +68,10 @@ const Header = () => (
                 </ul>
             </div>
             <div className="navbar-right d-none d-lg-flex justify-content-start align-items-center">
-                <a href="#" className="whatsapp-btn">
+                <a href="https://wa.me/905317637834" className="whatsapp-btn">
                     <img src="images/wp-icon.svg" alt="" />
                 </a>
-                <a href="./kisisel-verilerin-korunumu.html" className="btn-header me-5">
+                <a  href="https://wa.me/905317637834" className="btn-header me-5">
                     <span>
                         Fiyuu İnsan Kaynakları
                     </span>
