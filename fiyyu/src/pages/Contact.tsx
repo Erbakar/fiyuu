@@ -50,9 +50,9 @@ const Contact = () => {
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
                                 info@fiyuu.com.tr
                             </a>
-                            <ul className="contact-item-social p-0 m-0 mb-5 mt-3">
+                            <ul className="contact-item-social p-0 m-0 mb-3">
                                 <li className="d-flex justify-content-center align-items-center">
-                                    <a href="#" className="d-flex justify-content-center align-items-center">
+                                    <a href="https://www.linkedin.com/company/fiyuu/" target="blank" className="d-flex justify-content-center align-items-center">
                                         <div className="icon d-flex justify-content-center align-items-center">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -106,38 +106,7 @@ const Contact = () => {
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
                                 info@fiyuu.com.tr
                             </a>
-                            <ul className="contact-item-social p-0 m-0 mb-5 mt-3">
-                                <li className="d-flex justify-content-center align-items-center">
-                                    <a href="#" className="d-flex justify-content-center align-items-center">
-                                        <div className="icon d-flex justify-content-center align-items-center">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g clipPath="url(#clip0_1_1079)">
-                                                    <path
-                                                        d="M6.29176 5.23242C5.65614 5.23242 5.23239 5.76234 5.23239 6.34464C5.23239 6.87456 5.65614 7.35115 6.29176 7.35115C6.98023 7.35115 7.35112 6.87456 7.35112 6.29179C7.35112 5.70902 6.92738 5.23242 6.29176 5.23242Z"
-                                                        fill="#495980" />
-                                                    <path d="M7.35112 7.8811H5.23239V14.7677H7.35112V7.8811Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M12.4365 7.9873C11.3243 7.9873 10.6882 8.62292 10.4235 9.04667H10.3707L10.2645 8.14633H8.35764C8.35764 8.72909 8.41049 9.41757 8.41049 10.2122V14.7677H10.5292V11.0068C10.5292 10.795 10.5292 10.636 10.5821 10.4769C10.7411 10.106 11.0058 9.62944 11.5886 9.62944C12.3304 9.62944 12.648 10.2651 12.648 11.1126V14.7677H14.7667V10.8478C14.7667 8.88765 13.7602 7.9873 12.4361 7.9873H12.4365Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M15.9211 20H4.07891C1.8299 20 0 18.1701 0 15.9211V4.07891C0 1.8299 1.8299 0 4.07891 0H15.9206C18.1696 0 19.9995 1.8299 19.9995 4.07891V15.9206C19.9995 18.1696 18.1696 19.9995 15.9206 19.9995L15.9211 20ZM4.07891 1.11639C2.44558 1.11639 1.11639 2.44512 1.11639 4.07891V15.9206C1.11639 17.554 2.44558 18.8831 4.07891 18.8831H15.9206C17.554 18.8831 18.8831 17.554 18.8831 15.9206V4.07891C18.8831 2.44558 17.554 1.11639 15.9206 1.11639H4.07891Z"
-                                                        fill="#495980" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_1_1079">
-                                                        <rect width="20" height="20" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </div>
-                                        <span>
-                                            Linkedin
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
+                          
                         </div>
                         <div className="iframe-area">
                             <iframe
@@ -161,38 +130,7 @@ const Contact = () => {
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
                                 info@fiyuu.com.tr
                             </a>
-                            <ul className="contact-item-social p-0 m-0 mb-5 mt-3">
-                                <li className="d-flex justify-content-center align-items-center">
-                                    <a href="#" className="d-flex justify-content-center align-items-center">
-                                        <div className="icon d-flex justify-content-center align-items-center">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g clipPath="url(#clip0_1_1079)">
-                                                    <path
-                                                        d="M6.29176 5.23242C5.65614 5.23242 5.23239 5.76234 5.23239 6.34464C5.23239 6.87456 5.65614 7.35115 6.29176 7.35115C6.98023 7.35115 7.35112 6.87456 7.35112 6.29179C7.35112 5.70902 6.92738 5.23242 6.29176 5.23242Z"
-                                                        fill="#495980" />
-                                                    <path d="M7.35112 7.8811H5.23239V14.7677H7.35112V7.8811Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M12.4365 7.9873C11.3243 7.9873 10.6882 8.62292 10.4235 9.04667H10.3707L10.2645 8.14633H8.35764C8.35764 8.72909 8.41049 9.41757 8.41049 10.2122V14.7677H10.5292V11.0068C10.5292 10.795 10.5292 10.636 10.5821 10.4769C10.7411 10.106 11.0058 9.62944 11.5886 9.62944C12.3304 9.62944 12.648 10.2651 12.648 11.1126V14.7677H14.7667V10.8478C14.7667 8.88765 13.7602 7.9873 12.4361 7.9873H12.4365Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M15.9211 20H4.07891C1.8299 20 0 18.1701 0 15.9211V4.07891C0 1.8299 1.8299 0 4.07891 0H15.9206C18.1696 0 19.9995 1.8299 19.9995 4.07891V15.9206C19.9995 18.1696 18.1696 19.9995 15.9206 19.9995L15.9211 20ZM4.07891 1.11639C2.44558 1.11639 1.11639 2.44512 1.11639 4.07891V15.9206C1.11639 17.554 2.44558 18.8831 4.07891 18.8831H15.9206C17.554 18.8831 18.8831 17.554 18.8831 15.9206V4.07891C18.8831 2.44558 17.554 1.11639 15.9206 1.11639H4.07891Z"
-                                                        fill="#495980" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_1_1079">
-                                                        <rect width="20" height="20" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </div>
-                                        <span>
-                                            Linkedin
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
+                       
                         </div>
                         <div className="iframe-area">
                             <iframe
@@ -216,38 +154,7 @@ const Contact = () => {
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
                                 info@fiyuu.com.tr
                             </a>
-                            <ul className="contact-item-social p-0 m-0 mb-5 mt-3">
-                                <li className="d-flex justify-content-center align-items-center">
-                                    <a href="#" className="d-flex justify-content-center align-items-center">
-                                        <div className="icon d-flex justify-content-center align-items-center">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g clipPath="url(#clip0_1_1079)">
-                                                    <path
-                                                        d="M6.29176 5.23242C5.65614 5.23242 5.23239 5.76234 5.23239 6.34464C5.23239 6.87456 5.65614 7.35115 6.29176 7.35115C6.98023 7.35115 7.35112 6.87456 7.35112 6.29179C7.35112 5.70902 6.92738 5.23242 6.29176 5.23242Z"
-                                                        fill="#495980" />
-                                                    <path d="M7.35112 7.8811H5.23239V14.7677H7.35112V7.8811Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M12.4365 7.9873C11.3243 7.9873 10.6882 8.62292 10.4235 9.04667H10.3707L10.2645 8.14633H8.35764C8.35764 8.72909 8.41049 9.41757 8.41049 10.2122V14.7677H10.5292V11.0068C10.5292 10.795 10.5292 10.636 10.5821 10.4769C10.7411 10.106 11.0058 9.62944 11.5886 9.62944C12.3304 9.62944 12.648 10.2651 12.648 11.1126V14.7677H14.7667V10.8478C14.7667 8.88765 13.7602 7.9873 12.4361 7.9873H12.4365Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M15.9211 20H4.07891C1.8299 20 0 18.1701 0 15.9211V4.07891C0 1.8299 1.8299 0 4.07891 0H15.9206C18.1696 0 19.9995 1.8299 19.9995 4.07891V15.9206C19.9995 18.1696 18.1696 19.9995 15.9206 19.9995L15.9211 20ZM4.07891 1.11639C2.44558 1.11639 1.11639 2.44512 1.11639 4.07891V15.9206C1.11639 17.554 2.44558 18.8831 4.07891 18.8831H15.9206C17.554 18.8831 18.8831 17.554 18.8831 15.9206V4.07891C18.8831 2.44558 17.554 1.11639 15.9206 1.11639H4.07891Z"
-                                                        fill="#495980" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_1_1079">
-                                                        <rect width="20" height="20" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </div>
-                                        <span>
-                                            Linkedin
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
+                  
                         </div>
                         <div className="iframe-area">
                             <iframe
@@ -271,38 +178,6 @@ const Contact = () => {
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
                                 info@fiyuu.com.tr
                             </a>
-                            <ul className="contact-item-social p-0 m-0 mb-5 mt-3">
-                                <li className="d-flex justify-content-center align-items-center">
-                                    <a href="#" className="d-flex justify-content-center align-items-center">
-                                        <div className="icon d-flex justify-content-center align-items-center">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g clipPath="url(#clip0_1_1079)">
-                                                    <path
-                                                        d="M6.29176 5.23242C5.65614 5.23242 5.23239 5.76234 5.23239 6.34464C5.23239 6.87456 5.65614 7.35115 6.29176 7.35115C6.98023 7.35115 7.35112 6.87456 7.35112 6.29179C7.35112 5.70902 6.92738 5.23242 6.29176 5.23242Z"
-                                                        fill="#495980" />
-                                                    <path d="M7.35112 7.8811H5.23239V14.7677H7.35112V7.8811Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M12.4365 7.9873C11.3243 7.9873 10.6882 8.62292 10.4235 9.04667H10.3707L10.2645 8.14633H8.35764C8.35764 8.72909 8.41049 9.41757 8.41049 10.2122V14.7677H10.5292V11.0068C10.5292 10.795 10.5292 10.636 10.5821 10.4769C10.7411 10.106 11.0058 9.62944 11.5886 9.62944C12.3304 9.62944 12.648 10.2651 12.648 11.1126V14.7677H14.7667V10.8478C14.7667 8.88765 13.7602 7.9873 12.4361 7.9873H12.4365Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M15.9211 20H4.07891C1.8299 20 0 18.1701 0 15.9211V4.07891C0 1.8299 1.8299 0 4.07891 0H15.9206C18.1696 0 19.9995 1.8299 19.9995 4.07891V15.9206C19.9995 18.1696 18.1696 19.9995 15.9206 19.9995L15.9211 20ZM4.07891 1.11639C2.44558 1.11639 1.11639 2.44512 1.11639 4.07891V15.9206C1.11639 17.554 2.44558 18.8831 4.07891 18.8831H15.9206C17.554 18.8831 18.8831 17.554 18.8831 15.9206V4.07891C18.8831 2.44558 17.554 1.11639 15.9206 1.11639H4.07891Z"
-                                                        fill="#495980" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_1_1079">
-                                                        <rect width="20" height="20" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </div>
-                                        <span>
-                                            Linkedin
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
                         <div className="iframe-area">
                             <iframe
@@ -326,38 +201,7 @@ const Contact = () => {
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
                                 info@fiyuu.com.tr
                             </a>
-                            <ul className="contact-item-social p-0 m-0 mb-5 mt-3">
-                                <li className="d-flex justify-content-center align-items-center">
-                                    <a href="#" className="d-flex justify-content-center align-items-center">
-                                        <div className="icon d-flex justify-content-center align-items-center">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g clipPath="url(#clip0_1_1079)">
-                                                    <path
-                                                        d="M6.29176 5.23242C5.65614 5.23242 5.23239 5.76234 5.23239 6.34464C5.23239 6.87456 5.65614 7.35115 6.29176 7.35115C6.98023 7.35115 7.35112 6.87456 7.35112 6.29179C7.35112 5.70902 6.92738 5.23242 6.29176 5.23242Z"
-                                                        fill="#495980" />
-                                                    <path d="M7.35112 7.8811H5.23239V14.7677H7.35112V7.8811Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M12.4365 7.9873C11.3243 7.9873 10.6882 8.62292 10.4235 9.04667H10.3707L10.2645 8.14633H8.35764C8.35764 8.72909 8.41049 9.41757 8.41049 10.2122V14.7677H10.5292V11.0068C10.5292 10.795 10.5292 10.636 10.5821 10.4769C10.7411 10.106 11.0058 9.62944 11.5886 9.62944C12.3304 9.62944 12.648 10.2651 12.648 11.1126V14.7677H14.7667V10.8478C14.7667 8.88765 13.7602 7.9873 12.4361 7.9873H12.4365Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M15.9211 20H4.07891C1.8299 20 0 18.1701 0 15.9211V4.07891C0 1.8299 1.8299 0 4.07891 0H15.9206C18.1696 0 19.9995 1.8299 19.9995 4.07891V15.9206C19.9995 18.1696 18.1696 19.9995 15.9206 19.9995L15.9211 20ZM4.07891 1.11639C2.44558 1.11639 1.11639 2.44512 1.11639 4.07891V15.9206C1.11639 17.554 2.44558 18.8831 4.07891 18.8831H15.9206C17.554 18.8831 18.8831 17.554 18.8831 15.9206V4.07891C18.8831 2.44558 17.554 1.11639 15.9206 1.11639H4.07891Z"
-                                                        fill="#495980" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_1_1079">
-                                                        <rect width="20" height="20" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </div>
-                                        <span>
-                                            Linkedin
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
+      
                         </div>
                         <div className="iframe-area">
                             <iframe
@@ -381,38 +225,7 @@ const Contact = () => {
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
                                 info@fiyuu.com.tr
                             </a>
-                            <ul className="contact-item-social p-0 m-0 mb-5 mt-3">
-                                <li className="d-flex justify-content-center align-items-center">
-                                    <a href="#" className="d-flex justify-content-center align-items-center">
-                                        <div className="icon d-flex justify-content-center align-items-center">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g clipPath="url(#clip0_1_1079)">
-                                                    <path
-                                                        d="M6.29176 5.23242C5.65614 5.23242 5.23239 5.76234 5.23239 6.34464C5.23239 6.87456 5.65614 7.35115 6.29176 7.35115C6.98023 7.35115 7.35112 6.87456 7.35112 6.29179C7.35112 5.70902 6.92738 5.23242 6.29176 5.23242Z"
-                                                        fill="#495980" />
-                                                    <path d="M7.35112 7.8811H5.23239V14.7677H7.35112V7.8811Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M12.4365 7.9873C11.3243 7.9873 10.6882 8.62292 10.4235 9.04667H10.3707L10.2645 8.14633H8.35764C8.35764 8.72909 8.41049 9.41757 8.41049 10.2122V14.7677H10.5292V11.0068C10.5292 10.795 10.5292 10.636 10.5821 10.4769C10.7411 10.106 11.0058 9.62944 11.5886 9.62944C12.3304 9.62944 12.648 10.2651 12.648 11.1126V14.7677H14.7667V10.8478C14.7667 8.88765 13.7602 7.9873 12.4361 7.9873H12.4365Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M15.9211 20H4.07891C1.8299 20 0 18.1701 0 15.9211V4.07891C0 1.8299 1.8299 0 4.07891 0H15.9206C18.1696 0 19.9995 1.8299 19.9995 4.07891V15.9206C19.9995 18.1696 18.1696 19.9995 15.9206 19.9995L15.9211 20ZM4.07891 1.11639C2.44558 1.11639 1.11639 2.44512 1.11639 4.07891V15.9206C1.11639 17.554 2.44558 18.8831 4.07891 18.8831H15.9206C17.554 18.8831 18.8831 17.554 18.8831 15.9206V4.07891C18.8831 2.44558 17.554 1.11639 15.9206 1.11639H4.07891Z"
-                                                        fill="#495980" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_1_1079">
-                                                        <rect width="20" height="20" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </div>
-                                        <span>
-                                            Linkedin
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
+
                         </div>
                         <div className="iframe-area">
                             <iframe
@@ -436,38 +249,7 @@ const Contact = () => {
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
                                 info@fiyuu.com.tr
                             </a>
-                            <ul className="contact-item-social p-0 m-0 mb-5 mt-3">
-                                <li className="d-flex justify-content-center align-items-center">
-                                    <a href="#" className="d-flex justify-content-center align-items-center">
-                                        <div className="icon d-flex justify-content-center align-items-center">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g clipPath="url(#clip0_1_1079)">
-                                                    <path
-                                                        d="M6.29176 5.23242C5.65614 5.23242 5.23239 5.76234 5.23239 6.34464C5.23239 6.87456 5.65614 7.35115 6.29176 7.35115C6.98023 7.35115 7.35112 6.87456 7.35112 6.29179C7.35112 5.70902 6.92738 5.23242 6.29176 5.23242Z"
-                                                        fill="#495980" />
-                                                    <path d="M7.35112 7.8811H5.23239V14.7677H7.35112V7.8811Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M12.4365 7.9873C11.3243 7.9873 10.6882 8.62292 10.4235 9.04667H10.3707L10.2645 8.14633H8.35764C8.35764 8.72909 8.41049 9.41757 8.41049 10.2122V14.7677H10.5292V11.0068C10.5292 10.795 10.5292 10.636 10.5821 10.4769C10.7411 10.106 11.0058 9.62944 11.5886 9.62944C12.3304 9.62944 12.648 10.2651 12.648 11.1126V14.7677H14.7667V10.8478C14.7667 8.88765 13.7602 7.9873 12.4361 7.9873H12.4365Z"
-                                                        fill="#495980" />
-                                                    <path
-                                                        d="M15.9211 20H4.07891C1.8299 20 0 18.1701 0 15.9211V4.07891C0 1.8299 1.8299 0 4.07891 0H15.9206C18.1696 0 19.9995 1.8299 19.9995 4.07891V15.9206C19.9995 18.1696 18.1696 19.9995 15.9206 19.9995L15.9211 20ZM4.07891 1.11639C2.44558 1.11639 1.11639 2.44512 1.11639 4.07891V15.9206C1.11639 17.554 2.44558 18.8831 4.07891 18.8831H15.9206C17.554 18.8831 18.8831 17.554 18.8831 15.9206V4.07891C18.8831 2.44558 17.554 1.11639 15.9206 1.11639H4.07891Z"
-                                                        fill="#495980" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_1_1079">
-                                                        <rect width="20" height="20" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </div>
-                                        <span>
-                                            Linkedin
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
+   
                         </div>
                         <div className="iframe-area">
                             <iframe

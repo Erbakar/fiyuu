@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useAnimation } from "../hooks/useAnimation";
+import { NavLink } from "react-router-dom";
 
 const Kurye = () => {
     const animate = useAnimation()
@@ -163,9 +164,9 @@ const Kurye = () => {
                                 </button>
                                 <span>
                                     <input type="checkbox" className="kvkkCheckbox"  style={{display: "none"}}/>
-                                    <label className="ms-4"><a href="./Musteri_Acik_Riza_-Aydinlatma_Metni.pdf"
+                                    <label className="ms-4"><NavLink to="/aydinlatma-metni" target="blank" 
                                             target="_blank">Aydınlatma Metni (işe alım süreçleri hakkında
-                                            bilgi)</a></label>
+                                            bilgi)</NavLink></label>
                                 </span>
                             </div>
 
@@ -178,10 +179,10 @@ const Kurye = () => {
                                 </button>
                                 <span>
                                     <input type="checkbox" className="kvkkCheckbox"  style={{display: "none"}}/>
-                                    <label className="ms-4"><a href="./Kvk-Basvuru-Formu.pdf" target="_blank">KVKK Onayı
+                                    <label className="ms-4"><NavLink to="/kisisel-verilerin-korunumu"  target="blank" >KVKK Onayı
                                             (Kişisel bilgilerimin Esnaf Kurye işe
                                             alım
-                                            süreçlerinde kullanılmasını onaylıyorum.)</a></label>
+                                            süreçlerinde kullanılmasını onaylıyorum.)</NavLink></label>
                                 </span>
                             </div>
 
@@ -195,10 +196,10 @@ const Kurye = () => {
                                 </button>
                                 <span>
                                     <input type="checkbox" className="kvkkCheckbox"  style={{display: "none"}}/>
-                                    <label className="ms-4"><a href="./bilgilendirme-metni.html">Ticari Elektronik
+                                    <label className="ms-4">  <NavLink to="/bilgilendirme-metni"  target="blank" >Ticari Elektronik
                                             Bilgilendirme Metni (telefonlara
                                             giden
-                                            mesajlar için onay)</a></label>
+                                            mesajlar için onay)</NavLink></label>
                                 </span>
                             </div>
                             <button  className="submit-btn d-flex mt-5 justify-content-center align-items-center">

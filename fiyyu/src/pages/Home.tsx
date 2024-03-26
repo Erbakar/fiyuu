@@ -4,6 +4,7 @@ import Earnings from '../components/Earnings.js';
 import Map from '../components/Map.js';
 import News from '../components/News.js';
 import { useAnimation } from '../hooks/useAnimation.js';
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
     const animate = useAnimation()
@@ -44,13 +45,16 @@ const Home = () => {
                                     <p className="hero-text mb-5" data-animation="slideInRight" data-animation-delay="50ms">
                                         Çalıştığın kadar kazan!
                                     </p>
-                                    <a href="./job-application-form.html" data-animation="slideInRight"
+
+
+                   
+                                    <NavLink to="/career" data-animation="slideInRight"
                                         data-animation-delay="50ms"
                                         className="hero-btn d-flex m-0 justify-content-center align-items-center">
                                         <span className="text-center d-inline-block">
                                             Hemen Başvur
                                         </span>
-                                    </a>
+                                    </NavLink>
 
                                     <div className="arrow-down d-flex justify-content-center align-items-center">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -70,12 +74,12 @@ const Home = () => {
                                     <h1 className="mb-3 hero-title">
                                         İş Ortağı Olmak İstiyorum
                                     </h1>
-                                    <a href="./business-partner-form.html"
+                                    <NavLink to="/partner"
                                         className="hero-btn d-flex m-0 justify-content-center align-items-center">
                                         <span className="text-center d-inline-block">
                                             Hemen Başvur
                                         </span>
-                                    </a>
+                                    </NavLink>
 
                                     <div className="arrow-down d-flex justify-content-center align-items-center">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -187,11 +191,11 @@ const Home = () => {
                                 <img src="./images/what-is-fiyuu-right.png" alt="" className="w-100" />
                             </div>
 
-                            <a href="./career.html" className="btn-discover mb-5">
+                            <NavLink to="/partner"  className="btn-discover mb-5">
                                 <span>
                                     Keşfet
                                 </span>
-                            </a>
+                            </NavLink>
                         </div>
 
                         <div className="w-100 d-flex justify-content-center align-items-center">

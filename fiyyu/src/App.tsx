@@ -10,6 +10,8 @@ import Partner from "./pages/Partner"
 import Contact from "./pages/Contact"
 import Kurye from "./pages/Kurye"
 import Kvk from "./pages/Kvk"
+import Bilgilendirme from "./pages/Bilgilendirme"
+import Aydinlatma from "./pages/Aydinlatma"
 
 
 const App = () => {
@@ -23,6 +25,8 @@ const App = () => {
         <Route index path="/career" element={<Kurye />} />
         <Route index path="/contact" element={<Contact />} />
         <Route index path="/kisisel-verilerin-korunumu" element={<Kvk />} />
+        <Route index path="/bilgilendirme-metni" element={<Bilgilendirme />} />
+        <Route index path="/aydinlatma-metni" element={<Aydinlatma />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug/:index" element={<BlogDetail />} />
       </Routes>

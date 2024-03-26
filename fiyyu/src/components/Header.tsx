@@ -173,40 +173,40 @@ const Header = () => (
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav text-center p-0 mx-0 mt-5 mb-4">
                     <li className="nav-item">
-                        <a className="nav-link" href="./index.html">
+                    <NavLink  to="/" className="nav-link" >
                             Anasayfa
-                        </a>
+                        </NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="./about-us.html">
+                    <NavLink  to="/about" className="nav-link" >
                             Hakkımızda
-                        </a>
+                        </NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="./business-partner-form.html">
+                    <NavLink  to="/partner" className="nav-link" >
                             İş Ortağımız Olun
-                        </a>
+                        </NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="./blog.html">
+                    <NavLink  to="/blog" className="nav-link" >
                             Haberler
-                        </a>
+                        </NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="./contact.html">
+                    <NavLink  to="/contact" className="nav-link" >
                             İletişim
-                        </a>
+                        </NavLink>
                     </li>
                 </ul>
 
-                <a href="./kisisel-verilerin-korunumu.html" className="btn-header py-4 d-flex w-100 mb-4">
+                <a href="https://wa.me/905317637834" className="btn-header py-4 d-flex w-100 mb-4">
                     <span>
                         Fiyuu İnsan Kaynakları
                     </span>
                 </a>
                 <ul className="social-icons p-0 m-0 d-flex justify-content-center align-items-center">
                     <li>
-                        <a href="#">
+                    <a href="https://www.linkedin.com/company/fiyuu/" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <g clipPath="url(#clip0_34_2060)">
@@ -230,7 +230,7 @@ const Header = () => (
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                    <a href="https://www.instagram.com/fiyuutr/" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
                                 fill="none">
                                 <g clipPath="url(#clip0_34_2065)">
@@ -253,7 +253,7 @@ const Header = () => (
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                    <a href="https://www.facebook.com/fiyuu/?locale=tr_TR" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <g clipPath="url(#clip0_34_2057)">
@@ -273,7 +273,7 @@ const Header = () => (
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                    <a href="https://twitter.com/fiyuutr" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <g clipPath="url(#clip0_34_2055)">
