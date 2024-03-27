@@ -12,7 +12,7 @@ function Earnings() {
 
     // Hesaplama yapılacak
     if (workStyle && cityValue && avmValue) {
-      const earnings = parseFloat(workStyle) * 30 * (parseFloat(cityValue) + parseFloat(avmValue));
+      const earnings = parseFloat(workStyle) * 26 * (parseFloat(cityValue) + parseFloat(avmValue));
       setMonthlyEarnings(earnings.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&.'));
     } else {
       alert('Lütfen tüm seçenekleri belirleyin.');
