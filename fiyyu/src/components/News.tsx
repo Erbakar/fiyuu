@@ -56,7 +56,7 @@ const News = () => {
         animate() 
     }, 10);
 
-console.log(news);
+
 
     return (
         <div className="fiyuu-news w-100 d-flex justify-content-center  flex-column align-items-center">
