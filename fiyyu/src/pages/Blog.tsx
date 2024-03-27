@@ -1,4 +1,5 @@
 
+import { NavLink } from "react-router-dom";
 import { useAnimation } from "../hooks/useAnimation";
 import { useEffect, useState } from "react";
 type NewsItem = {
@@ -81,9 +82,7 @@ const Blog = () => {
                                                 katkı sunmak...
                                             </p>
                                         </div>
-                                        <a href="./blog-detail-2.html" className="show-more">
-                                            Daha fazlası
-                                        </a>
+                                        <NavLink to={`/blog/${item.slug}/${index}`} className="show-more">Daha fazlası</NavLink>
                                     </div>
 
 

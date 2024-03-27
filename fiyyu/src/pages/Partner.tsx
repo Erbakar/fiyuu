@@ -8,6 +8,30 @@ const Partner = () => {
     useEffect(() => {
         animate()
         window.scrollTo(0, 0);
+
+        const checkboxGroups = document.querySelectorAll(".kvkk-onay");
+
+        // Her bir grup için işlemleri yapıyoruz
+        checkboxGroups.forEach(function (group) {
+            const disabledButton = group.querySelector(".disabledButton");
+            const selectedButton = group.querySelector(".selectedButton");
+            const kvkkCheckbox = group.querySelector(".kvkkCheckbox");
+            const labelText = group.querySelector("label");
+    
+            disabledButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                kvkkCheckbox.checked = true;
+                selectedButton.style.display = "inline-block";
+                disabledButton.style.display = "none";
+            });
+    
+            selectedButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                kvkkCheckbox.checked = false;
+                selectedButton.style.display = "none";
+                disabledButton.style.display = "inline-block";
+            });
+        });
     }, [])
 
     return (
@@ -77,10 +101,16 @@ const Partner = () => {
 
 
                                 <div className="col-12 col-lg-7 p-0 form-items d-flex flex-column">
-                                    <div className="form-items mb-0">
+                                    <div className="form-items-secondary mb-0">
                                         <div className="form-control-ctr">
                                             <select className="form-select" id="sektor">
                                                 <option value="sektor-1" defaultValue='sektor-1'>Sektör 1</option>
+                                                <option value="sektor-2">Sektör 2</option>
+                                            </select>
+                                        </div>
+                                        <div className="form-control-ctr">
+                                            <select className="form-select" id="sektor">
+                                                <option value="sektor-1" defaultValue='sektor-1'>Sektör</option>
                                                 <option value="sektor-2">Sektör 2</option>
                                             </select>
                                         </div>
@@ -96,9 +126,7 @@ const Partner = () => {
                                                 </select>
                                             </div>
                                             <div className="form-control-ctr">
-                                                <select className="form-select" id="district" disabled="disabled">
-                                                    <option defaultValue='0' value="0">Lütfen Önce  İl seçiniz</option>
-                                                </select>
+                                            <input type="text" className="form-control" id="ilce" placeholder="İlçe Adı"/>
                                             </div>
                                         </div>
                                         <div className="form-control-ctr w-100 w-sm-50 ms-sm-2 h-auto">
@@ -126,7 +154,7 @@ const Partner = () => {
                                                 <option value="Instagram">Instagram</option>
                                                 <option value="Tiktok">Tiktok</option>
                                                 <option value="Facebook">Facebook</option>
-                                                <option value="Eleman.net">Eleman.net</option>
+                                                <option value="Eleman">Eleman.net</option>
                                                 <option value="sahibinden">Sahibinden</option>
                                                 <option value="24saatteis">24 Saatte İş</option>
                                                 <option value="yenibiris">Yeni Bir İş</option>
@@ -135,8 +163,9 @@ const Partner = () => {
                                                 <option value="isin-olsun">İşin Olsun</option>
                                                 <option value="secretcv">Secret CV</option>
                                                 <option value="websitesi">Web Sitesi</option>
-                                                <option value="Kariyer.net">Kariyer.net</option>
-
+                                                <option value="Kariyer">Kariyer.net</option>
+                                                <option value="KadınKurye">Kadın Kurye Getir Bonusu</option>
+                                                
                                             </select>
                                         </div>
                                     </div>

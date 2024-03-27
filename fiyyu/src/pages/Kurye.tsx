@@ -8,6 +8,29 @@ const Kurye = () => {
     useEffect(() => {
         animate()
         window.scrollTo(0, 0);
+        const checkboxGroups = document.querySelectorAll(".kvkk-onay");
+
+        // Her bir grup için işlemleri yapıyoruz
+        checkboxGroups.forEach(function (group) {
+            const disabledButton = group.querySelector(".disabledButton");
+            const selectedButton = group.querySelector(".selectedButton");
+            const kvkkCheckbox = group.querySelector(".kvkkCheckbox");
+            const labelText = group.querySelector("label");
+    
+            disabledButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                kvkkCheckbox.checked = true;
+                selectedButton.style.display = "inline-block";
+                disabledButton.style.display = "none";
+            });
+    
+            selectedButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                kvkkCheckbox.checked = false;
+                selectedButton.style.display = "none";
+                disabledButton.style.display = "inline-block";
+            });
+        });
     }, [])
 
     return (
@@ -95,9 +118,7 @@ const Kurye = () => {
                                             </select>
                                         </div>
                                         <div className="form-control-ctr">
-                                            <select className="form-select" id="district" disabled="disabled">
-                                                <option  defaultValue='0' value="0">İlçe seçiniz</option>
-                                            </select>
+                                        <input type="text" className="form-control" id="ilce" placeholder="İlçe Adı"/>
                                         </div>
                                     </div>
                                     <div className="form-items">
@@ -138,7 +159,7 @@ const Kurye = () => {
                                                 <option value="Instagram">Instagram</option>
                                                 <option value="Tiktok">Tiktok</option>
                                                 <option value="Facebook">Facebook</option>
-                                                <option value="Eleman.net">Eleman.net</option>
+                                                <option value="Eleman">Eleman.net</option>
                                                 <option value="sahibinden">Sahibinden</option>
                                                 <option value="24saatteis">24 Saatte İş</option>
                                                 <option value="yenibiris">Yeni Bir İş</option>
@@ -147,8 +168,8 @@ const Kurye = () => {
                                                 <option value="isin-olsun">İşin Olsun</option>
                                                 <option value="secretcv">Secret CV</option>
                                                 <option value="websitesi">Web Sitesi</option>
-                                                <option value="Kariyer.net">Kariyer.net</option>
-
+                                                <option value="Kariyer">Kariyer.net</option>
+                                                <option value="KadınKurye">Kadın Kurye Getir Bonusu</option>
                                             </select>
                                         </div>
                                     </div>
