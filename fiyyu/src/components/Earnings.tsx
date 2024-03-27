@@ -1,44 +1,25 @@
-import { useEffect } from 'react';
+import React, { useState } from 'react';
 import { useAnimation } from '../hooks/useAnimation';
 
-const Earnings = () => {
-    const animate = useAnimation()
+function Earnings() {
+    const [workStyle, setWorkStyle] = useState('');
+    const [cityValue, setCityValue] = useState('');
+    const [avmValue, setAvmValue] = useState('');
+    const [monthlyEarnings, setMonthlyEarnings] = useState(null);
 
-    useEffect(() => {
-        animate()
-      
-        document.getElementById('calculate-earnings-form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent default form submission
-            const isResultShow = false;
-            // Get selected work style value
-            if (document.querySelector('input[name="flexRadioDefault"]:checked')) {
-                var workStyle =  parseFloat(document.querySelector('input[name="flexRadioDefault"]:checked').value) ? parseFloat(document.querySelector('input[name="flexRadioDefault"]:checked').value) : null;
-                
-            } else {
-                var workStyle =  null;
-            }
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-            // Get selected city value
-            const cityValue = parseFloat(document.getElementById('selectBox').value);
+    // Hesaplama yapılacak
+    if (workStyle && cityValue && avmValue) {
+      const earnings = parseFloat(workStyle) * 30 * (parseFloat(cityValue) + parseFloat(avmValue));
+      setMonthlyEarnings(earnings.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&.'));
+    } else {
+      alert('Lütfen tüm seçenekleri belirleyin.');
+    }
+  };
 
-            // Get selected AVM (Shopping Mall) value
-            const avmValue = parseFloat(document.getElementById('avm').value);
-
-            // Check if all inputs are selected
-            if (isNaN(workStyle) || isNaN(cityValue) || isNaN(avmValue)) {
-                alert('Lütfen tüm seçenekleri belirleyin.'); // Prompt user to select all options
-                return false;
-            } else {
-                const monthlyEarnings = workStyle * 30 * (cityValue + avmValue);
-                const resultElement = document.getElementById('result');
-                const formattedEarnings = monthlyEarnings.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&.');
-                resultElement.textContent = formattedEarnings;
-                return true;
-            }
-        });
-    }, [])
-
-    return (
+  return (
         <div className="calculate-earnings w-100 d-flex justify-content-center align-items-center">
             <div
                 className="page-container d-flex flex-column flex-xl-row justify-content-center justify-content-xl-between align-items-center">
@@ -63,37 +44,27 @@ const Earnings = () => {
                     className="calculate-earnings__right d-flex flex-column justify-content-start align-items-start">
                     <h3>
                         Kazancını hesapla!
-                        {/* {(() => {
-        if (document.getElementById('calculate-earnings-form').addEventListener) {
-          return (
-            <div>someCase</div>
-          )
-        }  else {
-          return (
-            <div>catch all</div>
-          )
-        }    })()} */}
-                    </h3>
-                    
-                    <form id="calculate-earnings-form">
+                     </h3>
+     
+                    <form id="calculate-earnings-form" onSubmit={handleSubmit}>
                         <div className="content mb-5">
 
 
                             <div className="col">
                                 <div className="form-check">
-                                    <input className="form-check-input" value="25" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                                    <input className="form-check-input" value="25" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onChange={(e) => setWorkStyle(e.target.value)} />
                                     <label className="defaultValuem-check-label" htmlFor="flexRadioDefault1">
                                         Rahat çalışırım
                                     </label>
                                 </div>
                                 <div className="form-check">
-                                    <input className="form-check-input" value="35" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                    <input className="form-check-input" value="35" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onChange={(e) => setWorkStyle(e.target.value)}/>
                                     <label className="form-check-label" htmlFor="flexRadioDefault2">
                                         Hızlı çalışırım
                                     </label>
                                 </div>
                                 <div className="form-check">
-                                    <input className="form-check-input" value="45" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+                                    <input className="form-check-input" value="45" type="radio" name="flexRadioDefault" id="flexRadioDefault3" onChange={(e) => setWorkStyle(e.target.value)}/>
                                     <label className="form-check-label" htmlFor="flexRadioDefault3">
                                         Benden hızlısı yok
                                     </label>
@@ -101,7 +72,7 @@ const Earnings = () => {
                             </div>
                             <div className="col">
                                 <div className="select-ctr">
-                                    <select className="form-select h-100" id="selectBox">
+                                    <select className="form-select h-100" id="selectBox" value={cityValue} onChange={(e) => setCityValue(e.target.value)}>
                                         <option defaultValue="deafult"  >il seçiniz</option>
                                         <option value="0">------</option>
                                         <option value="54">İstanbul Avrupa</option>
@@ -188,7 +159,7 @@ const Earnings = () => {
 
                                 </div>
                                 <div className="select-ctr">
-                                    <select className="form-select h-100" id="avm">
+                                    <select className="form-select h-100" id="avm" value={avmValue} onChange={(e) => setAvmValue(e.target.value)}>
                                         <option defaultValue="deafult">Avm Varmı?</option>
                                         <option value="7.5">Var</option>
                                         <option value="0">Yok</option>
@@ -214,7 +185,7 @@ const Earnings = () => {
 
                         </div>
                     </form>
-                    <div className='result'>Tahmini Aylık Kazancınız  <b id='result'>75.000</b> TL</div>
+                  {monthlyEarnings && <div  className='result'>Tahmini Aylık Kazancınız <b>{monthlyEarnings}</b> TL</div>}
                 </div>
             </div>
         </div>
