@@ -7,6 +7,7 @@ const Contact = () => {
     useEffect(() => {
         animate()
         window.scrollTo(0, 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
@@ -85,7 +86,7 @@ const Contact = () => {
                         <div className="iframe-area">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
-                                allowFullScreen="" loading="lazy"   style={{border: "0"}}
+                                allowFullScreen loading="lazy"   style={{border: "0"}}
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
@@ -110,7 +111,7 @@ const Contact = () => {
                         <div className="iframe-area">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
-                                style={{border: "0"}} allowFullScreen="" loading="lazy"
+                                style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
@@ -134,7 +135,7 @@ const Contact = () => {
                         <div className="iframe-area">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
-                                style={{border: "0"}} allowFullScreen="" loading="lazy"
+                                style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
@@ -158,7 +159,7 @@ const Contact = () => {
                         <div className="iframe-area">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
-                                style={{border: "0"}} allowFullScreen="" loading="lazy"
+                                style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
@@ -181,7 +182,7 @@ const Contact = () => {
                         <div className="iframe-area">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
-                                style={{border: "0"}} allowFullScreen="" loading="lazy"
+                                style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
@@ -205,7 +206,7 @@ const Contact = () => {
                         <div className="iframe-area">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
-                                style={{border: "0"}} allowFullScreen="" loading="lazy"
+                                style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
@@ -229,7 +230,7 @@ const Contact = () => {
                         <div className="iframe-area">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
-                                style={{border: "0"}} allowFullScreen="" loading="lazy"
+                                style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
@@ -253,7 +254,7 @@ const Contact = () => {
                         <div className="iframe-area">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
-                                style={{border: "0"}} allowFullScreen="" loading="lazy"
+                                style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>

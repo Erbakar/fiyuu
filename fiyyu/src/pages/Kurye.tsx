@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import { useEffect } from "react";
 import { useAnimation } from "../hooks/useAnimation";
 import { NavLink } from "react-router-dom";
@@ -15,7 +18,6 @@ const Kurye = () => {
             const disabledButton = group.querySelector(".disabledButton");
             const selectedButton = group.querySelector(".selectedButton");
             const kvkkCheckbox = group.querySelector(".kvkkCheckbox");
-            const labelText = group.querySelector("label");
     
             disabledButton.addEventListener("click", function (event) {
                 event.preventDefault();
@@ -31,6 +33,7 @@ const Kurye = () => {
                 disabledButton.style.display = "inline-block";
             });
         });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
@@ -185,7 +188,7 @@ const Kurye = () => {
                                 </button>
                                 <span>
                                     <input type="checkbox" className="kvkkCheckbox"  style={{display: "none"}}/>
-                                    <label className="ms-4"><NavLink to="/aydinlatma-metni" target="blank" 
+                                    <label className="ms-4"><NavLink to="/aydinlatma-metni"
                                             target="_blank">Aydınlatma Metni (işe alım süreçleri hakkında
                                             bilgi)</NavLink></label>
                                 </span>

@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import { useEffect } from "react";
 import { useAnimation } from "../hooks/useAnimation";
 import { NavLink } from "react-router-dom";
@@ -16,6 +19,7 @@ const Partner = () => {
             const disabledButton = group.querySelector(".disabledButton");
             const selectedButton = group.querySelector(".selectedButton");
             const kvkkCheckbox = group.querySelector(".kvkkCheckbox");
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const labelText = group.querySelector("label");
     
             disabledButton.addEventListener("click", function (event) {
@@ -32,6 +36,7 @@ const Partner = () => {
                 disabledButton.style.display = "inline-block";
             });
         });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
