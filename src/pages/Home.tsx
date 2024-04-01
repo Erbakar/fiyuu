@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import '../../js/splide.min.js'
+import '/public/js/splide.min.js'
 import Earnings from '../components/Earnings.js';
 import Map from '../components/Map.js';
 import News from '../components/News.js';
