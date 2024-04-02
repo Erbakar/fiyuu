@@ -6,7 +6,7 @@ const Header = () => (
         <div className="container-fluid p-0 w-100 justify-content-between align-items-center">
             <div className="navbar-left d-flex flex-row justify-content-start align-items-center">
                 <NavLink
-                            to="/home"
+                            to="/"
                             className={({ isActive }) => clx('navbar-brand p-0 d-inline-block', {
                                 'active': isActive
                             })}
@@ -16,7 +16,7 @@ const Header = () => (
                 <ul className="navbar-nav d-none d-lg-flex p-0 m-0">
                     <li className="nav-item">
                         <NavLink
-                            to="/home"
+                            to="/"
                             className={({ isActive }) => clx('nav-link', {
                                 'active': isActive
                             })}
@@ -173,7 +173,7 @@ const Header = () => (
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav text-center p-0 mx-0 mt-5 mb-4">
                     <li className="nav-item">
-                    <NavLink  to="/home" className="nav-link" >
+                    <NavLink  to="/" className="nav-link" >
                             Anasayfa
                         </NavLink>
                     </li>

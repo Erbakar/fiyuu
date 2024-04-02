@@ -51,7 +51,7 @@ const Footer = () => (
                     </div>
                     <ul className="p-0 footer-content__top-links  m-0">
                         <li>
-                            <NavLink to="/home">
+                            <NavLink to="/">
                                 Anasayfa
                             </NavLink>
                         </li>
