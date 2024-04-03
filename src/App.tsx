@@ -12,6 +12,7 @@ import Kurye from "./pages/Kurye"
 import Kvk from "./pages/Kvk"
 import Bilgilendirme from "./pages/Bilgilendirme"
 import Aydinlatma from "./pages/Aydinlatma"
+import Career from "./pages/Career"
 
 
 const App = () => {
@@ -22,7 +23,8 @@ const App = () => {
         <Route index path="/" element={<Home />} />
         <Route index path="/about" element={<About />} />
         <Route index path="/partner" element={<Partner />} />
-        <Route index path="/career" element={<Kurye />} />
+        <Route index path="/career" element={<Career />} />
+        <Route index path="/kurye" element={<Kurye />} />
         <Route index path="/contact" element={<Contact />} />
         <Route index path="/kisisel-verilerin-korunumu" element={<Kvk />} />
         <Route index path="/bilgilendirme-metni" element={<Bilgilendirme />} />

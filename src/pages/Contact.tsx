@@ -85,7 +85,7 @@ const Contact = () => {
                         </div>
                         <div className="iframe-area">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6012.23607665877!2d28.977293151029574!3d41.110113085345674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab544c6e5a679%3A0xcf363019242aa31c!2sMeat%20Day%20Vadistanbul!5e0!3m2!1sen!2str!4v1712143662531!5m2!1sen!2str"
                                 allowFullScreen loading="lazy"   style={{border: "0"}}
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
@@ -109,8 +109,8 @@ const Contact = () => {
                           
                         </div>
                         <div className="iframe-area">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
+                           <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3006.616579313059!2d28.993182877429838!3d41.0992233713381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab681ba7d9497%3A0xd08e4997d3d69eb1!2zU2V5cmFudGVwZSwgxLBicmFoaW0gS2FyYW_En2xhbm_En2x1IENkLiBObzoxMDUsIDM0NDE4IEvDosSfxLF0aGFuZS_EsHN0YW5idWw!5e0!3m2!1sen!2str!4v1712143714364!5m2!1sen!2str"
                                 style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
@@ -133,12 +133,12 @@ const Contact = () => {
                        
                         </div>
                         <div className="iframe-area">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
+                        <iframe
+ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.4191984271224!2d32.87268217739537!3d39.90963417152578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34fb610d8c5f5%3A0xb5534dc48bcffb53!2zTWV0aW4gT2t0YXksIEjEsW7EsXMgQ2QuIE5vOjIwIEQ6YSwgMDY2NzAgw4dhbmtheWEvQW5rYXJh!5e0!3m2!1str!2str!4v1712146032242!5m2!1str!2str"
                                 style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-                    </div>
+                     </div>
                     <div data-animation="zoomIn" data-animation-delay="50ms"
                         className="contact-cards__item d-flex flex-column justify-content-between align-items-start">
                         <div className="d-flex flex-column justify-content-start align-items-start">
@@ -152,17 +152,17 @@ const Contact = () => {
                                 0850 220 70 90
                             </a>
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
-                                info@fiyuu.com.tr
+                                info@fiyuu.com.tr 
                             </a>
                   
                         </div>
                         <div className="iframe-area">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3186.618742231043!2d35.32279997731495!3d36.995032772192324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15288f464660e269%3A0x7759d582eae9dd79!2seOfis%20-%20Adana%20Semih%20R%C3%BCstem%20%C4%B0%C5%9F%20Merkezi!5e0!3m2!1str!2str!4v1712146282557!5m2!1str!2str" 
                                 style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
+
                     <div data-animation="zoomIn" data-animation-delay="50ms"
                         className="contact-cards__item d-flex flex-column justify-content-between align-items-start">
                         <div className="d-flex flex-column justify-content-start align-items-start">
@@ -180,8 +180,7 @@ const Contact = () => {
                             </a>
                         </div>
                         <div className="iframe-area">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
+                        <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.9837974274537!2d30.689500977311862!3d36.89073587222134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c3901ed70b6647%3A0x214e0a0d2b3b4f4!2zQWx0xLFuZGHEnywgMTAwIFnEsWwgQmx2IE5vOjEyIEQ6MiwgMDcwNTAgTXVyYXRwYcWfYS9BbnRhbHlh!5e0!3m2!1str!2str!4v1712146483673!5m2!1str!2str"
                                 style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
@@ -204,8 +203,7 @@ const Contact = () => {
       
                         </div>
                         <div className="iframe-area">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3127.754880130569!2d27.12839137735221!3d38.37779157183951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbdf23eec8480f%3A0x5eb3775a51abea88!2zWXVudXMgRW1yZSwgxZ5odC4gUGlsb3QgVm9sa2FuIEtvw6d5acSfaXQgQmx2LCBLYXJhYmHEn2xhci_EsHptaXI!5e0!3m2!1str!2str!4v1712146440397!5m2!1str!2str"
                                 style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
@@ -228,8 +226,7 @@ const Contact = () => {
 
                         </div>
                         <div className="iframe-area">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
+                        <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.40473272707!2d32.48679367734105!3d37.96768297193744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d08e87226da83b%3A0x34171b8fed68e93d!2sSelahaddin%20Eyyubi%2C%20Beyhekim%20Cd.%2C%20Sel%C3%A7uklu%2FKonya!5e0!3m2!1str!2str!4v1712146563397!5m2!1str!2str"
                                 style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
@@ -252,8 +249,7 @@ const Contact = () => {
    
                         </div>
                         <div className="iframe-area">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.04413523123!2d-118.74138070476894!3d34.02060846212484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20Kaliforniya%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1708028714061!5m2!1str!2str"
+                        <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3146.7997616762236!2d40.15327979485314!3d37.935108099609174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40751e564a054af9%3A0xfb361ccb06054985!2sMezopotamya%2C%20329.%20Sk.%2C%2021070%20Kayap%C4%B1nar%2FDiyarbak%C4%B1r!5e0!3m2!1str!2str!4v1712146610195!5m2!1str!2str"
                                 style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>

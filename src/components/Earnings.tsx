@@ -75,7 +75,7 @@ function Earnings() {
                             <div className="col">
                                 <div className="select-ctr">
                                     <select className="form-select h-100" id="selectBox" value={cityValue} onChange={(e) => setCityValue(e.target.value)}>
-                                        <option defaultValue="deafult"  >il seçiniz</option>
+                                        <option defaultValue="deafult"  >Şehir seçiniz</option>
                                         <option value="0">------</option>
                                         <option value="54">İstanbul Avrupa</option>
                                         <option value="54">İstanbul Anadolu</option>
@@ -162,7 +162,7 @@ function Earnings() {
                                 </div>
                                 <div className="select-ctr">
                                     <select className="form-select h-100" id="avm" value={avmValue} onChange={(e) => setAvmValue(e.target.value)}>
-                                        <option defaultValue="deafult">Avm Varmı?</option>
+                                        <option defaultValue="deafult">Avm bonusu</option>
                                         <option value="7.5">Var</option>
                                         <option value="0">Yok</option>
                                     </select>
@@ -187,7 +187,7 @@ function Earnings() {
 
                         </div>
                     </form>
-                  {monthlyEarnings && <div  className='result'>Tahmini Aylık Kazancınız <b>{monthlyEarnings}</b> TL</div>}
+                  {monthlyEarnings && <div  className='result'><img src="./images/money-trans.gif" alt="" /> Tahmini Aylık Kazancınız <br /> <b>{monthlyEarnings}</b>TL</div>}
                 </div>
             </div>
         </div>

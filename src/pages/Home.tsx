@@ -48,7 +48,7 @@ const Home = () => {
 
 
                    
-                                    <NavLink to="/career" data-animation="slideInRight"
+                                    <NavLink to="/kurye" data-animation="slideInRight"
                                         data-animation-delay="50ms"
                                         className="hero-btn d-flex m-0 justify-content-center align-items-center">
                                         <span className="text-center d-inline-block">

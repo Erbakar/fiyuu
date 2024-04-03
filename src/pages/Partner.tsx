@@ -58,10 +58,7 @@ const Partner = () => {
 
                         </h1>
                         <p data-animation="zoomIn">
-                            Anketin tamamlanması yaklaşık 4 dakika sürüyor. Merhaba, fiyuu ailesine katılmak için ilk
-                            adımı atıyorsun. Biz "Çevik" ve "Müşteri Odaklı" adaylar arıyoruz. Eğer sen de ekibimize
-                            katılmak istersen yapman gerekenler çok kolay! Bu başvuru formunu ayrıntılı ve özenli bir
-                            şekilde doldur. İşe alım ekibimiz seninle hemen bağlantıya geçecek.
+                        Anketin tamamlanması yaklaşık 4 dakika sürüyor. Merhaba, fiyuu ailesine katılmak için ilk adımı atıyorsun. Biz "Çevik" ve "Müşteri Odaklı" adaylar arıyoruz. Eğer sen de ekibimize katılmak istersen yapman gereken başvuru formunu ayrıntılı ve özenli bir şekilde doldurmak. Sonrasında İşe Alım ekiplerimiz seninle bağlantıya geçecek.
                         </p>
                     </div>
                     <div className="jaf-inner-form w-100">
@@ -106,19 +103,11 @@ const Partner = () => {
 
 
                                 <div className="col-12 col-lg-7 p-0 form-items d-flex flex-column">
-                                    <div className="form-items-secondary mb-0">
+                                <div className="form-items">
                                         <div className="form-control-ctr">
-                                            <select className="form-select" id="sektor">
-                                                <option value="sektor-1" defaultValue='sektor-1'>Sektör 1</option>
-                                                <option value="sektor-2">Sektör 2</option>
-                                            </select>
+                                        <input type="text" className="form-control" id="sektor" placeholder="Sektör"/>
                                         </div>
-                                        <div className="form-control-ctr">
-                                            <select className="form-select" id="sektor">
-                                                <option value="sektor-1" defaultValue='sektor-1'>Sektör</option>
-                                                <option value="sektor-2">Sektör 2</option>
-                                            </select>
-                                        </div>
+                                   
                                         <div className="form-control-ctr">
                                             <input type="text" className="form-control" id="marka-adi" placeholder="Marka Adı"/>
                                         </div>
@@ -127,11 +116,11 @@ const Partner = () => {
                                         <div className="form-items flex-column d-flex w-100 w-sm-50 me-4 mb-sm-0">
                                             <div className="form-control-ctr">
                                                 <select className="form-select" id="city">
-                                                    <option value="0">Lütfen Bir İl Seçiniz</option>
+                                                    <option value="0">İl Seçiniz</option>
                                                 </select>
                                             </div>
                                             <div className="form-control-ctr">
-                                            <input type="text" className="form-control" id="ilce" placeholder="İlçe Adı"/>
+                                            <input type="text" className="form-control" id="ilce" placeholder="İlçe Seçiniz"/>
                                             </div>
                                         </div>
                                         <div className="form-control-ctr w-100 w-sm-50 ms-sm-2 h-auto">

@@ -26,10 +26,25 @@ const News = () => {
         try {
             setLoading(false)
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
+
             const data = await fetch('https://api.storyblok.com/v2/cdn/stories/?version=draft&token=PU48xeT0YARVgQPLiYGmwAtt')
             const news = await data.json()
+            let works = null;
+            
+          
+            news.stories.forEach((element: any , index: any) => {
+                if (element.full_slug.indexOf('haber-ve-blog') < 0 ) {
+                    news.stories.splice(index, 1)
+                    works = element.content.table.tbody;
+                }
+   
+           
+                
+            });
             setNews(news.stories)
             localStorage.setItem('news' , JSON.stringify(news.stories));
+            localStorage.setItem('works' , JSON.stringify(works));
         } catch (error) {
             setLoading(false)
             setError(true)
@@ -100,7 +115,7 @@ const News = () => {
                         <span className="new-card-big__date mb-5">
                             {news?.[0].content.topic}
                         </span>
-                        <NavLink to={`/blog/${news?.[0].slug}/0`}>Daha fazlası</NavLink>
+                        <NavLink to={`/blog/${news?.[1].slug}/0`}>Daha fazlası</NavLink>
                     </div>
                 </div>
                 <div className="col-12 col-lg-5 new-mini-cards p-0 mt-5 mt-lg-0 ps-lg-5">

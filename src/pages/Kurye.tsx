@@ -55,12 +55,7 @@ const Kurye = () => {
                             Kurye olmak istiyorum
                         </h1>
                         <p data-animation="zoomIn" data-animation-delay="50ms">
-                            Anketin tamamlanması yaklaşık 4 dakika sürüyor. Merhaba, fiyuu ailesine katılmak için ilk
-                            adımı
-                            atıyorsun. Biz "Çevik" ve "Müşteri Odaklı" adaylar arıyoruz. Eğer sen de ekibimize katılmak
-                            istersen yapman gerekenler çok kolay! Bu başvuru formunu ayrıntılı ve özenli bir şekilde
-                            doldur.
-                            İşe alım ekibimiz seninle hemen bağlantıya geçecek.
+                        Anketin tamamlanması yaklaşık 4 dakika sürüyor. Merhaba, fiyuu ailesine katılmak için ilk adımı atıyorsun. Biz "Çevik" ve "Müşteri Odaklı" adaylar arıyoruz. Eğer sen de ekibimize katılmak istersen yapman gereken başvuru formunu ayrıntılı ve özenli bir şekilde doldurmak. Sonrasında İşe Alım ekiplerimiz seninle bağlantıya geçecek.
                         </p>
                     </div>
                     <div className="jaf-inner-form w-100">
@@ -121,7 +116,7 @@ const Kurye = () => {
                                             </select>
                                         </div>
                                         <div className="form-control-ctr">
-                                        <input type="text" className="form-control" id="ilce" placeholder="İlçe Adı"/>
+                                        <input type="text" className="form-control" id="ilce" placeholder="İlçe Seçiniz"/>
                                         </div>
                                     </div>
                                     <div className="form-items">

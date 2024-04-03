@@ -595,14 +595,21 @@ ul {
   z-index: 1;
   margin-bottom: 16px;
 }
-.calculate-earnings__right .result {
+ .result {
   display: block;
   width: 100%;
   text-align: center;
   background: #fff;
-  padding: 20px;
+  padding: 20px 100px 20px;
   border-radius: 8px;
   font-size: 20px;
+  position: relative;
+}
+ .result img {
+  position: absolute;
+  width: 100px;
+  left: 0;
+  top: -20px;
 }
 .what-is-fiyuu .section-title h3 {
   color: var(--primary-gray);

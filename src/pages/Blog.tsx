@@ -55,7 +55,7 @@ const Blog = () => {
                 <div className="blog-inner page-container">
                     <div className="blog-cards">
                         {
-                            news?.map((item, index) => {
+                            news?.slice(1, 99).map((item, index) => {
                                 return (
 
 
@@ -69,17 +69,10 @@ const Blog = () => {
                                                 {item.content.title}
                                             </h4>
                                             <span className="blog-card-date">
-                                                March 21, 2021 - 3 dakika
+                                            {item.content.topic}
                                             </span>
                                             <p className="blog-card-description">
-                                                Hızlı sipariş teslimatı alanında hizmet veren Fiyuu, kuryelerin eğitimine ve gelişimine
-                                                katkı sunmak...
-                                                Hızlı sipariş teslimatı alanında hizmet veren Fiyuu, kuryelerin eğitimine ve gelişimine
-                                                katkı sunmak...
-                                                Hızlı sipariş teslimatı alanında hizmet veren Fiyuu, kuryelerin eğitimine ve gelişimine
-                                                katkı sunmak...
-                                                Hızlı sipariş teslimatı alanında hizmet veren Fiyuu, kuryelerin eğitimine ve gelişimine
-                                                katkı sunmak...
+                                            {item.content.spot}
                                             </p>
                                         </div>
                                         <NavLink to={`/blog/${item.slug}/${index}`} className="show-more">Daha fazlası</NavLink>

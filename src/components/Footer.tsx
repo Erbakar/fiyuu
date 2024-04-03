@@ -24,7 +24,7 @@ const Footer = () => (
                             <img src="./images/kurye.png" alt="" />
                         </div>
 
-                        <NavLink to="/career">
+                        <NavLink to="/kurye">
                             <span>
                                 Kurye Olmak Istiyorum
                             </span>
