@@ -133,10 +133,10 @@ const Contact = () => {
                        
                         </div>
                         <div className="iframe-area">
-                        <iframe
- src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.4191984271224!2d32.87268217739537!3d39.90963417152578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34fb610d8c5f5%3A0xb5534dc48bcffb53!2zTWV0aW4gT2t0YXksIEjEsW7EsXMgQ2QuIE5vOjIwIEQ6YSwgMDY2NzAgw4dhbmtheWEvQW5rYXJh!5e0!3m2!1str!2str!4v1712146032242!5m2!1str!2str"
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3186.618742231043!2d35.32279997731495!3d36.995032772192324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15288f464660e269%3A0x7759d582eae9dd79!2seOfis%20-%20Adana%20Semih%20R%C3%BCstem%20%C4%B0%C5%9F%20Merkezi!5e0!3m2!1str!2str!4v1712146282557!5m2!1str!2str" 
                                 style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
+
                         </div>
                      </div>
                     <div data-animation="zoomIn" data-animation-delay="50ms"
@@ -157,7 +157,8 @@ const Contact = () => {
                   
                         </div>
                         <div className="iframe-area">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3186.618742231043!2d35.32279997731495!3d36.995032772192324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15288f464660e269%3A0x7759d582eae9dd79!2seOfis%20-%20Adana%20Semih%20R%C3%BCstem%20%C4%B0%C5%9F%20Merkezi!5e0!3m2!1str!2str!4v1712146282557!5m2!1str!2str" 
+                        <iframe
+ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.4191984271224!2d32.87268217739537!3d39.90963417152578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34fb610d8c5f5%3A0xb5534dc48bcffb53!2zTWV0aW4gT2t0YXksIEjEsW7EsXMgQ2QuIE5vOjIwIEQ6YSwgMDY2NzAgw4dhbmtheWEvQW5rYXJh!5e0!3m2!1str!2str!4v1712146032242!5m2!1str!2str"
                                 style={{border: "0"}} allowFullScreen loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
