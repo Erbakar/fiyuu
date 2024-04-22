@@ -274,11 +274,11 @@ const Footer = () => (
 
                         <div className="d-flex justify-content-center align-items-center">
                             <div className="d-flex justify-content-center align-items-center">
-                                <a  href="https://wa.me/905317637834" className="whatsapp-btn">
+                                <a  href="https://wa.me/08502207090" className="whatsapp-btn">
                                     <img src="./images/wp-icon.svg" alt="" />
                                 </a>
                             </div>
-                            <a  href="https://wa.me/905317637834" className="btn-footer ms-3">
+                            <a  href="https://wa.me/08502207090" className="btn-footer ms-3">
                                 <span>
                                 whatsapp hattı
                                 </span>

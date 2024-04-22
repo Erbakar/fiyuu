@@ -86,7 +86,7 @@ const Kurye = () => {
                                                 <InputMask type="tckn" className="form-control" mask="99999999999" id="text" placeholder="TC Kimlik No" />
                                             </div>
                                             <div className="form-control-ctr">
-                                                <input type="date" className="form-control" id="birthdate" />
+                                                <input type="date" className="form-control" id="birthdate" placeholder="Doğum Tarihinizi Giriniz" />
                                             </div>
                                         </div>
                                         <div className="form-items d-flex">

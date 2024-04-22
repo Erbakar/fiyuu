@@ -6,13 +6,13 @@ const Header = () => (
         <div className="container-fluid p-0 w-100 justify-content-between align-items-center">
             <div className="navbar-left d-flex flex-row justify-content-start align-items-center">
                 <NavLink
-                            to="/"
-                            className={({ isActive }) => clx('navbar-brand p-0 d-inline-block', {
-                                'active': isActive
-                            })}
-                        >
+                    to="/"
+                    className={({ isActive }) => clx('navbar-brand p-0 d-inline-block', {
+                        'active': isActive
+                    })}
+                >
                     <img src="./images/logo-header.png" alt="" />
-                    </NavLink>
+                </NavLink>
                 <ul className="navbar-nav d-none d-lg-flex p-0 m-0">
                     <li className="nav-item">
                         <NavLink
@@ -25,7 +25,7 @@ const Header = () => (
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                    <NavLink
+                        <NavLink
                             to="/about"
                             className={({ isActive }) => clx('nav-link', {
                                 'active': isActive
@@ -33,7 +33,7 @@ const Header = () => (
                         >
                             Hakkımızda
                         </NavLink>
-            
+
                     </li>
                     <li className="nav-item">
                         <NavLink
@@ -42,7 +42,7 @@ const Header = () => (
                                 'active': isActive
                             })}
                         >
-                              İş Ortağımız Olun
+                            İş Ortağımız Olun
                         </NavLink>
                     </li>
                     <li className="nav-item">
@@ -68,15 +68,36 @@ const Header = () => (
                 </ul>
             </div>
             <div className="navbar-right d-none d-lg-flex justify-content-start align-items-center">
-                <a href="https://wa.me/905317637834" className="whatsapp-btn">
+                <a href="https://wa.me/08502207090" className="whatsapp-btn">
                     <img src="./images/wp-icon.svg" alt="" />
                 </a>
-                <a  href="https://wa.me/905317637834" className="btn-header me-5">
+                <a href="https://wa.me/08502207090" className="btn-header me-5">
                     <span>
-                      whatsapp hattı
+                        whatsapp hattı
                     </span>
                 </a>
                 <ul className="social-icons p-0 m-0 d-flex justify-content-center align-items-center">
+                    <li>
+                        <a href="mailto:kuryeik@fiyuu.com.tr" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 29 28"
+                                fill="none">
+                                <g clipPath="url(#clip0_34_1862)">
+                                    <path
+                                        d="M28.3 9.74379L25 7.23123V2.87444C25 2.59806 24.775 2.37193 24.5 2.37193H18.63L16.315 0.608111C15.245 -0.205959 13.765 -0.205959 12.69 0.608111L10.375 2.37193H4.505C4.23 2.37193 4.005 2.59806 4.005 2.87444V7.2262L0.7 9.74379C0.585 9.84429 0.515 9.99002 0.5 10.1458V21.9749C0.5 22.2513 0.725 22.4775 1 22.4775C1.275 22.4775 1.5 22.2513 1.5 21.9749V11.1709L11.82 19.2363L1.93 26.2262C1.41 25.6684 1.5 24.6885 1.5 23.98C1.5 23.7036 1.27 23.4825 0.995 23.4825C0.725 23.4825 0.505 23.7036 0.5 23.98V24.985C0.51 26.6483 1.845 27.99 3.5 28.0001H25.5C27.155 27.99 28.49 26.6483 28.5 24.985V10.1408C28.5 9.985 28.425 9.83424 28.3 9.73876V9.74379ZM4 11.8493L1.82 10.1458L4 8.48751V11.8493ZM25 8.48751L27.18 10.1458L25 11.8493V8.48751ZM13.295 1.41213C14.01 0.869418 14.995 0.869418 15.71 1.41213L16.975 2.37193H12.03L13.295 1.41213ZM25.5 26.995H3.5C3.25 26.995 3.005 26.9448 2.775 26.8543L12.665 19.8644C13.775 20.6232 15.23 20.6232 16.34 19.8644L26.23 26.8543C26 26.9448 25.755 26.995 25.505 26.995H25.5ZM27.5 24.985C27.5 25.4373 27.35 25.8694 27.07 26.2262L17.18 19.2312L18.715 18.0302C18.935 17.8594 18.97 17.5428 18.805 17.3267C18.64 17.1106 18.32 17.0704 18.105 17.2363L15.93 18.9347C15.09 19.593 13.91 19.593 13.07 18.9347L5 12.6332V3.37696H24V12.6282L19.875 15.8543C19.66 16.0302 19.625 16.3468 19.8 16.5629C19.97 16.7739 20.275 16.8091 20.49 16.6483L27.5 11.1709V24.99V24.985Z"
+                                        fill="#495980" />
+                                    <path
+                                        d="M10.965 7.84418C8.12995 10.5779 9.66995 15.6884 13.575 16.3366C14.75 16.5578 15.965 16.3517 17.005 15.7487C17.245 15.608 17.325 15.3015 17.185 15.0603C17.045 14.8191 16.74 14.7387 16.5 14.8794C15.67 15.3618 14.695 15.5276 13.75 15.3467C8.55495 14.1859 10.035 6.58288 15.285 7.45222C16.87 7.76378 18.115 9.01001 18.425 10.603C18.63 11.5628 18.535 13.0301 17.25 12.9899V9.69845C17.25 9.42207 17.02 9.20097 16.745 9.20097C16.6 9.20097 16.465 9.26629 16.37 9.37685C15.26 8.33665 13.525 8.39695 12.485 9.5075C11.45 10.6231 11.51 12.3668 12.615 13.412C13.575 14.3115 15.03 14.407 16.095 13.6382C17.11 14.2964 18.46 14.005 19.115 12.9849C19.27 12.7437 19.38 12.4723 19.43 12.1859C19.52 11.598 19.51 11 19.4 10.412C18.72 6.51755 13.66 4.99996 10.955 7.83916L10.965 7.84418ZM14.48 13.1356C13.53 13.1256 12.76 12.3517 12.75 11.3969C12.76 10.4271 13.555 9.6482 14.52 9.65825C15.47 9.6683 16.24 10.4422 16.25 11.3969C16.24 12.3668 15.445 13.1457 14.48 13.1356Z"
+                                        fill="#495980" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_34_1862">
+                                        <rect width="28" height="28" fill="#495980" transform="translate(0.5)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
+                    </li>
+
                     <li>
                         <a href="https://www.linkedin.com/company/fiyuu/" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
@@ -173,27 +194,27 @@ const Header = () => (
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav text-center p-0 mx-0 mt-5 mb-4">
                     <li className="nav-item">
-                    <NavLink  to="/" className="nav-link" >
+                        <NavLink to="/" className="nav-link" >
                             Anasayfa
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                    <NavLink  to="/about" className="nav-link" >
+                        <NavLink to="/about" className="nav-link" >
                             Hakkımızda
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                    <NavLink  to="/partner" className="nav-link" >
+                        <NavLink to="/partner" className="nav-link" >
                             İş Ortağımız Olun
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                    <NavLink  to="/blog" className="nav-link" >
+                        <NavLink to="/blog" className="nav-link" >
                             Haberler
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                    <NavLink  to="/contact" className="nav-link" >
+                        <NavLink to="/contact" className="nav-link" >
                             İletişim
                         </NavLink>
                     </li>
@@ -205,8 +226,29 @@ const Header = () => (
                     </span>
                 </a>
                 <ul className="social-icons p-0 m-0 d-flex justify-content-center align-items-center">
+          
                     <li>
-                    <a href="https://www.linkedin.com/company/fiyuu/" target="_blank">
+                        <a href="mailto:kuryeik@fiyuu.com.tr" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 29 28"
+                                fill="none">
+                                <g clipPath="url(#clip0_34_1862)">
+                                    <path
+                                        d="M28.3 9.74379L25 7.23123V2.87444C25 2.59806 24.775 2.37193 24.5 2.37193H18.63L16.315 0.608111C15.245 -0.205959 13.765 -0.205959 12.69 0.608111L10.375 2.37193H4.505C4.23 2.37193 4.005 2.59806 4.005 2.87444V7.2262L0.7 9.74379C0.585 9.84429 0.515 9.99002 0.5 10.1458V21.9749C0.5 22.2513 0.725 22.4775 1 22.4775C1.275 22.4775 1.5 22.2513 1.5 21.9749V11.1709L11.82 19.2363L1.93 26.2262C1.41 25.6684 1.5 24.6885 1.5 23.98C1.5 23.7036 1.27 23.4825 0.995 23.4825C0.725 23.4825 0.505 23.7036 0.5 23.98V24.985C0.51 26.6483 1.845 27.99 3.5 28.0001H25.5C27.155 27.99 28.49 26.6483 28.5 24.985V10.1408C28.5 9.985 28.425 9.83424 28.3 9.73876V9.74379ZM4 11.8493L1.82 10.1458L4 8.48751V11.8493ZM25 8.48751L27.18 10.1458L25 11.8493V8.48751ZM13.295 1.41213C14.01 0.869418 14.995 0.869418 15.71 1.41213L16.975 2.37193H12.03L13.295 1.41213ZM25.5 26.995H3.5C3.25 26.995 3.005 26.9448 2.775 26.8543L12.665 19.8644C13.775 20.6232 15.23 20.6232 16.34 19.8644L26.23 26.8543C26 26.9448 25.755 26.995 25.505 26.995H25.5ZM27.5 24.985C27.5 25.4373 27.35 25.8694 27.07 26.2262L17.18 19.2312L18.715 18.0302C18.935 17.8594 18.97 17.5428 18.805 17.3267C18.64 17.1106 18.32 17.0704 18.105 17.2363L15.93 18.9347C15.09 19.593 13.91 19.593 13.07 18.9347L5 12.6332V3.37696H24V12.6282L19.875 15.8543C19.66 16.0302 19.625 16.3468 19.8 16.5629C19.97 16.7739 20.275 16.8091 20.49 16.6483L27.5 11.1709V24.99V24.985Z"
+                                        fill="#495980" />
+                                    <path
+                                        d="M10.965 7.84418C8.12995 10.5779 9.66995 15.6884 13.575 16.3366C14.75 16.5578 15.965 16.3517 17.005 15.7487C17.245 15.608 17.325 15.3015 17.185 15.0603C17.045 14.8191 16.74 14.7387 16.5 14.8794C15.67 15.3618 14.695 15.5276 13.75 15.3467C8.55495 14.1859 10.035 6.58288 15.285 7.45222C16.87 7.76378 18.115 9.01001 18.425 10.603C18.63 11.5628 18.535 13.0301 17.25 12.9899V9.69845C17.25 9.42207 17.02 9.20097 16.745 9.20097C16.6 9.20097 16.465 9.26629 16.37 9.37685C15.26 8.33665 13.525 8.39695 12.485 9.5075C11.45 10.6231 11.51 12.3668 12.615 13.412C13.575 14.3115 15.03 14.407 16.095 13.6382C17.11 14.2964 18.46 14.005 19.115 12.9849C19.27 12.7437 19.38 12.4723 19.43 12.1859C19.52 11.598 19.51 11 19.4 10.412C18.72 6.51755 13.66 4.99996 10.955 7.83916L10.965 7.84418ZM14.48 13.1356C13.53 13.1256 12.76 12.3517 12.75 11.3969C12.76 10.4271 13.555 9.6482 14.52 9.65825C15.47 9.6683 16.24 10.4422 16.25 11.3969C16.24 12.3668 15.445 13.1457 14.48 13.1356Z"
+                                        fill="#495980" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_34_1862">
+                                        <rect width="28" height="28" fill="#495980" transform="translate(0.5)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/fiyuu/" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <g clipPath="url(#clip0_34_2060)">
@@ -230,7 +272,7 @@ const Header = () => (
                         </a>
                     </li>
                     <li>
-                    <a href="https://www.instagram.com/fiyuutr/" target="_blank">
+                        <a href="https://www.instagram.com/fiyuutr/" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
                                 fill="none">
                                 <g clipPath="url(#clip0_34_2065)">
@@ -253,7 +295,7 @@ const Header = () => (
                         </a>
                     </li>
                     <li>
-                    <a href="https://www.facebook.com/fiyuu/?locale=tr_TR" target="_blank">
+                        <a href="https://www.facebook.com/fiyuu/?locale=tr_TR" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <g clipPath="url(#clip0_34_2057)">
@@ -273,7 +315,7 @@ const Header = () => (
                         </a>
                     </li>
                     <li>
-                    <a href="https://twitter.com/fiyuutr" target="_blank">
+                        <a href="https://twitter.com/fiyuutr" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <g clipPath="url(#clip0_34_2055)">
