@@ -4,7 +4,8 @@
 import { useEffect } from "react";
 import { useAnimation } from "../hooks/useAnimation";
 import { NavLink } from "react-router-dom";
-
+import React from 'react';
+import InputMask from 'react-input-mask';
 const Partner = () => {
     const animate = useAnimation()
 
@@ -77,8 +78,7 @@ const Partner = () => {
                                                 placeholder="Ad Soyad"/>
                                         </div>
                                         <div className="form-control-ctr">
-                                            <input type="tel" className="form-control" id="phoneNumber"
-                                                placeholder="Telefon"/>
+                                        <InputMask type="tel" className="form-control" id="phoneNumber" mask="999 999 99 99" placeholder="Telefon"/>
                                         </div>
                                     </div>
                                     <div className="form-items w-100 d-flex">
@@ -120,7 +120,9 @@ const Partner = () => {
                                                 </select>
                                             </div>
                                             <div className="form-control-ctr">
-                                            <input type="text" className="form-control" id="ilce" placeholder="İlçe Seçiniz"/>
+                                            <select className="form-select" id="city">
+                                                    <option value="0">İlçe Seçiniz</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div className="form-control-ctr w-100 w-sm-50 ms-sm-2 h-auto">

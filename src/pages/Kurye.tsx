@@ -4,11 +4,13 @@
 import { useEffect } from "react";
 import { useAnimation } from "../hooks/useAnimation";
 import { NavLink } from "react-router-dom";
-
+import React from 'react';
+import InputMask from 'react-input-mask';
 const Kurye = () => {
     const animate = useAnimation()
 
     useEffect(() => {
+        
         animate()
         window.scrollTo(0, 0);
         const checkboxGroups = document.querySelectorAll(".kvkk-onay");
@@ -33,6 +35,7 @@ const Kurye = () => {
                 disabledButton.style.display = "inline-block";
             });
         });
+        
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -57,8 +60,10 @@ const Kurye = () => {
                         <p data-animation="zoomIn" data-animation-delay="50ms">
                         Anketin tamamlanması yaklaşık 4 dakika sürüyor. Merhaba, fiyuu ailesine katılmak için ilk adımı atıyorsun. Biz "Çevik" ve "Müşteri Odaklı" adaylar arıyoruz. Eğer sen de ekibimize katılmak istersen yapman gereken başvuru formunu ayrıntılı ve özenli bir şekilde doldurmak. Sonrasında İşe Alım ekiplerimiz seninle bağlantıya geçecek.
                         </p>
+
                     </div>
                     <div className="jaf-inner-form w-100">
+                        
                         <form action="#" className="w-100 d-flex justify-content-center flex-column align-items-center">
                             <div className="form-content w-100 row m-0 justify-content-between">
                                 <div className="col-12 col-lg-3 p-0 form-description mb-5 mb-lg-0">
@@ -69,25 +74,35 @@ const Kurye = () => {
                                 </div>
 
                                 <div className="col-12 col-lg-7 p-0">
+
                                     <div className="form-items w-100">
                                         <div className="form-control-ctr">
                                             <input type="text" className="form-control" id="fullName" placeholder="Ad Soyad"/>
                                         </div>
                                         <div className="form-control-ctr">
-                                            <input type="tel" className="form-control" id="phoneNumber" placeholder="Telefon"/>
+                                            <InputMask type="tel" className="form-control" id="phoneNumber" mask="999 999 99 99" placeholder="Telefon"/>
                                         </div>
                                         <div className="form-control-ctr">
-                                            <input type="tckn" className="form-control" id="text" placeholder="TC Kimlik No"/>
+                                            <InputMask type="tckn" className="form-control"  mask="99999999999" id="text" placeholder="TC Kimlik No"/>
                                         </div>
                                         <div className="form-control-ctr">
                                             <input type="date" className="form-control" id="birthdate"/>
                                         </div>
                                     </div>
-                                    <div className="form-items w-100 d-flex">
+                                    <div className="form-items d-flex">
                                         <div className="form-control-ctr">
-                                            <input type="email" className="form-control" id="email" placeholder="E-posta"/>
+                                            <input type="email" className="form-control"  id="email" placeholder="E-posta"/>
+                                        </div>
+                                        <div className="form-control-ctr">
+                                            <select className="form-select" id="employmentType">
+                                                <option value="0" defaultValue='0'>Cinsiyet</option>
+                                                <option value="tam_zamanli" >Kadın</option>
+                                                <option value="yari_zamanli">Erkek</option>
+                                            </select>
                                         </div>
                                     </div>
+                                    
+                              
                                 </div>
                             </div>
                             <div className="form-content w-100 row m-0 justify-content-between">
@@ -112,11 +127,13 @@ const Kurye = () => {
                                         </div>
                                         <div className="form-control-ctr">
                                             <select className="form-select" id="city">
-                                                <option value="0"> İl Seçiniz</option>
+                                                <option value="0" defaultValue='0'> İl Seçiniz</option>
                                             </select>
                                         </div>
                                         <div className="form-control-ctr">
-                                        <input type="text" className="form-control" id="ilce" placeholder="İlçe Seçiniz"/>
+                                        <select className="form-select" id="city">
+                                                <option value="0" defaultValue='0'> İlçe Seçiniz</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div className="form-items">
