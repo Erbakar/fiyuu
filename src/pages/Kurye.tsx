@@ -1,12 +1,18 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useAnimation } from "../hooks/useAnimation";
 import { NavLink } from "react-router-dom";
-import React from 'react';
+import React, {useState} from 'react';
 import InputMask from 'react-input-mask';
+import { CITIES } from "../constants";
+import TCValidation from "../components/TCValidation";
 const Kurye = () => {
+    const cityRef = useRef(null)
+    const [dateType, setDateType] = useState("text")
+    const [selectedDistrict, setSelectedDistrict] = useState(-1)
+    const [whereDidYouSeeUs, setWhereDidYouSeeUs] = useState("")
     const animate = useAnimation()
 
     useEffect(() => {
@@ -38,6 +44,12 @@ const Kurye = () => {
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    useEffect(() => {
+        if (cityRef.current) {
+            cityRef.current.children[0].selected = true
+        }
+    }, [selectedDistrict])
 
     return (
         <div className="job-application-form-ctr d-flex justify-content-center flex-column align-items-center">
@@ -82,11 +94,16 @@ const Kurye = () => {
                                             <div className="form-control-ctr">
                                                 <InputMask type="tel" className="form-control" id="phoneNumber" mask="999 999 99 99" placeholder="Telefon" />
                                             </div>
+                                            <TCValidation />
                                             <div className="form-control-ctr">
-                                                <InputMask type="tckn" className="form-control" mask="99999999999" id="text" placeholder="TC Kimlik No" />
-                                            </div>
-                                            <div className="form-control-ctr">
-                                                <input type="date" className="form-control" id="birthdate" placeholder="Doğum Tarihinizi Giriniz" />
+                                                <input
+                                                    type={dateType}
+                                                    onFocus={() => setDateType('date')}
+                                                    onBlur={() => setDateType('text')}
+                                                    className="form-control"
+                                                    id="birthdate"
+                                                    placeholder="Doğum Tarihinizi Giriniz"
+                                                />
                                             </div>
                                         </div>
                                         <div className="form-items d-flex">
@@ -126,13 +143,21 @@ const Kurye = () => {
                                                 </select>
                                             </div>
                                             <div className="form-control-ctr">
-                                                <select className="form-select" id="city">
-                                                    <option value="0" defaultValue='0'> İl Seçiniz</option>
+                                                <select className="form-select" id="city" onChange={(e) => {
+                                                    setSelectedDistrict(parseInt(e.target.value))
+                                                }}>
+                                                    <option value={-1}> İl Seçiniz</option>
+                                                    {CITIES.map((city, index) => (
+                                                        <option key={index} value={index}>{city.il}</option>
+                                                    ))}
                                                 </select>
                                             </div>
                                             <div className="form-control-ctr">
-                                                <select className="form-select" id="city">
+                                                <select className="form-select form-disabled" id="city" disabled={selectedDistrict === -1} ref={cityRef}>
                                                     <option value="0" defaultValue='0'> İlçe Seçiniz</option>
+                                                    {selectedDistrict !== -1 && CITIES[selectedDistrict].ilceleri.map((ilce, index) => (
+                                                        <option key={index} value={index}>{ilce}</option>
+                                                    ))}
                                                 </select>
                                             </div>
                                         </div>
@@ -169,7 +194,7 @@ const Kurye = () => {
 
                                         <div className="form-items w-100  d-flex">
                                             <div className="form-control-ctr">
-                                                <select className="form-select w-100" id="licenseType" >
+                                                <select className="form-select w-100" id="licenseType" onChange={(e) => setWhereDidYouSeeUs(e.target.value)}>
                                                     <option value="0" defaultValue='0'>Bizi Nereden Gördünüz</option>
                                                     <option value="Instagram">Instagram</option>
                                                     <option value="Tiktok">Tiktok</option>
@@ -190,9 +215,11 @@ const Kurye = () => {
 
                                         </div>
 
-                                        <div className="form-control-ctr">
-                                            <input type="text" className="form-control" id="fullName" placeholder="Ad Soyad" />
-                                        </div>
+                                        {(whereDidYouSeeUs === "Calisan-refereansi" || whereDidYouSeeUs === "KadınKurye") && (
+                                            <div className="form-control-ctr">
+                                                <input type="text" className="form-control" id="fullName" placeholder="Ad Soyad" />
+                                            </div>
+                                        )}
 
 
 
