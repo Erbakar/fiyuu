@@ -22,7 +22,7 @@ const Contact = () => {
                         </h1>
 
                         <p className="page-banner__card-text mt-3">
-                        Türkiyenin 7 ilinde 9 operasyon merkeziyle sizelere en hızlı ve güvenilir hizmeti vermeye genişleyen ağımızla devam ediyoruz.
+                        Türkiye'nin 7 ilinde 9 operasyon merkeziyle sizelere en hızlı ve güvenilir hizmeti vermeye genişleyen ağımızla devam ediyoruz.
                         </p>
                     </div>
 

@@ -40,7 +40,7 @@ const Career = () => {
                             </h1>
 
                             <p className="page-banner__card-text mt-3" data-animation="slideInUp" data-animation-delay="50ms">
-                                Siz de ekibimizin bir parcasi olun.
+                            Siz de ekibimizin bir parçası olun! 
                             </p>
                         </div>
 
@@ -83,10 +83,10 @@ const Career = () => {
                         </div>
                         <div className="career-content__card">
                             <h2 className="text-center title" data-animation="slideInUp" data-animation-delay="50ms">
-                                Siz de ekibimize katılın!
+                            Siz de ekibimizin bir parçası olun! 
                             </h2>
                             <p className="text-center subtext" data-animation="slideInUp" data-animation-delay="50ms">
-                                Acik pozisyon ve detaylara asagidaki listemizden ulasabilirisiniz.
+                            Açık pozisyon ve detaylara aşağıdaki listemizden ulaşabilirsiniz.
                             </p>
 
                             <div className="career-cards d-flex justify-content-start align-items-start w-100 flex-column">
@@ -95,7 +95,7 @@ const Career = () => {
                                     <span className="col-3 p-0 px-3">Açık Pozisyonlar</span>
                                     <span className="col-3 p-0 px-3">Departman</span>
                                     <span className="col-3 p-0 px-3">Bölge</span>
-                                    <span className="col-3 p-0 px-3">Basvuru Linki</span>
+                                    <span className="col-3 p-0 px-3">Başvuru Linki</span>
                                 </div>
 
                                 {

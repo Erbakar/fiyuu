@@ -88,7 +88,7 @@ const Map = () => {
             <div data-animation="slideInRight" data-animation-delay="50ms"
                 className="section-title w-100 d-flex flex-column justify-content-center align-items-start mb-5">
                 <h3>
-                    Fiyuu Nedir?
+                Rakamlarla fiyuu
                 </h3>
             </div>
 

@@ -26,7 +26,7 @@ const Footer = () => (
 
                         <NavLink to="/kurye">
                             <span>
-                                Kurye Olmak Istiyorum
+                                Kurye Olmak İstiyorum
                             </span>
                         </NavLink>
                     </div>
@@ -270,9 +270,7 @@ const Footer = () => (
                         </div>
                     </div>
                     <div className="footer-content__bottom-wp d-flex flex-column justify-content-start align-items-start">
-                        <h5>
-                            Kurye işe alım Whatsapp hattı
-                        </h5>
+                      
 
                         <div className="d-flex justify-content-center align-items-center">
                             <div className="d-flex justify-content-center align-items-center">
@@ -282,7 +280,7 @@ const Footer = () => (
                             </div>
                             <a  href="https://wa.me/905317637834" className="btn-footer ms-3">
                                 <span>
-                                    Fiyuu İnsan Kaynakları
+                                whatsapp hattı
                                 </span>
                             </a>
                         </div>

@@ -55,7 +55,7 @@ const Blog = () => {
                 <div className="blog-inner page-container">
                     <div className="blog-cards">
                         {
-                            news?.slice(1, 99).map((item, index) => {
+                            news?.map((item, index) => {
                                 return (
 
 
