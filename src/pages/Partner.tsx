@@ -4,7 +4,7 @@
 import { useEffect, useRef } from "react";
 import { useAnimation } from "../hooks/useAnimation";
 import { NavLink } from "react-router-dom";
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import InputMask from 'react-input-mask';
 import { CITIES } from "../constants";
 import TCValidation from "../components/TCValidation";
@@ -73,7 +73,7 @@ const Partner = () => {
                                 <div className="form-content w-100 row m-0 justify-content-between">
                                     <div className="col-12 col-lg-3 p-0 form-description mb-5 mb-lg-0">
                                         <h3>
-                                            İletişim Bilgileri
+                                            Kişisel bilgiler
                                         </h3>
                                     </div>
 
@@ -88,32 +88,28 @@ const Partner = () => {
                                             </div>
                                         </div>
                                         <div className="form-items">
-                                        <TCValidation />
-                                 
+                                            <TCValidation />
+
                                             <div className="form-control-ctr">
                                                 <input type="email" className="form-control" id="email" placeholder="E-posta" />
                                             </div>
-                                         
+
                                         </div>
-                              
-                                     
+
+
 
                                     </div>
 
                                 </div>
 
-                    
+
 
                                 <div className="form-content w-100 row m-0 justify-content-between">
                                     <div className="col-12 col-lg-3 p-0 form-description mb-5 mb-lg-0">
                                         <h3>
                                             Müşteri bilgileri
                                         </h3>
-                                        <p>
-                                            Çalışmak istediğiniz yeri ve zamanları seçiniz
 
-
-                                        </p>
                                     </div>
 
 
@@ -137,24 +133,24 @@ const Partner = () => {
                                         </div>
                                         <div className="d-flex flex-column flex-sm-row w-100 align-items-stretch">
                                             <div className="form-items flex-column d-flex w-100 w-sm-50 me-4 mb-sm-0">
-                                            <div className="form-control-ctr">
-                                                <select className="form-select" id="city" onChange={(e) => {
-                                                    setSelectedDistrict(parseInt(e.target.value))
-                                                }}>
-                                                    <option value={-1}> İl Seçiniz</option>
-                                                    {CITIES.map((city, index) => (
-                                                        <option key={index} value={index}>{city.il}</option>
-                                                    ))}
-                                                </select>
-                                            </div>
-                                            <div className="form-control-ctr">
-                                                <select className="form-select form-disabled" id="city" disabled={selectedDistrict === -1} ref={cityRef}>
-                                                    <option value="0" defaultValue='0'> İlçe Seçiniz</option>
-                                                    {selectedDistrict !== -1 && CITIES[selectedDistrict].ilceleri.map((ilce, index) => (
-                                                        <option key={index} value={index}>{ilce}</option>
-                                                    ))}
-                                                </select>
-                                            </div>
+                                                <div className="form-control-ctr">
+                                                    <select className="form-select" id="city" onChange={(e) => {
+                                                        setSelectedDistrict(parseInt(e.target.value))
+                                                    }}>
+                                                        <option value={-1}> İl Seçiniz</option>
+                                                        {CITIES.map((city, index) => (
+                                                            <option key={index} value={index}>{city.il}</option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+                                                <div className="form-control-ctr">
+                                                    <select className="form-select form-disabled" id="city" disabled={selectedDistrict === -1} ref={cityRef}>
+                                                        <option value="0" defaultValue='0'> İlçe Seçiniz</option>
+                                                        {selectedDistrict !== -1 && CITIES[selectedDistrict].ilceleri.map((ilce, index) => (
+                                                            <option key={index} value={index}>{ilce}</option>
+                                                        ))}
+                                                    </select>
+                                                </div>
                                             </div>
                                             <div className="form-control-ctr w-100 w-sm-50 ms-sm-2 h-auto">
                                                 <textarea name="" id="" className="form-control h-100"
@@ -163,7 +159,7 @@ const Partner = () => {
                                         </div>
                                         <div className="form-items">
                                             <div className="form-control-ctr">
-                                            <select className="form-select" id="city">
+                                                <select className="form-select" id="city">
                                                     <option value="0" defaultValue='0'>İşletme tipi</option>
                                                     <option value="0">Kurumsal</option>
                                                     <option value="0">Bireysel</option>
@@ -171,7 +167,7 @@ const Partner = () => {
                                             </div>
 
                                             <div className="form-control-ctr">
-                                            <InputMask type="branh" className="form-control" id="phoneNumber" mask="999" placeholder="Şube sayısı" />
+                                                <InputMask type="branh" className="form-control" id="phoneNumber" mask="999" placeholder="Şube sayısı" />
                                             </div>
                                         </div>
                                     </div>
@@ -189,19 +185,26 @@ const Partner = () => {
 
                                         <div className="form-items w-100  d-flex">
                                             <div className="form-control-ctr">
-                                            <select className="form-select w-100" id="licenseType" onChange={(e) => setWhereDidYouSeeUs(e.target.value)}>
+                                                <select className="form-select w-100" id="licenseType" onChange={(e) => setWhereDidYouSeeUs(e.target.value)}>
                                                     <option value='0' defaultValue='0'>Bizi Nereden Gördünüz</option>
                                                     <option value="websitesi">Web Sitesi</option>
                                                     <option value="instagram">İnstagram</option>
                                                     <option value="linkedin">Linkedin</option>
                                                     <option value="Facebook">Facebook</option>
                                                     <option value="twitter">Twitter</option>
-                                                    <option value="esnaf-referans">Esnaf referans</option>
-                                                    <option value="restoran-referansı">Restoran referansı</option>
+                                                    <option value="esnaf-referansi">Esnaf referansı</option>
+                                                    <option value="restoran-referansi">Restoran referansı</option>
                                                     <option value="satis-temsilcisi">Satış temsilcisi</option>
                                                 </select>
                                             </div>
                                         </div>
+
+                                        {(whereDidYouSeeUs === "esnaf-referansi" || whereDidYouSeeUs === "restoran-referansi") && (
+                                            <div className="form-control-ctr">
+                                                <input type="text" className="form-control" id="fullName" placeholder="Ad Soyad" />
+                                            </div>
+                                        )}
+
                                     </div>
                                 </div>
 
@@ -252,13 +255,17 @@ const Partner = () => {
                                             mesajlar için onay)</NavLink></label>
                                     </span>
                                 </div>
-
                                 <button
-                                    className="submit-btn d-flex mt-5 justify-content-center align-items-center">
+                                    class
+                                    ="g-recaptcha submit-btn d-flex mt-5 justify-content-center align-items-center"
+                                    data-sitekey="6Lf6MsUpAAAAADM2SMMV1zeYGjRCHi-nc4-NSwvF"
+                                    data-callback='onSubmit'
+                                    data-action='submit'>
                                     <span className="text-center d-inline-block">
                                         Hemen Başvur
                                     </span>
                                 </button>
+
                             </form>
                         </div>
                     </div>

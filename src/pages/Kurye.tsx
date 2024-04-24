@@ -80,7 +80,7 @@ const Kurye = () => {
                                 <div className="form-content w-100 row m-0 justify-content-between">
                                     <div className="col-12 col-lg-3 p-0 form-description mb-5 mb-lg-0">
                                         <h3>
-                                            İletişim Bilgileri
+                                        Kişisel bilgiler
                                         </h3>
 
                                     </div>
@@ -273,7 +273,13 @@ const Kurye = () => {
                                             mesajlar için onay)</NavLink></label>
                                     </span>
                                 </div>
-                                <button className="submit-btn d-flex mt-5 justify-content-center align-items-center">
+                            
+                                <button
+                                    class
+                                    ="g-recaptcha submit-btn d-flex mt-5 justify-content-center align-items-center"
+                                    data-sitekey="6Lf6MsUpAAAAADM2SMMV1zeYGjRCHi-nc4-NSwvF"
+                                    data-callback='onSubmit'
+                                    data-action='submit'>
                                     <span className="text-center d-inline-block">
                                         Hemen Başvur
                                     </span>

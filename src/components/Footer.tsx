@@ -280,7 +280,7 @@ const Footer = () => (
                             </div>
                             <a  href="https://wa.me/08502207090" className="btn-footer ms-3">
                                 <span>
-                                whatsapp hattı
+                                Whatsapp hattı
                                 </span>
                             </a>
                         </div>
