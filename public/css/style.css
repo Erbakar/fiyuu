@@ -3521,5 +3521,13 @@ ul {
   animation-name: flipInY;
   animation-direction: reverse;
 }
-
+.error-form-item {
+  border-color: var(--primary-pink) !important;
+}
+.error-msg {
+  color: var(--primary-pink) !important;
+  font-size: 12px;
+  font-weight: 600;
+  
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,12 +1,18 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useAnimation } from "../hooks/useAnimation";
 import { NavLink } from "react-router-dom";
-import React from 'react';
+import React, {useState} from 'react';
 import InputMask from 'react-input-mask';
+import { CITIES } from "../constants";
+import TCValidation from "../components/TCValidation";
 const Partner = () => {
+    const cityRef = useRef(null)
+    const [dateType, setDateType] = useState("text")
+    const [selectedDistrict, setSelectedDistrict] = useState(-1)
+    const [whereDidYouSeeUs, setWhereDidYouSeeUs] = useState("")
     const animate = useAnimation()
 
     useEffect(() => {
@@ -14,7 +20,6 @@ const Partner = () => {
         window.scrollTo(0, 0);
 
         const checkboxGroups = document.querySelectorAll(".kvkk-onay");
-
         // Her bir grup için işlemleri yapıyoruz
         checkboxGroups.forEach(function (group) {
             const disabledButton = group.querySelector(".disabledButton");
@@ -63,6 +68,7 @@ const Partner = () => {
                             </p>
                         </div>
                         <div className="jaf-inner-form w-100">
+
                             <form action="#" className="w-100 d-flex justify-content-center flex-column align-items-center">
                                 <div className="form-content w-100 row m-0 justify-content-between">
                                     <div className="col-12 col-lg-3 p-0 form-description mb-5 mb-lg-0">
@@ -81,11 +87,15 @@ const Partner = () => {
                                                 <InputMask type="tel" className="form-control" id="phoneNumber" mask="999 999 99 99" placeholder="Telefon" />
                                             </div>
                                         </div>
-                                        <div className="form-items w-100 d-flex">
+                                        <div className="form-items">
+                                        <TCValidation />
+                                 
                                             <div className="form-control-ctr">
                                                 <input type="email" className="form-control" id="email" placeholder="E-posta" />
                                             </div>
+                                         
                                         </div>
+                              
                                      
 
                                     </div>
@@ -127,16 +137,24 @@ const Partner = () => {
                                         </div>
                                         <div className="d-flex flex-column flex-sm-row w-100 align-items-stretch">
                                             <div className="form-items flex-column d-flex w-100 w-sm-50 me-4 mb-sm-0">
-                                                <div className="form-control-ctr">
-                                                    <select className="form-select" id="city">
-                                                        <option value="0" defaultValue='0'>İl Seçiniz</option>
-                                                    </select>
-                                                </div>
-                                                <div className="form-control-ctr">
-                                                    <select className="form-select" id="city">
-                                                        <option value="0" defaultValue='0'>İlçe Seçiniz</option>
-                                                    </select>
-                                                </div>
+                                            <div className="form-control-ctr">
+                                                <select className="form-select" id="city" onChange={(e) => {
+                                                    setSelectedDistrict(parseInt(e.target.value))
+                                                }}>
+                                                    <option value={-1}> İl Seçiniz</option>
+                                                    {CITIES.map((city, index) => (
+                                                        <option key={index} value={index}>{city.il}</option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                            <div className="form-control-ctr">
+                                                <select className="form-select form-disabled" id="city" disabled={selectedDistrict === -1} ref={cityRef}>
+                                                    <option value="0" defaultValue='0'> İlçe Seçiniz</option>
+                                                    {selectedDistrict !== -1 && CITIES[selectedDistrict].ilceleri.map((ilce, index) => (
+                                                        <option key={index} value={index}>{ilce}</option>
+                                                    ))}
+                                                </select>
+                                            </div>
                                             </div>
                                             <div className="form-control-ctr w-100 w-sm-50 ms-sm-2 h-auto">
                                                 <textarea name="" id="" className="form-control h-100"
@@ -171,30 +189,19 @@ const Partner = () => {
 
                                         <div className="form-items w-100  d-flex">
                                             <div className="form-control-ctr">
-                                                <select className="form-select w-100" id="licenseType">
+                                            <select className="form-select w-100" id="licenseType" onChange={(e) => setWhereDidYouSeeUs(e.target.value)}>
                                                     <option value='0' defaultValue='0'>Bizi Nereden Gördünüz</option>
-                                                    <option value="Instagram">Instagram</option>
-                                                    <option value="Tiktok">Tiktok</option>
-                                                    <option value="Facebook">Facebook</option>
-                                                    <option value="Eleman">Eleman.net</option>
-                                                    <option value="sahibinden">Sahibinden</option>
-                                                    <option value="24saatteis">24 Saatte İş</option>
-                                                    <option value="yenibiris">Yeni Bir İş</option>
-                                                    <option value="bitoniş">Bitoniş</option>
-                                                    <option value="Calisan-refereansi">Çalışan Referansı</option>
-                                                    <option value="isin-olsun">İşin Olsun</option>
-                                                    <option value="secretcv">Secret CV</option>
                                                     <option value="websitesi">Web Sitesi</option>
-                                                    <option value="Kariyer">Kariyer.net</option>
-                                                    <option value="KadınKurye">Kadın Kurye Getir Bonusu</option>
-
+                                                    <option value="instagram">İnstagram</option>
+                                                    <option value="linkedin">Linkedin</option>
+                                                    <option value="Facebook">Facebook</option>
+                                                    <option value="twitter">Twitter</option>
+                                                    <option value="esnaf-referans">Esnaf referans</option>
+                                                    <option value="restoran-referansı">Restoran referansı</option>
+                                                    <option value="satis-temsilcisi">Satış temsilcisi</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div className="form-control-ctr">
-                                            <input type="text" className="form-control" id="fullName" placeholder="Ad Soyad" />
-                                        </div>
-
                                     </div>
                                 </div>
 

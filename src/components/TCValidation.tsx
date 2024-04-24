@@ -42,8 +42,8 @@ const TCValidation = () => {
 		<div className={cx("form-control-ctr", {
 			'error': error !== null
 		})}>
-			<InputMask type="tckn" className="form-control" mask="99999999999" id="text" placeholder="TC Kimlik No" onChange={onChange} />
-			{error && <div className="error-msg">{error}</div>}
+			<InputMask type="tckn"  className={`form-control ${error ? 'error-form-item' : ''}`} mask="99999999999" id="text" placeholder="TC Kimlik No" onChange={onChange} />
+			{error && <small className="error-msg">{error}</small>}
 		</div>
 	)
 }
