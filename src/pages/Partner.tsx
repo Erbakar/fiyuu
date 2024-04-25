@@ -256,7 +256,7 @@ const Partner = () => {
                                     </span>
                                 </div>
                                 <button
-                                    class
+                                    className
                                     ="g-recaptcha submit-btn d-flex mt-5 justify-content-center align-items-center"
                                     data-sitekey="6Lf6MsUpAAAAADM2SMMV1zeYGjRCHi-nc4-NSwvF"
                                     data-callback='onSubmit'

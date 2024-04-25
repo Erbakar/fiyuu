@@ -235,7 +235,7 @@ const Kurye = () => {
                                     </button>
                                     <span>
                                         <input type="checkbox" className="kvkkCheckbox" style={{ display: "none" }} />
-                                        <label className="ms-4"><NavLink to="/aydinlatma-metni"
+                                        <label className="ms-4"><NavLink to="/aydinlatma-metni" 
                                             target="_blank">Aydınlatma Metni (işe alım süreçleri hakkında
                                             bilgi)</NavLink></label>
                                     </span>
@@ -275,7 +275,7 @@ const Kurye = () => {
                                 </div>
                             
                                 <button
-                                    class
+                                    className
                                     ="g-recaptcha submit-btn d-flex mt-5 justify-content-center align-items-center"
                                     data-sitekey="6Lf6MsUpAAAAADM2SMMV1zeYGjRCHi-nc4-NSwvF"
                                     data-callback='onSubmit'
