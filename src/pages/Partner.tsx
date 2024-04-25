@@ -217,7 +217,7 @@ const Partner = () => {
                                     </button>
                                     <span>
                                         <input type="checkbox" className="kvkkCheckbox" style={{ display: "none" }} />
-                                        <label className="ms-4"><NavLink to="/aydinlatma-metni" target="blank" >Aydınlatma Metni (işe alım süreçleri hakkında
+                                        <label className="ms-4"><NavLink to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Musteri_Acik_Riza_-Aydinlatma_Metni.pdf" target="blank" >Aydınlatma Metni (işe alım süreçleri hakkında
                                             bilgi)</NavLink></label>
                                     </span>
                                 </div>
@@ -249,7 +249,7 @@ const Partner = () => {
                                     </button>
                                     <span>
                                         <input type="checkbox" className="kvkkCheckbox" style={{ display: "none" }} />
-                                        <label className="ms-4"> <NavLink to="/bilgilendirme-metni" target="blank" >Ticari Elektronik
+                                        <label className="ms-4"> <NavLink to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Kisisel-Verilerin-Korunmasi-ve-Islenmesi-Politikasi.pdf" target="blank" >Ticari Elektronik
                                             Bilgilendirme Metni (telefonlara
                                             giden
                                             mesajlar için onay)</NavLink></label>

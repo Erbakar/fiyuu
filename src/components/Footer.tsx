@@ -301,22 +301,23 @@ const Footer = () => (
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/kisisel-verilerin-korunumu">
+                            <NavLink to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Musteri_Acik_Riza_-Aydinlatma_Metni.pdf"  target="_blank">
                                 Kişisel Verilerin İşlenmesi ve Aydınlatma Metni
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/kisisel-verilerin-korunumu">
+                            <NavLink to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Kisisel-Verilerin-Korunmasi-ve-Islenmesi-Politikasi.pdf"  target="_blank">
                                 Kişisel Verilerin Korunması ve İşlenmesi Politikası
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/kisisel-verilerin-korunumu">
+                            <NavLink to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Kvk-Basvuru-Formu.pdf" target="_blank">
                                 Kvk Başvuru Formu
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/kisisel-verilerin-korunumu">
+                            <NavLink to="https://e-sirket.mkk.com.tr/?page=company&company=21771#" target="
+                                _blank">
                                 Bilgi Toplumu Hizmetleri
                             </NavLink>
                         </li>
