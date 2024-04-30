@@ -138,9 +138,9 @@ const Kurye = () => {
         // Process form data if there are no errors
         if (!Object.values(errors).some((error) => error)) {
             // Your submission logic here
-            // console.log('Form submitted successfully:', formData);
+             console.log('Form submitted successfully:', formData);
         } else {
-            // console.log('Form validation failed:', errors);
+             console.log('Form validation failed:', errors);
             window.scrollTo(0, 900);
         }
         event.preventDefault();
