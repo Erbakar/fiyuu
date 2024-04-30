@@ -55,9 +55,6 @@ const Kurye = () => {
 
   // Function to handle input changes
   const handleInputChange = (event) => {
-    console.log("name = " + event.target.name, "value = " + event.target.value);
-    // console.log('event' , event.target);
-
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
     validateForm();
@@ -98,9 +95,6 @@ const Kurye = () => {
       kvkk,
       aydinlatma,
     } = formData;
-
-    console.log("formData", formData);
-
     const birthDate = new Date(dogumTarihi);
     const currentDate = new Date();
     const age = currentDate.getFullYear() - birthDate.getFullYear();
@@ -121,8 +115,7 @@ const Kurye = () => {
       ehliyetTipi: ehliyetTipi === "" || ehliyetTipi === "0",
       sirketTipi: sirketTipi === "" || sirketTipi === "0",
       referans: referans === "" || referans === "0",
-      referansAdSoyad:
-        referansAdSoyad.length < 5 || referansAdSoyad.length === "",
+      referansAdSoyad: (referans === "Calisan-refereansi" || referans === "KadınKurye") && referansAdSoyad.length < 5 || referansAdSoyad.length === "",
       gdpr: gdpr === false,
       kvkk: kvkk === false,
       aydinlatma: aydinlatma === false,
