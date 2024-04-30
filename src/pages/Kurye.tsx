@@ -29,6 +29,8 @@ const Kurye = () => {
             const kvkkCheckbox = group.querySelector(".kvkkCheckbox");
 
             disabledButton.addEventListener("click", function (event) {
+                console.log('disabledButton' , event);
+                
                 event.preventDefault();
                 kvkkCheckbox.checked = true;
                 selectedButton.style.display = "inline-block";
@@ -36,6 +38,7 @@ const Kurye = () => {
             });
 
             selectedButton.addEventListener("click", function (event) {
+                console.log('selectedButton' , event);
                 event.preventDefault();
                 kvkkCheckbox.checked = false;
                 selectedButton.style.display = "none";
@@ -65,6 +68,7 @@ const Kurye = () => {
         sirketTipi: '',
         referans: '',
         referansAdSoyad: '',
+        gdpr: '',
     });
 
     const [errors, setErrors] = useState({
@@ -81,12 +85,15 @@ const Kurye = () => {
         sirketTipi: false,
         referans: false,
         referansAdSoyad: false,
+        gdpr: false,
     });
 
     // Function to handle input changes
-    const handleInputChange = (event) => { 
+    const handleInputChange = (event) => {
         console.log('name = ' + event.target.name, 'value = ' + event.target.value);
-               
+        // console.log('event' , event.target);
+
+
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
         validateForm();
@@ -97,7 +104,7 @@ const Kurye = () => {
 
     // Function to validate form data
     const validateForm = () => {
-        const { adSoyad, tel, tc, dogumTarihi, email, cinsiyet, calismaSekli, il, ilce, ehliyetTipi, sirketTipi, referans, referansAdSoyad } = formData;
+        const { adSoyad, tel, tc, dogumTarihi, email, cinsiyet, calismaSekli, il, ilce, ehliyetTipi, sirketTipi, referans, referansAdSoyad, gdpr } = formData;
         const birthDate = new Date(dogumTarihi);
         const currentDate = new Date();
         const age = currentDate.getFullYear() - birthDate.getFullYear();
@@ -119,6 +126,7 @@ const Kurye = () => {
             sirketTipi: sirketTipi === '' || sirketTipi === '0',
             referans: referans === '' || referans === '0',
             referansAdSoyad: referansAdSoyad.length < 5 || referansAdSoyad.length === '',
+            gdpr: gdpr === false,
         };
         setErrors(newErrors);
     };
@@ -294,7 +302,7 @@ const Kurye = () => {
 
                                             </div>
                                             <div className="form-control-ctr">
-                                                <select className="form-disabled"
+                                                <select
                                                     id="ilce"
                                                     name="ilce"
                                                     value={formData.ilce}
@@ -354,11 +362,11 @@ const Kurye = () => {
 
                                         <div className="form-items w-100  d-flex">
                                             <div className="form-control-ctr">
-                                                <select className="w-100"
+                                                <select
                                                     id="referans"
                                                     name="referans"
                                                     value={formData.referans}
-                                                    className={errors.referans ? "error-form-item-select" : "form-select"}
+                                                    className={errors.ehliyetTipi ? "error-form-item-select" : "form-select"}
                                                     onChange={handleInputChange}>
                                                     <option value="0" defaultValue='0'>Bizi Nereden Gördünüz</option>
                                                     <option value="Instagram">Instagram</option>
@@ -398,19 +406,21 @@ const Kurye = () => {
                                 </div>
 
                                 <div className="kvkk-onay">
-                                    <label className="disabledButton" htmlFor="gdpr">
+                                    <label className="disabledButton">
                                         <img src="./images/button-disabled.svg" alt="" />
                                     </label>
-                                    <label className="selectedButton" htmlFor="gdpr" style={{ display: "none" }}>
+                                    <label className="selectedButton" style={{ display: "none" }}>
                                         <img src="./images/button-selected.svg" alt="" />
                                     </label>
                                     <span>
-                                        <input type="checkbox" id="gdpr" className="kvkkCheckbox"
+                                        <input type="checkbox" className="kvkkCheckbox"
                                             style={{ display: "none" }}
                                         />
-                                        <label className="ms-4"><NavLink to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Musteri_Acik_Riza_-Aydinlatma_Metni.pdf"
-                                            target="_blank">Aydınlatma Metni (işe alım süreçleri hakkında
-                                            bilgi)</NavLink></label>
+                                        <label className="ms-4">
+                                            <NavLink to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Musteri_Acik_Riza_-Aydinlatma_Metni.pdf"
+                                                target="_blank">Aydınlatma Metni (işe alım süreçleri hakkında
+                                                bilgi)</NavLink>
+                                        </label>
                                     </span>
                                 </div>
 
