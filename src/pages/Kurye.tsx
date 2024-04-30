@@ -4,11 +4,12 @@
 import { useEffect, useRef } from "react";
 import { useAnimation } from "../hooks/useAnimation";
 import { NavLink } from "react-router-dom";
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import InputMask from 'react-input-mask';
 import { CITIES } from "../constants";
 import TCValidation from "../components/TCValidation";
 const Kurye = () => {
+
     const cityRef = useRef(null)
     const [dateType, setDateType] = useState("text")
     const [selectedDistrict, setSelectedDistrict] = useState(-1)
@@ -50,7 +51,92 @@ const Kurye = () => {
             cityRef.current.children[0].selected = true
         }
     }, [selectedDistrict])
+    const [formData, setFormData] = useState({
+        adSoyad: '',
+        tel: '',
+        tc: '',
+        dogumTarihi: '',
+        email: '',
+        cinsiyet: '',
+        calismaSekli: '',
+        il: '',
+        ilce: '',
+        ehliyetTipi: '',
+        sirketTipi: '',
+        referans: '',
+        referansAdSoyad: '',
+    });
 
+    const [errors, setErrors] = useState({
+        adSoyad: false,
+        tel: false,
+        tc: false,
+        dogumTarihi: false,
+        email: false,
+        cinsiyet: false,
+        calismaSekli: false,
+        il: false,
+        ilce: false,
+        ehliyetTipi: false,
+        sirketTipi: false,
+        referans: false,
+        referansAdSoyad: false,
+    });
+
+    // Function to handle input changes
+    const handleInputChange = (event) => { 
+        console.log('name = ' + event.target.name, 'value = ' + event.target.value);
+               
+        const { name, value } = event.target;
+        setFormData({ ...formData, [name]: value });
+        validateForm();
+        if (name === 'il') {
+            setSelectedDistrict(event.target.value)
+        }
+    };
+
+    // Function to validate form data
+    const validateForm = () => {
+        const { adSoyad, tel, tc, dogumTarihi, email, cinsiyet, calismaSekli, il, ilce, ehliyetTipi, sirketTipi, referans, referansAdSoyad } = formData;
+        const birthDate = new Date(dogumTarihi);
+        const currentDate = new Date();
+        const age = currentDate.getFullYear() - birthDate.getFullYear();
+        let total = 0;
+        for (let i = 0; i < 10; i++) {
+            total += parseInt(tc[i]);
+        }
+        const newErrors = {
+            adSoyad: adSoyad.length < 5 || adSoyad.length === '',
+            tel: tel.length < 13 || tel.includes('_'),
+            tc: tc.length !== 11 || total % 10 !== parseInt(tc[10]),
+            dogumTarihi: dogumTarihi.length < 10 || age < 18,
+            email: !/\S+@\S+\.\S+/.test(email),
+            cinsiyet: cinsiyet === '' || cinsiyet === '0',
+            calismaSekli: calismaSekli === '' || calismaSekli === '0',
+            il: il === '' || il === '0',
+            ilce: ilce === '' || ilce === '0',
+            ehliyetTipi: ehliyetTipi === '' || ehliyetTipi === '0',
+            sirketTipi: sirketTipi === '' || sirketTipi === '0',
+            referans: referans === '' || referans === '0',
+            referansAdSoyad: referansAdSoyad.length < 5 || referansAdSoyad.length === '',
+        };
+        setErrors(newErrors);
+    };
+
+    // Function to handle form submission
+    const handleSubmit = (event) => {
+
+        validateForm();
+        // Process form data if there are no errors
+        if (!Object.values(errors).some((error) => error)) {
+            // Your submission logic here
+            // console.log('Form submitted successfully:', formData);
+        } else {
+            // console.log('Form validation failed:', errors);
+            window.scrollTo(0, 900);
+        }
+        event.preventDefault();
+    };
     return (
         <div className="job-application-form-ctr d-flex justify-content-center flex-column align-items-center">
             <div className="w-100 d-flex flex-column justify-content-center align-items-center">
@@ -76,11 +162,11 @@ const Kurye = () => {
                         </div>
                         <div className="jaf-inner-form w-100">
 
-                            <form action="#" className="w-100 d-flex justify-content-center flex-column align-items-center">
+                            <form onSubmit={handleSubmit} className="w-100 d-flex justify-content-center flex-column align-items-center">
                                 <div className="form-content w-100 row m-0 justify-content-between">
                                     <div className="col-12 col-lg-3 p-0 form-description mb-5 mb-lg-0">
                                         <h3>
-                                        Kişisel bilgiler
+                                            Kişisel bilgiler
                                         </h3>
 
                                     </div>
@@ -89,32 +175,76 @@ const Kurye = () => {
 
                                         <div className="form-items w-100">
                                             <div className="form-control-ctr">
-                                                <input type="text" className="form-control" id="fullName" placeholder="Ad Soyad" />
+                                                <input type="text" placeholder="Ad Soyad"
+                                                    id="adSoyad"
+                                                    name="adSoyad"
+                                                    value={formData.adSoyad}
+                                                    onChange={handleInputChange}
+                                                    className={errors.adSoyad ? "error-form-item" : "form-control"}
+
+                                                />
                                             </div>
                                             <div className="form-control-ctr">
-                                                <InputMask type="tel" className="form-control" id="phoneNumber" mask="999 999 99 99" placeholder="Telefon" />
+                                                <InputMask
+                                                    type="tel" mask="999 999 99 99" placeholder="Telefon"
+                                                    id="tel"
+                                                    name="tel"
+                                                    value={formData.tel}
+                                                    onChange={handleInputChange}
+                                                    className={errors.tel ? "error-form-item" : "form-control"}
+                                                />
                                             </div>
-                                            <TCValidation />
+                                            {/* <TCValidation
+                                            /> */}
+
+                                            <div className="form-control-ctr">
+                                                <InputMask type="tckn"
+                                                    mask="99999999999" placeholder="TC Kimlik No"
+                                                    id="tc"
+                                                    name="tc"
+                                                    value={formData.tc}
+                                                    onChange={handleInputChange}
+                                                    className={errors.tc ? "error-form-item" : "form-control"}
+                                                />
+
+                                            </div>
                                             <div className="form-control-ctr">
                                                 <input
                                                     type={dateType}
                                                     onFocus={() => setDateType('date')}
                                                     onBlur={() => setDateType('text')}
-                                                    className="form-control"
-                                                    id="birthdate"
                                                     placeholder="Doğum Tarihinizi Giriniz"
+                                                    id="dogumTarihi"
+                                                    name="dogumTarihi"
+                                                    value={formData.dogumTarihi}
+                                                    onChange={handleInputChange}
+                                                    className={errors.dogumTarihi ? "error-form-item" : "form-control"}
+
                                                 />
                                             </div>
                                         </div>
                                         <div className="form-items d-flex">
                                             <div className="form-control-ctr">
-                                                <input type="email" className="form-control" id="email" placeholder="E-posta" />
+                                                <input type="email" placeholder="E-posta"
+
+                                                    id="email"
+                                                    name="email"
+                                                    value={formData.email}
+                                                    onChange={handleInputChange}
+                                                    className={errors.email ? "error-form-item" : "form-control"}
+                                                />
                                             </div>
                                             <div className="form-control-ctr">
-                                                <select className="form-select" id="employmentType">
+                                                <select
+                                                    id="cinsiyet"
+                                                    name="cinsiyet"
+                                                    value={formData.cinsiyet}
+                                                    onChange={handleInputChange}
+                                                    className={errors.cinsiyet ? "error-form-item-select" : "form-select"}
+                                                >
                                                     <option value="0" defaultValue='0'>Cinsiyet</option>
-                                                    <option value="tam_zamanli" >Kadın</option>
-                                                    <option value="yari_zamanli">Erkek</option>
+                                                    <option value="Kadın" >Kadın</option>
+                                                    <option value="Erkek">Erkek</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -136,24 +266,42 @@ const Kurye = () => {
                                     <div className="col-12 col-lg-7 p-0 form-items d-flex flex-column">
                                         <div className="form-items-secondary">
                                             <div className="form-control-ctr">
-                                                <select className="form-select" id="employmentType">
+                                                <select
+                                                    id="calismaSekli"
+                                                    name="calismaSekli"
+                                                    value={formData.calismaSekli}
+                                                    onChange={handleInputChange}
+                                                    className={errors.calismaSekli ? "error-form-item-select" : "form-select"}
+                                                >
                                                     <option value="0" defaultValue='0'>Çalışma Zamanı</option>
                                                     <option value="tam_zamanli" >Tam Zamanlı</option>
                                                     <option value="yari_zamanli">Yarı Zamanlı</option>
                                                 </select>
                                             </div>
                                             <div className="form-control-ctr">
-                                                <select className="form-select" id="city" onChange={(e) => {
-                                                    setSelectedDistrict(parseInt(e.target.value))
-                                                }}>
+                                                <select
+                                                    id="il"
+                                                    name="il"
+                                                    value={formData.il}
+                                                    className={errors.il ? "error-form-item-select" : "form-select"}
+                                                    onChange={handleInputChange}
+                                                >
                                                     <option value={-1}> İl Seçiniz</option>
                                                     {CITIES.map((city, index) => (
                                                         <option key={index} value={index}>{city.il}</option>
                                                     ))}
                                                 </select>
+
                                             </div>
                                             <div className="form-control-ctr">
-                                                <select className="form-select form-disabled" id="city" disabled={selectedDistrict === -1} ref={cityRef}>
+                                                <select className="form-disabled"
+                                                    id="ilce"
+                                                    name="ilce"
+                                                    value={formData.ilce}
+                                                    onChange={handleInputChange}
+                                                    className={errors.ilce ? "error-form-item-select" : "form-select"}
+
+                                                    disabled={selectedDistrict === -1} ref={cityRef}>
                                                     <option value="0" defaultValue='0'> İlçe Seçiniz</option>
                                                     {selectedDistrict !== -1 && CITIES[selectedDistrict].ilceleri.map((ilce, index) => (
                                                         <option key={index} value={index}>{ilce}</option>
@@ -163,7 +311,13 @@ const Kurye = () => {
                                         </div>
                                         <div className="form-items">
                                             <div className="form-control-ctr">
-                                                <select className="form-select" id="licenseType">
+                                                <select
+                                                    id="ehliyetTipi"
+                                                    name="ehliyetTipi"
+                                                    value={formData.ehliyetTipi}
+                                                    onChange={handleInputChange}
+                                                    className={errors.ehliyetTipi ? "error-form-item-select" : "form-select"}
+                                                >
                                                     <option value="0" defaultValue='0'>Ehliyet tipi seçin</option>
                                                     <option value="a">A</option>
                                                     <option value="b">B</option>
@@ -173,10 +327,16 @@ const Kurye = () => {
                                                 </select>
                                             </div>
                                             <div className="form-control-ctr">
-                                                <select className="form-select" id="companyType">
+                                                <select
+                                                    id="sirketTipi"
+                                                    name="sirketTipi"
+                                                    value={formData.sirketTipi}
+                                                    onChange={handleInputChange}
+                                                    className={errors.sirketTipi ? "error-form-item-select" : "form-select"}
+                                                >
                                                     <option value="0" defaultValue='0'>Şirket tipi seçin</option>
-                                                    <option value="type1">Şahıs Şirketim var</option>
-                                                    <option value="type2">Şahıs şirketim yok</option>
+                                                    <option value="var">Şahıs Şirketim var</option>
+                                                    <option value="yok">Şahıs şirketim yok</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -194,7 +354,12 @@ const Kurye = () => {
 
                                         <div className="form-items w-100  d-flex">
                                             <div className="form-control-ctr">
-                                                <select className="form-select w-100" id="licenseType" onChange={(e) => setWhereDidYouSeeUs(e.target.value)}>
+                                                <select className="w-100"
+                                                    id="referans"
+                                                    name="referans"
+                                                    value={formData.referans}
+                                                    className={errors.referans ? "error-form-item-select" : "form-select"}
+                                                    onChange={handleInputChange}>
                                                     <option value="0" defaultValue='0'>Bizi Nereden Gördünüz</option>
                                                     <option value="Instagram">Instagram</option>
                                                     <option value="Tiktok">Tiktok</option>
@@ -215,9 +380,15 @@ const Kurye = () => {
 
                                         </div>
 
-                                        {(whereDidYouSeeUs === "Calisan-refereansi" || whereDidYouSeeUs === "KadınKurye") && (
+                                        {(formData.referans === "Calisan-refereansi" || formData.referans === "KadınKurye") && (
                                             <div className="form-control-ctr">
-                                                <input type="text" className="form-control" id="fullName" placeholder="Ad Soyad" />
+                                                <input type="text" placeholder="Ad Soyad"
+                                                    id="referansAdSoyad"
+                                                    name="referansAdSoyad"
+                                                    value={formData.referansAdSoyad}
+                                                    onChange={handleInputChange}
+                                                    className={errors.referansAdSoyad ? "error-form-item" : "form-control"}
+                                                />
                                             </div>
                                         )}
 
@@ -227,14 +398,16 @@ const Kurye = () => {
                                 </div>
 
                                 <div className="kvkk-onay">
-                                    <button className="disabledButton">
+                                    <label className="disabledButton" htmlFor="gdpr">
                                         <img src="./images/button-disabled.svg" alt="" />
-                                    </button>
-                                    <button className="selectedButton" style={{ display: "none" }}>
+                                    </label>
+                                    <label className="selectedButton" htmlFor="gdpr" style={{ display: "none" }}>
                                         <img src="./images/button-selected.svg" alt="" />
-                                    </button>
+                                    </label>
                                     <span>
-                                        <input type="checkbox" className="kvkkCheckbox" style={{ display: "none" }} />
+                                        <input type="checkbox" id="gdpr" className="kvkkCheckbox"
+                                            style={{ display: "none" }}
+                                        />
                                         <label className="ms-4"><NavLink to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Musteri_Acik_Riza_-Aydinlatma_Metni.pdf"
                                             target="_blank">Aydınlatma Metni (işe alım süreçleri hakkında
                                             bilgi)</NavLink></label>
@@ -273,7 +446,7 @@ const Kurye = () => {
                                             mesajlar için onay)</NavLink></label>
                                     </span>
                                 </div>
-                            
+
                                 <button
                                     className
                                     ="g-recaptcha submit-btn d-flex mt-5 justify-content-center align-items-center"
@@ -292,5 +465,6 @@ const Kurye = () => {
         </div>
     )
 }
+
 
 export default Kurye;

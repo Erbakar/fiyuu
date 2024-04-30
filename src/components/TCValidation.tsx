@@ -8,21 +8,6 @@ const TCValidation = () => {
 	const onChange = (e: any) => {
 		const value = e.target.value.split('_').join('');
 
-		if (value === '') {
-			setError('TC Kimlik No boş bırakılamaz!');
-			return;
-		}
-
-		if (value.length !== 11) {
-			setError('TC Kimlik No 11 haneli olmalıdır!');
-			return;
-		}
-
-		if (value[0] === '0') {
-			setError('TC Kimlik No 0 ile başlayamaz!');
-			return;
-		}
-
 		let total = 0;
 		for (let i = 0; i < 10; i++) {
 			total += parseInt(value[i]);
@@ -34,16 +19,14 @@ const TCValidation = () => {
 		}
 
 		setError(null);
-
-		console.log('TC Kimlik No: ' + value);
 	}
 	
 	return (
 		<div className={cx("form-control-ctr", {
 			'error': error !== null
 		})}>
-			<InputMask type="tckn"  className={`form-control ${error ? 'error-form-item' : ''}`} mask="99999999999" id="text" placeholder="TC Kimlik No" onChange={onChange} />
-			{error && <small className="error-msg">{error}</small>}
+			<InputMask type="tckn"
+			className={`form-control ${error ? 'error-form-item' : ''}`} mask="99999999999" id="text" placeholder="TC Kimlik No" onChange={onChange} />
 		</div>
 	)
 }
