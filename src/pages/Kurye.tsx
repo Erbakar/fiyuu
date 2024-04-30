@@ -123,15 +123,17 @@ const Kurye = () => {
             kvkk: kvkk === false,
             aydinlatma: aydinlatma === false,
         };
-        setErrors(newErrors);
+      setErrors(newErrors);
+      
+      return !Object.values(errors).some((error) => error)
     };
 
 
     // Function to handle form submission
     const handleSubmit = (event) => {
-        validateForm();
-        // Process form data if there are no errors
-        if (!Object.values(errors).some((error) => error)) {
+      // Process form data if there are no errors
+      
+        if (!validateForm()) {
             // Your submission logic here
             console.log("Form submitted successfully:", formData);
             setFormValid(true);
