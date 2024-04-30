@@ -648,7 +648,7 @@ const Kurye = () => {
                                             name="tcSorgulama"
                                             
                                             className={
-                                                tcValid ? "form-control-tc" : "error-form-item" 
+                                                tcValid || !showTCMessage ? "form-control-tc" : "error-form-item" 
                                             }
                                         />
                                     </div>
