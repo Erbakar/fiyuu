@@ -125,14 +125,14 @@ const Kurye = () => {
         };
       setErrors(newErrors);
       
-      return !Object.values(errors).some((error) => error)
+      return Object.values(newErrors).some((error) => error)
     };
 
 
     // Function to handle form submission
     const handleSubmit = (event) => {
       // Process form data if there are no errors
-      
+
         if (!validateForm()) {
             // Your submission logic here
             console.log("Form submitted successfully:", formData);
