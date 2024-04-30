@@ -181,7 +181,7 @@ const Kurye = () => {
               >
                 <div className="form-content w-100 row m-0 justify-content-between">
                   <div className="col-12 col-lg-3 p-0 form-description mb-5 mb-lg-0">
-                    <h3>Kişisel bilgiler</h3>
+                    <h3>Kişisel Bilgiler</h3>
                   </div>
 
                   <div className="col-12 col-lg-7 p-0">
@@ -469,13 +469,14 @@ const Kurye = () => {
                 </div>
 
                 <div
-                  className={cx("kvkk-onay", {
-                    "error-form-item": errors.gdpr,
-                  })}
+                className="kvkk-onay"
+                
                 >
                   <button
-                    className="disabledButton"
                     type="button"
+                    className={cx("disabledButton", {
+                        "error-form-item-button": errors.gdpr,
+                      })}
                     onClick={() => {
                       setFormData({ ...formData, gdpr: !formData.gdpr });
                       setErrors({ ...errors, gdpr: false });
@@ -507,12 +508,13 @@ const Kurye = () => {
                 </div>
 
                 <div
-                  className={cx("kvkk-onay", {
-                    "error-form-item": errors.kvkk,
-                  })}
+                className="kvkk-onay"
                 >
                   <button
-                    className="disabledButton"
+                    
+                    className={cx("disabledButton", {
+                        "error-form-item-button": errors.kvkk,
+                      })}
                     type="button"
                     onClick={() => {
                       setFormData({ ...formData, kvkk: !formData.kvkk });
@@ -543,12 +545,13 @@ const Kurye = () => {
                 </div>
 
                 <div
-                  className={cx("kvkk-onay", {
-                    "error-form-item": errors.aydinlatma,
-                  })}
+                 className="kvkk-onay"
                 >
                   <button
-                    className="disabledButton"
+                   
+                    className={cx("disabledButton", {
+                        "error-form-item-button": errors.aydinlatma,
+                      })}
                     type="button"
                     onClick={() => {
                       setFormData({

@@ -2763,7 +2763,7 @@ ul {
   appearance: none;
   background-image: url("../images/arrow-select.svg");
   background-repeat: no-repeat;
-  background-position: right 16px center;
+  background-position: right 6px center;
   background-size: 25px;
 }
 .error-form-item-select {
@@ -2839,6 +2839,13 @@ ul {
   border: none;
   outline: none;
   background-color: transparent;
+  height: 46px;
+  width: 46px;
+  border-radius: 11px;
+  margin-bottom: 2px;
+}
+.job-application-form-ctr .jaf-inner-form .kvkk-onay button.error-form-item-button {
+  background-color: var(--primary-pink) !important;
 }
 
 .job-application-form-ctr .jaf-inner-form .kvkk-onay span label a {
