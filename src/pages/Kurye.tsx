@@ -449,7 +449,7 @@ const Kurye = () => {
                                                             name="referans"
                                                             value={formData.referans}
                                                             className={
-                                                                errors.ehliyetTipi
+                                                                errors.referans
                                                                     ? "error-form-item-select"
                                                                     : "form-select"
                                                             }
