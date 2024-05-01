@@ -13,6 +13,7 @@ import Kvk from "./pages/Kvk"
 import Bilgilendirme from "./pages/Bilgilendirme"
 import Aydinlatma from "./pages/Aydinlatma"
 import Career from "./pages/Career"
+import Sss from "./pages/Sss"
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
         <Route index path="/partner" element={<Partner />} />
         <Route index path="/career" element={<Career />} />
         <Route index path="/kurye" element={<Kurye />} />
+        <Route index path="/sss" element={<Sss />} />
         <Route index path="/contact" element={<Contact />} />
         <Route index path="/kisisel-verilerin-korunumu" element={<Kvk />} />
         <Route index path="/bilgilendirme-metni" element={<Bilgilendirme />} />

@@ -76,6 +76,11 @@ const Footer = () => (
                             </NavLink>
                         </li>
                         <li>
+                            <NavLink to="/sss">
+                                SSS
+                            </NavLink>
+                        </li>
+                        <li>
                             <NavLink to="/contact">
                                 İletişim
                             </NavLink>
