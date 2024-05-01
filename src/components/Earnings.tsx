@@ -53,24 +53,24 @@ function Earnings() {
 
 
                             <div className="col">
-                                <div className="form-check">
+                                <label className="form-check"  htmlFor="flexRadioDefault1">
                                     <input className="form-check-input" value="25" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onChange={(e) => setWorkStyle(e.target.value)} />
-                                    <label className="defaultValuem-check-label" htmlFor="flexRadioDefault1">
+                                    <label className="defaultValuem-check-label">
                                         Rahat çalışırım
                                     </label>
-                                </div>
-                                <div className="form-check">
+                                </label>
+                                <label className="form-check" htmlFor="flexRadioDefault2">
                                     <input className="form-check-input" value="35" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onChange={(e) => setWorkStyle(e.target.value)}/>
-                                    <label className="form-check-label" htmlFor="flexRadioDefault2">
+                                    <label className="form-check-label">
                                         Hızlı çalışırım
                                     </label>
-                                </div>
-                                <div className="form-check">
+                                </label>
+                                <label className="form-check" htmlFor="flexRadioDefault3">
                                     <input className="form-check-input" value="45" type="radio" name="flexRadioDefault" id="flexRadioDefault3" onChange={(e) => setWorkStyle(e.target.value)}/>
-                                    <label className="form-check-label" htmlFor="flexRadioDefault3">
+                                    <label className="form-check-label">
                                         Benden hızlısı yok
                                     </label>
-                                </div>
+                                </label>
                             </div>
                             <div className="col">
                                 <div className="select-ctr">

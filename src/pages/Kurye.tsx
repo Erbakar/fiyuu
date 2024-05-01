@@ -193,13 +193,7 @@ const Kurye = () => {
                             <h1 data-animation="zoomIn" data-animation-delay="50ms">
                                 Kurye olmak istiyorum
                             </h1>
-                            <p data-animation="zoomIn" data-animation-delay="50ms">
-                                Anketin tamamlanması yaklaşık 4 dakika sürüyor. Merhaba, fiyuu
-                                ailesine katılmak için ilk adımı atıyorsun. Biz "Çevik" ve
-                                "Müşteri Odaklı" adaylar arıyoruz. Eğer sen de ekibimize
-                                katılmak istersen yapman gereken başvuru formunu ayrıntılı ve
-                                özenli bir şekilde doldurmak. Sonrasında İşe Alım ekiplerimiz
-                                seninle bağlantıya geçecek.
+                            <p data-animation="zoomIn" data-animation-delay="50ms">    fiyuu ailesine katılmak için ilk adımı atıyorsun. Biz "Çevik" ve "Müşteri Odaklı" adaylar arıyoruz. Eğer sen de ekibimize katılmak istersen, yapman gereken başvuru formunu ayrıntılı ve özenli bir şekilde doldurmak. Sonrasında İşe Alım ekiplerimiz seninle bağlantıya geçecek.
                             </p>
                         </div>
                         {tcValid ? (
@@ -236,7 +230,7 @@ const Kurye = () => {
                                                         <InputMask
                                                             type="tel"
                                                             mask="999 999 99 99"
-                                                            placeholder="Telefon"
+                                                            placeholder="Cep Telefonu"
                                                             id="tel"
                                                             name="tel"
                                                             value={formData.tel}

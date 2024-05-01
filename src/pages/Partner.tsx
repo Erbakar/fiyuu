@@ -64,7 +64,7 @@ const Partner = () => {
 
                             </h1>
                             <p data-animation="zoomIn">
-                                Anketin tamamlanması yaklaşık 4 dakika sürüyor. Merhaba, fiyuu ailesine katılmak için ilk adımı atıyorsun. Biz "Çevik" ve "Müşteri Odaklı" adaylar arıyoruz. Eğer sen de ekibimize katılmak istersen yapman gereken başvuru formunu ayrıntılı ve özenli bir şekilde doldurmak. Sonrasında İşe Alım ekiplerimiz seninle bağlantıya geçecek.
+                            fiyuu ile işbirliği yapmak için ilk adımı atıyorsunuz. Eğer siz de hızlı ve güvenilir teslimatı deneyimlemek isterseniz, başvuru formunu doldurup, işinizin büyümesine katkıda bulunabilirsiniz.
                             </p>
                         </div>
                         <div className="jaf-inner-form w-100">
