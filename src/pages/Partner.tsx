@@ -192,14 +192,14 @@ const Partner = () => {
                                                     <option value="linkedin">Linkedin</option>
                                                     <option value="Facebook">Facebook</option>
                                                     <option value="twitter">Twitter</option>
-                                                    <option value="esnaf-referansi">Esnaf referansı</option>
-                                                    <option value="restoran-referansi">Restoran referansı</option>
+                                                    <option value="kurye-referansi">Kurye Referansı</option>
+                                                    <option value="isletme-referansi">İşletme Referansı</option>
                                                     <option value="satis-temsilcisi">Satış temsilcisi</option>
                                                 </select>
                                             </div>
                                         </div>
 
-                                        {(whereDidYouSeeUs === "esnaf-referansi" || whereDidYouSeeUs === "restoran-referansi") && (
+                                        {(whereDidYouSeeUs === "kurye-referansi" || whereDidYouSeeUs === "isletme-referansi") && (
                                             <div className="form-control-ctr">
                                                 <input type="text" className="form-control" id="fullName" placeholder="Ad Soyad" />
                                             </div>

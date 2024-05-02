@@ -13,7 +13,7 @@ const Kurye = () => {
     const cityRef = useRef(null);
     const [dateType, setDateType] = useState("text");
     const [formValid, setFormValid] = useState(false);
-    const [tcValid, setTCValid] = useState(false);
+    const [tcValid, setTCValid] = useState(true);
     const [showTCMessage, setShowTCMessageset] = useState(false);
     const [selectedDistrict, setSelectedDistrict] = useState(-1);
     const [whereDidYouSeeUs, setWhereDidYouSeeUs] = useState("");

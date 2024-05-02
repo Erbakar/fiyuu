@@ -1,115 +1,117 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect } from "react";
 import { useAnimation } from "../hooks/useAnimation";
+
+
+const faq = [
+    {
+        id: 'question1',
+        question: "Eşimin veya arkadaşımın şirketi üzerinden çalışabilir miyim?",
+        answer: "Sadece kendi adınıza açılan şirket ile çalışabilirsiniz."
+    },
+    {
+        id: 'question2',
+        question: "Motosiklet marka ve model şartınız var mı?",
+        answer: "Hayır marka ve model şartımız yoktur. A sınıfı ehliyete sahipseniz cc sınırlamamız yoktur. B sınıfı ehliyete sahip olanlar için 125cc sınırlamamız vardır."
+    },
+    {
+        id: 'question3',
+        question: "Bağkur borcunu siz mi ödüyorsunuz, borç limiti var mı?",
+        answer: "Hayır, siz ödüyorsunuz. Bağkur borcu olmayan kuryelere istihdam konusunda öncelik veriyoruz."
+    },
+    {
+        id: 'question4',
+        question: "Ekipman desteği var mı?",
+        answer: "Hayır yoktur. İşe girişte ücretli şekilde Operasyon Merkezlerimizden temin edebilirsiniz."
+    },
+    {
+        id: 'question5',
+        question: "Yan haklarınız var mı?",
+        answer: "% 50 Tıkla Gelsin İndirimli yemek hakkı, Özel Sağlık Sigortası ve Logo işbaşı uygulamalarımızı kullanabilirsiniz."
+    },
+    {
+        id: 'question6',
+        question: "Ödeme günleri nelerdir?",
+        answer: "Ayın 10 ve 25 olmak üzere iki kez ödeme yapılmaktadır."
+    },
+    {
+        id: 'question7',
+        question: "Ortalama sipariş sayısı nedir?",
+        answer: "Lokasyon ve performans bazlı değişkenlik göstermektedir."
+    },
+    {
+        id: 'question8',
+        question: "Lokasyonlardaki kurye sayınız nedir?",
+        answer: "Kurye sayıları her lokasyonda şipariş sayısına göre planlanmaktadır."
+    },
+    {
+        id: 'question9',
+        question: "Kuryelerin hizmet verdiği bölge sabit midir?",
+        answer: "Her kuryemizin bir bölge sorumluluğu bulunmaktadır. Sorumlu olunan bölge içerisindeki tüm restoranlara kuryelerimiz hizmet vermektedir. İhtiyaç veya talebe göre bölge değişikliği yapılabilmektedir."
+    },
+    {
+        id: 'question10',
+        question: "Ortalama hakediş bedeli nedir?",
+        answer: "Kuryenin çalışma saati ve performansına göre değişiklik göstermektedir."
+    },
+    {
+        id: 'question11',
+        question: "Vardiya ve saat seçimi yapılabiliyor mu?",
+        answer: "Vardiya planlamaları, planlama ekipleri tarafından sipariş sayısına göre yapılmaktadır. 11:00 ile 05:00 saatleri arasında vardiya yazılmaktadır."
+    },
+    {
+        id: 'question12',
+        question: "Vardiyada kılık kıyafet uygulamanız var mı?",
+        answer: "İşe girişte teslim edilen yelek ile çalışmak zorunludur. Erkekler için görsel olarak olumsuzluk oluşturmayacak saç sakal kesimleri tercih edilmelidir. Pantolon giyme şartımız bulunmakta olup, eşofman, terlik vb. kurumsallığı bozabilecek kıyafetler yasaktır."
+    },
+    {
+        id: 'question13',
+        question: "Özel sağlık sigortası yapılıyor mu?",
+        answer: "Evet. Bağkur borcunuz olsun ya da olmasın; %100 Yatarak Tedavi, Kaza durumlarında hastanede yatılan gün için 500₺ destek, Ferdi Kaza poliçe kapsamı, Online Doktor Kontrolü ve Tedavisi, Yılda 1 Kez Check-up ve Diş Tedavisi"
+    },
+    {
+        id: 'question14',
+        question: "Part time çalışma seçeneğiniz var mı?",
+        answer: "Evet, part time çalışabilirsiniz."
+    },
+    {
+        id: 'question15',
+        question: "Haftada kaç gün çalışma zorunluluğu vardır?",
+        answer: "Haftada 6 gün çalışma zorunluluğu bulunmaktadır."
+    },
+    {
+        id: 'question16',
+        question: "İzin günlerini ben seçebiliyor muyum?",
+        answer: "Vardiyanızı planlama ekibimiz haftalık olarak hazırlayıp bölge müdürlerine iletiyor. Hafta içi olmak koşulu ile izin gününüzü bölge müdürünüz ile ayarlayabilirsiniz."
+    },
+    {
+        id: 'question17',
+        question: "Motosiklet kiralama hizmetiniz var mı?",
+        answer: "Erzurum, Erzincan, Elazığ, Aksaray, Antalya, İzmir, Balıkesir, Bursa, Yalova, Kırşehir, Nevşehir, Konya, Rize, Sivas, Trabzon, Kars."
+    },
+    {
+        id: 'question18',
+        question: "E- arşiv ile kesilen faturalardan ödeme alınabiliyor mu?",
+        answer: "E-fatura ile çalışmaktayız. E-arşiv ile kesilen fatura ödemeleri 45 gün sonra yapılmaktadır."
+    },
+    {
+        id: 'question19',
+        question: "Saat başı ücret ödeme uygulamanız var mı?",
+        answer: "Hayır yoktur, paket başı ücret verilmektedir."
+    },
+    {
+        id: 'question20',
+        question: "Sipariş garantisi var mı?",
+        answer: "Sipariş garantisi bulunmamaktadır. Her personel için en verimli şekilde maksimum sipariş taşımak için planlama yapılmaktadır."
+    },
+    {
+        id: 'question21',
+        question: "Pos cihazı almadan çalışmak mümkün mü?",
+        answer: "Mümkün, fakat pos cihazı olmadan yalnız online siparişlere gidilebileceği için sipariş sayısı diğer personellere göre az olacaktır."
+    },
+];
 
 const About = () => {
     const animate = useAnimation()
-    const faq = [
-        {
-            id: 'question1',
-            question: "Eşimin veya arkadaşımın şirketi üzerinden çalışabilir miyim?",
-            answer: "Sadece kendi adınıza açılan şirket ile çalışabilirsiniz."
-        },
-        {
-            id: 'question2',
-            question: "Motosiklet marka ve model şartınız var mı?",
-            answer: "Hayır marka ve model şartımız yoktur. A sınıfı ehliyete sahipseniz cc sınırlamamız yoktur. B sınıfı ehliyete sahip olanlar için 125cc sınırlamamız vardır."
-        },
-        {
-            id: 'question3',
-            question: "Bağkur borcunu siz mi ödüyorsunuz, borç limiti var mı?",
-            answer: "Hayır, siz ödüyorsunuz. Bağkur borcu olmayan kuryelere istihdam konusunda öncelik veriyoruz."
-        },
-        {
-            id: 'question4',
-            question: "Ekipman desteği var mı?",
-            answer: "Hayır yoktur. İşe girişte ücretli şekilde Operasyon Merkezlerimizden temin edebilirsiniz."
-        },
-        {
-            id: 'question5',
-            question: "Yan haklarınız var mı?",
-            answer: "% 50 Tıkla Gelsin İndirimli yemek hakkı, Özel Sağlık Sigortası ve Logo işbaşı uygulamalarımızı kullanabilirsiniz."
-        },
-        {
-            id: 'question6',
-            question: "Ödeme günleri nelerdir?",
-            answer: "Ayın 10 ve 25 olmak üzere iki kez ödeme yapılmaktadır."
-        },
-        {
-            id: 'question7',
-            question: "Ortalama sipariş sayısı nedir?",
-            answer: "Lokasyon ve performans bazlı değişkenlik göstermektedir."
-        },
-        {
-            id: 'question8',
-            question: "Lokasyonlardaki kurye sayınız nedir?",
-            answer: "Kurye sayıları her lokasyonda şipariş sayısına göre planlanmaktadır."
-        },
-        {
-            id: 'question9',
-            question: "Kuryelerin hizmet verdiği bölge sabit midir?",
-            answer: "Her kuryemizin bir bölge sorumluluğu bulunmaktadır. Sorumlu olunan bölge içerisindeki tüm restoranlara kuryelerimiz hizmet vermektedir. İhtiyaç veya talebe göre bölge değişikliği yapılabilmektedir."
-        },
-        {
-            id: 'question10',
-            question: "Ortalama hakediş bedeli nedir?",
-            answer: "Kuryenin çalışma saati ve performansına göre değişiklik göstermektedir."
-        },
-        {
-            id: 'question11',
-            question: "Vardiya ve saat seçimi yapılabiliyor mu?",
-            answer: "Vardiya planlamaları, planlama ekipleri tarafından sipariş sayısına göre yapılmaktadır. 11:00 ile 05:00 saatleri arasında vardiya yazılmaktadır."
-        },
-        {
-            id: 'question12',
-            question: "Vardiyada kılık kıyafet uygulamanız var mı?",
-            answer: "İşe girişte teslim edilen yelek ile çalışmak zorunludur. Erkekler için görsel olarak olumsuzluk oluşturmayacak saç sakal kesimleri tercih edilmelidir. Pantolon giyme şartımız bulunmakta olup, eşofman, terlik vb. kurumsallığı bozabilecek kıyafetler yasaktır."
-        },
-        {
-            id: 'question13',
-            question: "Özel sağlık sigortası yapılıyor mu?",
-            answer: "Evet. Bağkur borcunuz olsun ya da olmasın; %100 Yatarak Tedavi, Kaza durumlarında hastanede yatılan gün için 500₺ destek, Ferdi Kaza poliçe kapsamı, Online Doktor Kontrolü ve Tedavisi, Yılda 1 Kez Check-up ve Diş Tedavisi"
-        },
-        {
-            id: 'question14',
-            question: "Part time çalışma seçeneğiniz var mı?",
-            answer: "Evet, part time çalışabilirsiniz."
-        },
-        {
-            id: 'question15',
-            question: "Haftada kaç gün çalışma zorunluluğu vardır?",
-            answer: "Haftada 6 gün çalışma zorunluluğu bulunmaktadır."
-        },
-        {
-            id: 'question16',
-            question: "İzin günlerini ben seçebiliyor muyum?",
-            answer: "Vardiyanızı planlama ekibimiz haftalık olarak hazırlayıp bölge müdürlerine iletiyor. Hafta içi olmak koşulu ile izin gününüzü bölge müdürünüz ile ayarlayabilirsiniz."
-        },
-        {
-            id: 'question17',
-            question: "Motosiklet kiralama hizmetiniz var mı?",
-            answer: "Erzurum, Erzincan, Elazığ, Aksaray, Antalya, İzmir, Balıkesir, Bursa, Yalova, Kırşehir, Nevşehir, Konya, Rize, Sivas, Trabzon, Kars."
-        },
-        {
-            id: 'question18',
-            question: "E- arşiv ile kesilen faturalardan ödeme alınabiliyor mu?",
-            answer: "E-fatura ile çalışmaktayız. E-arşiv ile kesilen fatura ödemeleri 45 gün sonra yapılmaktadır."
-        },
-        {
-            id: 'question19',
-            question: "Saat başı ücret ödeme uygulamanız var mı?",
-            answer: "Hayır yoktur, paket başı ücret verilmektedir."
-        },
-        {
-            id: 'question20',
-            question: "Sipariş garantisi var mı?",
-            answer: "Sipariş garantisi bulunmamaktadır. Her personel için en verimli şekilde maksimum sipariş taşımak için planlama yapılmaktadır."
-        },
-        {
-            id: 'question21',
-            question: "Pos cihazı almadan çalışmak mümkün mü?",
-            answer: "Mümkün, fakat pos cihazı olmadan yalnız online siparişlere gidilebileceği için sipariş sayısı diğer personellere göre az olacaktır."
-        },
-    ];
        
 
     useEffect(() => {
