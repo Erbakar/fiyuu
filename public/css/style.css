@@ -2762,7 +2762,7 @@ ul {
   color: var(--form-gray);
 }
 
-.job-application-form-ctr .jaf-inner-form .form-content .form-items .form-control-ctr .form-select {
+.job-application-form-ctr .jaf-inner-form .form-content .form-items .form-control-ctr .form-select   {
   height: 100%;
   padding: 16px;
   border-radius: 10px;
@@ -2777,6 +2777,48 @@ ul {
   background-repeat: no-repeat;
   background-position: right 6px center;
   background-size: 25px;
+}
+.css-13cymwt-control ,.css-t3ipsp-control {
+  height: 100%;
+  padding:8px 24px 8px 0  !important;
+  border-radius: 10px ! important;
+  border: 2px solid #E0E0E0 !important;
+  background: #FFF;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  color: var(--form-gray) !important;
+  font-size: 14px;
+  font-weight: 600;
+  appearance: none;
+  background-image: url("../images/arrow-select.svg");
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: 25px;
+}
+.error-form-item-select-multi .css-13cymwt-control , .error-form-item-select-multi .css-t3ipsp-control {
+  border: 2px solid  var(--primary-pink) !important;
+}
+.css-1p3m7a8-multiValue {
+  color: #fff;
+  background-color: #6c9cf8 !important;
+  border-radius: 10px !important;
+  padding: 2px 6px !important;
+  margin: 2px !important;
+}
+.css-1y7rh0y-MultiValueGeneric2 {
+  color:  #fff !important;
+}
+.css-1jqq78o-placeholder , .css-art2ul-ValueContainer2 , .css-feonkk-Input2{
+  color: var(--form-gray) !important;
+}
+
+.css-1u9des2-indicatorSeparator ,  .css-1xc3v61-indicatorContainer , .css-15lsx6c-indicatorContainer , .css-4xgw5l-IndicatorsContainer2{
+  display:none !important;
+}
+.css-1u9des2-indicatorSeparator ,  .css-1xc3v61-indicatorContainer , .css-15lsx6c-indicatorContainer , .css-4xgw5l-IndicatorsContainer2{
+  opacity: 0;
+}
+.css-b62m3t-container {
+  margin-top: -20px;
 }
 .error-form-item-select {
   height: 100%;
@@ -3597,5 +3639,10 @@ ul {
 .accordion .accordion-body {
   padding: 30px 20px;
 }
-
+.error-text {
+  color: var(--primary-pink) !important;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: -3px;
+}
 /*# sourceMappingURL=style.css.map */

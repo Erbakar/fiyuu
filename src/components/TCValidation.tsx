@@ -27,7 +27,9 @@ const TCValidation = () => {
 		})}>
 			<InputMask type="tckn"
 			className={`form-control ${error ? 'error-form-item' : ''}`} mask="99999999999" id="text" placeholder="TC Kimlik No" onChange={onChange} />
+			{error && <span className="error-text">{error}</span>}
 		</div>
+	
 	)
 }
 
