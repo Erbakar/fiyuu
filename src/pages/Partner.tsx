@@ -273,8 +273,8 @@ const Partner = () => {
 
     // Function to handle form submission
     const handleSubmit = (event) => {
+        event.preventDefault();
         // Process form data if there are no errors
-        allert("formData:", formData);
 
         if (!validateForm()) {
             // Your submission logic here
@@ -286,9 +286,7 @@ const Partner = () => {
             setFormValid(false);
             window.scrollTo(0, 900);
         }
-        debugger;
-        event.preventDefault();
-    };
+    }
 
 
     return (

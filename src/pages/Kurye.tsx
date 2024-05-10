@@ -133,6 +133,7 @@ const Kurye = () => {
     const handleSubmit = (event) => {
       // Process form data if there are no errors
 
+      event.preventDefault();
         if (!validateForm()) {
             // Your submission logic here
             console.log("Form submitted successfully:", formData);
@@ -144,7 +145,6 @@ const Kurye = () => {
             window.scrollTo(0, 900);
         }
 
-        event.preventDefault();
     };
 
     const handleTCSubmit = (event) => {
