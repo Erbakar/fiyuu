@@ -8,6 +8,8 @@ import React, { useState } from 'react';
 import InputMask from 'react-input-mask';
 import { CITIES } from "../constants";
 import Select from 'react-select'
+import cx from "classnames";
+
 
 
 const PAYMENT_OPTIONS = [
@@ -104,10 +106,13 @@ const PAYMENT_OPTIONS = [
 ]
 
 const Partner = () => {
-    const cityRef = useRef(null)
-    const [dateType, setDateType] = useState("text")
-    const [selectedDistrict, setSelectedDistrict] = useState(-1)
-    const [whereDidYouSeeUs, setWhereDidYouSeeUs] = useState("")
+    const cityRef = useRef(null);
+    const [dateType, setDateType] = useState("text");
+    const [formValid, setFormValid] = useState(false);
+    const [tcValid, setTCValid] = useState(true);
+    const [showTCMessage, setShowTCMessageset] = useState(false);
+    const [selectedDistrict, setSelectedDistrict] = useState(-1);
+    const [whereDidYouSeeUs, setWhereDidYouSeeUs] = useState("");
     const animate = useAnimation()
 
     const [formData, setFormData] = useState({
@@ -117,7 +122,13 @@ const Partner = () => {
         kasaSistemi: "",
         mutfakTuru: "",
         odemeYontemleri: [],
-
+        il: "",
+        ilce: "",
+        adres: "",
+        isletmeTipi: "",
+        subeSayisi: "",
+        isletmeAttribute1: "",
+        kendiKuryenizVarMi: "",
         adSoyad: "",
         tel: "",
         tc: "",
@@ -125,8 +136,6 @@ const Partner = () => {
         email: "",
         cinsiyet: "",
         calismaSekli: "",
-        il: "",
-        ilce: "",
         ehliyetTipi: "",
         sirketTipi: "",
         referans: "",
@@ -142,18 +151,19 @@ const Partner = () => {
         paketSayisi: false,
         kasaSistemi: false,
         mutfakTuru: false,
-        odemeYontemleri: [],
+        odemeYontemleri: false,
+        il: false,
+        ilce: false,
+        adres: false,
+        isletmeTipi: false,
+        isletmeAttribute1: false,
+        subeSayisi: false,
+        kendiKuryenizVarMi: false,
         adSoyad: false,
         tel: false,
         tc: false,
         dogumTarihi: false,
         email: false,
-        cinsiyet: false,
-        calismaSekli: false,
-        il: false,
-        ilce: false,
-        ehliyetTipi: false,
-        sirketTipi: false,
         referans: false,
         referansAdSoyad: false,
         gdpr: false,
@@ -162,7 +172,6 @@ const Partner = () => {
     });
     // Function to handle input changes
     const handleInputChange = (event) => {
-        console.log("event:", event);
 
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
@@ -171,7 +180,14 @@ const Partner = () => {
             setSelectedDistrict(event.target.value);
 
         }
+        console.log("formData", formData);
+
     };
+    const handleSelectChange = (newValue) => {
+        formData.odemeYontemleri = newValue.map((item) => item.value);
+        validateForm();
+
+    }
     useEffect(() => {
         animate();
         window.scrollTo(0, 0);
@@ -192,18 +208,19 @@ const Partner = () => {
             paketSayisi,
             kasaSistemi,
             mutfakTuru,
-            odemeYontemleri = [],
+            odemeYontemleri,
+            il,
+            ilce,
+            adres,
+            isletmeTipi,
+            isletmeAttribute1,
+            subeSayisi,
+            kendiKuryenizVarMi,
             adSoyad,
             tel,
             tc,
             dogumTarihi,
             email,
-            cinsiyet,
-            calismaSekli,
-            il,
-            ilce,
-            ehliyetTipi,
-            sirketTipi,
             referans,
             referansAdSoyad,
             gdpr,
@@ -224,26 +241,27 @@ const Partner = () => {
             paketSayisi: paketSayisi.length < 1 || paketSayisi.length === "",
             kasaSistemi: kasaSistemi === "" || kasaSistemi === "0",
             mutfakTuru: mutfakTuru === "" || mutfakTuru === "0",
-            odemeYontemleri: odemeYontemleri.length === 0,
+            odemeYontemleri: odemeYontemleri.length < 1,
+            il: il === "" || il === "0",
+            ilce: ilce === "" || ilce === "0",
+            adres: adres.length < 15 || adres.length === "",
+            isletmeTipi: isletmeTipi === "" || isletmeTipi === "0",
+            isletmeAttribute1: isletmeAttribute1.length < 10 || isletmeAttribute1.length === "",
+            subeSayisi: subeSayisi.length < 1 || subeSayisi.length === "",
+            kendiKuryenizVarMi: kendiKuryenizVarMi === "" || kendiKuryenizVarMi === "0",
             adSoyad: adSoyad.length < 5 || adSoyad.length === "",
             tel: tel.length < 13 || tel.includes("_"),
             tc: tc.length !== 11 || total % 10 !== parseInt(tc[10]),
             dogumTarihi: dogumTarihi.length < 10 || age < 18,
             email: !/\S+@\S+\.\S+/.test(email),
-            cinsiyet: cinsiyet === "" || cinsiyet === "0",
-            calismaSekli: calismaSekli === "" || calismaSekli === "0",
-            il: il === "" || il === "0",
-            ilce: ilce === "" || ilce === "0",
-            ehliyetTipi: ehliyetTipi === "" || ehliyetTipi === "0",
-            sirketTipi: sirketTipi === "" || sirketTipi === "0",
             referans: referans === "" || referans === "0",
-            referansAdSoyad: (referans === "Calisan-refereansi" || referans === "KadınKurye") && referansAdSoyad.length < 5 || referansAdSoyad.length === "",
+            referansAdSoyad: (referans === "isletme-referansi" || referans === "kurye-referansi") && referansAdSoyad.length < 5 || referansAdSoyad.length === "",
             gdpr: gdpr === false,
             kvkk: kvkk === false,
             aydinlatma: aydinlatma === false,
-
-
         };
+        console.log("newErrors:", newErrors);
+
 
         setErrors(newErrors);
 
@@ -256,6 +274,7 @@ const Partner = () => {
     // Function to handle form submission
     const handleSubmit = (event) => {
         // Process form data if there are no errors
+        allert("formData:", formData);
 
         if (!validateForm()) {
             // Your submission logic here
@@ -267,34 +286,11 @@ const Partner = () => {
             setFormValid(false);
             window.scrollTo(0, 900);
         }
-
+        debugger;
         event.preventDefault();
     };
 
-    const handleTCSubmit = (event) => {
-        const tcValue = document.getElementById("tcSorgulama").value
 
-        let total = 0;
-        for (let i = 0; i < 10; i++) {
-            total += parseInt(tcValue[i]);
-        }
-        if (tcValue.length !== 11 || total % 10 !== parseInt(tcValue[10])) {
-            setTCValid(false);
-
-            window.scrollTo(0, 600);
-            if (tcValue.length === 11 && !tcValue.includes("_")) {
-                setShowTCMessageset(true);
-            }
-        } else {
-            setTCValid(true);
-            setShowTCMessageset(false);
-            window.scrollTo(0, 900);
-            console.log("tcValue:", true);
-        }
-
-
-        event.preventDefault();
-    }
     return (
         <div className="job-application-form-ctr d-flex justify-content-center flex-column align-items-center">
             <div className="w-100 d-flex flex-column justify-content-center align-items-center">
@@ -455,9 +451,9 @@ const Partner = () => {
 
 
 
-                                            onChange={handleInputChange}
+                                            onChange={handleSelectChange}
                                             className={
-                                                errors.odemeYontemleri.length < 1 ? "error-form-item-select-multi" : ''}
+                                                errors.odemeYontemleri ? "error-form-item-select-multi" : ''}
                                             placeholder="Ödeme Yöntemi"
                                             isMulti
                                             options={PAYMENT_OPTIONS}
@@ -467,40 +463,123 @@ const Partner = () => {
                                         <div className="d-flex flex-column flex-sm-row w-100 align-items-stretch">
                                             <div className="form-items flex-column d-flex w-100 w-sm-50 me-4 mb-sm-0">
                                                 <div className="form-control-ctr">
-                                                    <select className="form-select" id="city" onChange={(e) => {
-                                                        setSelectedDistrict(parseInt(e.target.value))
-                                                    }}>
+                                                    <select
+                                                        id="il"
+                                                        name="il"
+                                                        value={formData.il}
+                                                        className={
+                                                            errors.il ? "error-form-item-select" : "form-select"
+                                                        }
+                                                        onChange={handleInputChange}
+                                                    >
                                                         <option value={-1}> İl Seçiniz</option>
                                                         {CITIES.map((city, index) => (
-                                                            <option key={index} value={index}>{city.il}</option>
+                                                            <option key={index} value={index}>
+                                                                {city.il}
+                                                            </option>
                                                         ))}
                                                     </select>
                                                 </div>
                                                 <div className="form-control-ctr">
-                                                    <select className="form-select form-disabled" id="city" disabled={selectedDistrict === -1} ref={cityRef}>
-                                                        <option value="0" defaultValue='0'> İlçe Seçiniz</option>
-                                                        {selectedDistrict !== -1 && CITIES[selectedDistrict].ilceleri.map((ilce, index) => (
-                                                            <option key={index} value={index}>{ilce}</option>
-                                                        ))}
+                                                    <select
+                                                        id="ilce"
+                                                        name="ilce"
+                                                        value={formData.ilce}
+                                                        onChange={handleInputChange}
+                                                        className={
+                                                            errors.ilce
+                                                                ? "error-form-item-select"
+                                                                : "form-select"
+                                                        }
+                                                        disabled={selectedDistrict === -1}
+                                                        ref={cityRef}
+                                                    >
+                                                        <option value="0" defaultValue="0">
+                                                            {" "}
+                                                            İlçe Seçiniz
+                                                        </option>
+                                                        {selectedDistrict !== -1 &&
+                                                            CITIES[selectedDistrict].ilceleri.map(
+                                                                (ilce, index) => (
+                                                                    <option key={index} value={index}>
+                                                                        {ilce}
+                                                                    </option>
+                                                                )
+                                                            )}
                                                     </select>
                                                 </div>
                                             </div>
                                             <div className="form-control-ctr w-100 w-sm-50 ms-sm-2 h-auto">
-                                                <textarea name="" id="" className="form-control h-100"
+                                                <textarea
+                                                    id="adres"
+                                                    name="adres"
+                                                    value={formData.adres}
+                                                    maxLength="500"
+                                                    onChange={handleInputChange}
+                                                    className={
+                                                        errors.adres ? "error-form-item h-100" : "form-control h-100"
+                                                    }
+
                                                     placeholder="Adres"></textarea>
                                             </div>
                                         </div>
                                         <div className="form-items">
                                             <div className="form-control-ctr">
-                                                <select className="form-select" id="city">
+                                                <select
+                                                    id="isletmeTipi"
+                                                    name="isletmeTipi"
+                                                    value={formData.isletmeTipi}
+                                                    onChange={handleInputChange}
+                                                    className={
+                                                        errors.isletmeTipi
+                                                            ? "error-form-item-select"
+                                                            : "form-select"
+                                                    }
+                                                >
                                                     <option value="0" defaultValue='0'>İşletme tipi</option>
-                                                    <option value="0">Kurumsal</option>
-                                                    <option value="0">Bireysel</option>
+                                                    <option value="Kurumsal">Kurumsal</option>
+                                                    <option value="Bireysel">Bireysel</option>
                                                 </select>
+                                            </div>
+                                            <div className="form-control-ctr ">
+                                                {(formData.isletmeTipi !== "0" && formData.isletmeTipi !== '') && (
+
+                                                    <input
+                                                        type="text"
+                                                        placeholder={formData.isletmeTipi === "Kurumsal" ? "Vergi No" : "TC Kimlik No"}
+                                                        id="isletmeAttribute1"
+                                                        name="isletmeAttribute1"
+                                                        value={formData.isletmeAttribute1}
+                                                        onChange={handleInputChange}
+                                                        className={
+                                                            errors.isletmeAttribute1 ? "error-form-item" : "form-control"
+                                                        }
+                                                    />
+
+                                                )}
+
                                             </div>
 
                                             <div className="form-control-ctr">
-                                                <InputMask type="branh" className="form-control" id="phoneNumber" mask="999" placeholder="Şube sayısı" />
+                                                <InputMask type="text" mask="999" placeholder="Şube sayısı" id="subeSayisi" name="subeSayisi" value={formData.subeSayisi} onChange={handleInputChange} className={errors.subeSayisi ? "error-form-item" : "form-control"} />
+
+                                            </div>
+                                            <div className="form-control-ctr">
+                                                <select
+                                                    id="kendiKuryenizVarMi"
+                                                    name="kendiKuryenizVarMi"
+                                                    value={formData.kendiKuryenizVarMi}
+                                                    onChange={handleInputChange}
+                                                    className={
+                                                        errors.kendiKuryenizVarMi
+                                                            ? "error-form-item-select"
+                                                            : "form-select"
+                                                    }
+                                                >
+                                                    <option value="0" defaultValue='0'>Kendi kuryeniz var mı?</option>
+                                                    <option value="kendikuryemvar">Kendi kuryem var</option>
+                                                    <option value="kendikuryemyok">Kendi kuryem yok</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -596,7 +675,17 @@ const Partner = () => {
 
                                         <div className="form-items w-100  d-flex">
                                             <div className="form-control-ctr">
-                                                <select className="form-select w-100" id="licenseType" onChange={(e) => setWhereDidYouSeeUs(e.target.value)}>
+                                                <select
+                                                    id="referans"
+                                                    name="referans"
+                                                    value={formData.referans}
+                                                    className={
+                                                        errors.referans
+                                                            ? "error-form-item-select"
+                                                            : "form-select"
+                                                    }
+                                                    onChange={handleInputChange}
+                                                >
                                                     <option value='0' defaultValue='0'>Bizi Nereden Gördünüz</option>
                                                     <option value="websitesi">Web Sitesi</option>
                                                     <option value="instagram">İnstagram</option>
@@ -610,62 +699,148 @@ const Partner = () => {
                                             </div>
                                         </div>
 
-                                        {(whereDidYouSeeUs === "kurye-referansi" || whereDidYouSeeUs === "isletme-referansi") && (
-                                            <div className="form-control-ctr">
-                                                <input type="text" className="form-control" id="fullName" placeholder="Ad Soyad" />
-                                            </div>
-                                        )}
-
+                                        {(formData.referans === "kurye-referansi" ||
+                                            formData.referans === "isletme-referansi") && (
+                                                <div className="form-control-ctr">
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Ad Soyad"
+                                                        id="referansAdSoyad"
+                                                        name="referansAdSoyad"
+                                                        value={formData.referansAdSoyad}
+                                                        onChange={handleInputChange}
+                                                        className={
+                                                            errors.referansAdSoyad
+                                                                ? "error-form-item"
+                                                                : "form-control"
+                                                        }
+                                                    />
+                                                </div>
+                                            )}
                                     </div>
                                 </div>
 
-                                <div className="kvkk-onay">
-                                    <button className="disabledButton">
-                                        <img src="./images/button-disabled.svg" alt="" />
-                                    </button>
-                                    <button className="selectedButton" style={{ display: "none" }}>
-                                        <img src="./images/button-selected.svg" alt="" />
+                                <div
+                                    className="kvkk-onay"
+
+                                >
+                                    <button
+                                        type="button"
+                                        className={cx("disabledButton", {
+                                            "error-form-item-button": errors.gdpr,
+                                        })}
+                                        onClick={() => {
+                                            setFormData({ ...formData, gdpr: !formData.gdpr });
+                                            setErrors({ ...errors, gdpr: false });
+                                        }}
+                                    >
+                                        {formData.gdpr ? (
+                                            <img src="./images/button-selected.svg" alt="" />
+                                        ) : (
+                                            <img src="./images/button-disabled.svg" alt="" />
+                                        )}
                                     </button>
                                     <span>
-                                        <input type="checkbox" className="kvkkCheckbox" style={{ display: "none" }} />
-                                        <label className="ms-4"><NavLink to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Musteri_Acik_Riza_-Aydinlatma_Metni.pdf" target="blank" >Aydınlatma Metni (işe alım süreçleri hakkında
-                                            bilgi)</NavLink></label>
+                                        <input
+                                            type="checkbox"
+                                            className="kvkkCheckbox"
+                                            style={{ display: "none" }}
+                                            name="gdpr"
+                                            onChange={handleInputChange}
+                                        />
+                                        <label className="ms-4">
+                                            <NavLink
+                                                to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Musteri_Acik_Riza_-Aydinlatma_Metni.pdf"
+                                                target="_blank"
+                                            >
+                                                Aydınlatma Metni (işe alım süreçleri hakkında bilgi)
+                                            </NavLink>
+                                        </label>
                                     </span>
                                 </div>
 
 
-                                <div className="kvkk-onay">
-                                    <button className="disabledButton">
-                                        <img src="./images/button-disabled.svg" alt="" />
-                                    </button>
-                                    <button className="selectedButton" style={{ display: "none" }}>
-                                        <img src="./images/button-selected.svg" alt="" />
+                                <div
+                                    className="kvkk-onay"
+                                >
+                                    <button
+
+                                        className={cx("disabledButton", {
+                                            "error-form-item-button": errors.kvkk,
+                                        })}
+                                        type="button"
+                                        onClick={() => {
+                                            setFormData({ ...formData, kvkk: !formData.kvkk });
+                                            setErrors({ ...errors, kvkk: false });
+                                        }}
+                                    >
+                                        {formData.kvkk ? (
+                                            <img src="./images/button-selected.svg" alt="" />
+                                        ) : (
+                                            <img src="./images/button-disabled.svg" alt="" />
+                                        )}
                                     </button>
                                     <span>
-                                        <input type="checkbox" className="kvkkCheckbox" style={{ display: "none" }} />
-                                        <label className="ms-4"><NavLink to="/kisisel-verilerin-korunumu" target="blank" >KVKK Onayı
-                                            (Kişisel bilgilerimin Esnaf Kurye işe
-                                            alım
-                                            süreçlerinde kullanılmasını onaylıyorum.)</NavLink></label>
+                                        <input
+                                            type="checkbox"
+                                            className="kvkkCheckbox"
+                                            style={{ display: "none" }}
+                                            name="kvkk"
+                                            onChange={handleInputChange}
+                                        />
+                                        <label className="ms-4">
+                                            <NavLink to="/kisisel-verilerin-korunumu" target="blank">
+                                                KVKK Onayı (Kişisel bilgilerimin Esnaf Kurye işe alım
+                                                süreçlerinde kullanılmasını onaylıyorum.)
+                                            </NavLink>
+                                        </label>
                                     </span>
                                 </div>
 
+                                <div
+                                    className="kvkk-onay"
+                                >
+                                    <button
 
-                                <div className="kvkk-onay">
-                                    <button className="disabledButton">
-                                        <img src="./images/button-disabled.svg" alt="" />
-                                    </button>
-                                    <button className="selectedButton" style={{ display: "none" }}>
-                                        <img src="./images/button-selected.svg" alt="" />
+                                        className={cx("disabledButton", {
+                                            "error-form-item-button": errors.aydinlatma,
+                                        })}
+                                        type="button"
+                                        onClick={() => {
+                                            setFormData({
+                                                ...formData,
+                                                aydinlatma: !formData.aydinlatma,
+                                            });
+                                            setErrors({ ...errors, aydinlatma: false });
+                                        }}
+                                    >
+                                        {formData.aydinlatma ? (
+                                            <img src="./images/button-selected.svg" alt="" />
+                                        ) : (
+                                            <img src="./images/button-disabled.svg" alt="" />
+                                        )}
                                     </button>
                                     <span>
-                                        <input type="checkbox" className="kvkkCheckbox" style={{ display: "none" }} />
-                                        <label className="ms-4"> <NavLink to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Kisisel-Verilerin-Korunmasi-ve-Islenmesi-Politikasi.pdf" target="blank" >Ticari Elektronik
-                                            Bilgilendirme Metni (telefonlara
-                                            giden
-                                            mesajlar için onay)</NavLink></label>
+                                        <input
+                                            type="checkbox"
+                                            className="kvkkCheckbox"
+                                            style={{ display: "none" }}
+                                            name="aydinlatma"
+                                            onChange={handleInputChange}
+                                        />
+                                        <label className="ms-4">
+                                            {" "}
+                                            <NavLink
+                                                to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Kisisel-Verilerin-Korunmasi-ve-Islenmesi-Politikasi.pdf"
+                                                target="blank"
+                                            >
+                                                Ticari Elektronik Bilgilendirme Metni (telefonlara giden
+                                                mesajlar için onay)
+                                            </NavLink>
+                                        </label>
                                     </span>
                                 </div>
+
                                 <button
                                     className="g-recaptcha submit-btn d-flex mt-5 justify-content-center align-items-center"
                                     data-sitekey="6Lf6MsUpAAAAADM2SMMV1zeYGjRCHi-nc4-NSwvF"
