@@ -20,7 +20,7 @@ const Kurye = () => {
     const [formData, setFormData] = useState({
         adSoyad: "",
         tel: "",
-        tc: "",
+        tc: false,
         dogumTarihi: "",
         email: "",
         cinsiyet: "",
@@ -57,12 +57,20 @@ const Kurye = () => {
   
     // Function to handle input changes
     const handleInputChange = (event) => {
+       
+       
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
-        validateForm();
+
+        //Emirhan formdata  geriden geliyor asagidaki console.loglari bakabilirsin data ayni degil
+        console.log("formData:", formData);
+        console.log("event:",  event.target.value);
+        
+    
         if (name === "il") {
             setSelectedDistrict(event.target.value);
         }
+        validateForm();
     };
 
     useEffect(() => {
@@ -77,8 +85,10 @@ const Kurye = () => {
         }
     }, [selectedDistrict]);
 
-    // Function to validate form data
+    // there is a problem with this function that I can't solve it yet , the problem is that the function is not returning the correct value
+    
     const validateForm = () => {
+
         const {
             adSoyad,
             tel,
@@ -96,19 +106,16 @@ const Kurye = () => {
             gdpr,
             kvkk,
             aydinlatma,
-        } = formData;
+        } =  formData;
         const birthDate = new Date(dogumTarihi);
         const currentDate = new Date();
         const age = currentDate.getFullYear() - birthDate.getFullYear();
-        let total = 0;
-        for (let i = 0; i < 10; i++) {
-            total += parseInt(tc[i]);
-        }
+        
 
         const newErrors = {
             adSoyad: adSoyad.length < 5 || adSoyad.length === "",
             tel: tel.length < 13 || tel.includes("_"),
-            tc: tc.length !== 11 || total % 10 !== parseInt(tc[10]),
+            tc:  TCValidation(tc),   
             dogumTarihi: dogumTarihi.length < 10 || age < 18,
             email: !/\S+@\S+\.\S+/.test(email),
             cinsiyet: cinsiyet === "" || cinsiyet === "0",
@@ -147,6 +154,17 @@ const Kurye = () => {
 
     };
 
+       const TCValidation = (value) => {
+            let total = 0;
+            for (let i = 0; i < 10; i++) {
+                total += parseInt(value[i]);
+            }
+
+            if (total % 10 !== parseInt(value[10])) {
+                return true;
+            }
+        }
+
     const handleTCSubmit = (event) => {
     const tcValue =  document.getElementById("tcSorgulama").value
 
@@ -165,7 +183,6 @@ const Kurye = () => {
         setTCValid(true);
         setShowTCMessageset(false);
         window.scrollTo(0, 900);
-        console.log("tcValue:", true);
     }
 
       
