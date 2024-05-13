@@ -7,7 +7,6 @@ import { NavLink } from "react-router-dom";
 import React, { useState } from "react";
 import InputMask from "react-input-mask";
 import { CITIES } from "../constants";
-import TCValidation from "../components/TCValidation";
 import cx from "classnames";
 const Kurye = () => {
     const cityRef = useRef(null);
@@ -105,6 +104,7 @@ const Kurye = () => {
         for (let i = 0; i < 10; i++) {
             total += parseInt(tc[i]);
         }
+
         const newErrors = {
             adSoyad: adSoyad.length < 5 || adSoyad.length === "",
             tel: tel.length < 13 || tel.includes("_"),
@@ -133,6 +133,7 @@ const Kurye = () => {
     const handleSubmit = (event) => {
       // Process form data if there are no errors
 
+      event.preventDefault();
         if (!validateForm()) {
             // Your submission logic here
             console.log("Form submitted successfully:", formData);
@@ -144,7 +145,6 @@ const Kurye = () => {
             window.scrollTo(0, 900);
         }
 
-        event.preventDefault();
     };
 
     const handleTCSubmit = (event) => {
@@ -239,10 +239,9 @@ const Kurye = () => {
                                                                 errors.tel ? "error-form-item" : "form-control"
                                                             }
                                                         />
+                                                        
                                                     </div>
-                                                    {/* <TCValidation
-/> */}
-
+                                               
                                                     <div className="form-control-ctr">
                                                         <InputMask
                                                             type="tckn"
@@ -256,6 +255,7 @@ const Kurye = () => {
                                                                 errors.tc ? "error-form-item" : "form-control"
                                                             }
                                                         />
+                                                             {errors.tc && <small className="error-text">Geçersiz Kimlik Numarası</small>}
                                                     </div>
                                                     <div className="form-control-ctr">
                                                         <input

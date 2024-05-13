@@ -19,6 +19,7 @@
     "react-refresh": "^0.14.0",
     "react-router": "^6.23.0",
     "react-router-dom": "^6.22.2",
+    "react-select": "^5.8.0",
     "react-whatsapp": "^0.3.0",
     "storyblok-rich-text-react-renderer": "^2.9.2"
   },

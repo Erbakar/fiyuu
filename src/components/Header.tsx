@@ -73,7 +73,7 @@ const Header = () => (
                 </a>
                 <a href="https://wa.me/08502207090" className="btn-header me-5">
                     <span>
-                        Whatsapp hattı
+                        Whatsapp Hattı
                     </span>
                 </a>
                 <ul className="social-icons p-0 m-0 d-flex justify-content-center align-items-center">
