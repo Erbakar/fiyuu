@@ -163,7 +163,7 @@ const Kurye = () => {
                             setUserMessenge(result.message);
                             window.scrollTo(0, 600);
                         } else {
-                            toast.warn(result.message, {
+                            toast.error(result.message, {
                                 position: "top-right",
                                 autoClose: 5000,
                                 hideProgressBar: false,
@@ -179,7 +179,7 @@ const Kurye = () => {
                     .catch((error) => console.error(error));
             }
             else {
-                toast.warn('Lütfen İl ve İlçe Seçiniz', {
+                toast.error('Lütfen İl ve İlçe Seçiniz', {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -732,11 +732,13 @@ const Kurye = () => {
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
+                transition: Bounce
                 rtl={false}
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
                 theme="dark"
+                
             />
         </div>
     );
