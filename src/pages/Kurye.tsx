@@ -54,7 +54,7 @@ const Kurye = () => {
         kvkk: false,
         aydinlatma: false,
     });
-  
+
     // Function to handle input changes
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -62,10 +62,6 @@ const Kurye = () => {
         const newFormData = { ...formData, [name]: value };
         setFormData(newFormData);
 
-        //Emirhan formdata  geriden geliyor asagidaki console.loglari bakabilirsin data ayni degil
-        console.log("formData:", newFormData);
-        
-    
         if (name === "il") {
             setSelectedDistrict(event.target.value);
         }
@@ -85,7 +81,7 @@ const Kurye = () => {
     }, [selectedDistrict]);
 
     // there is a problem with this function that I can't solve it yet , the problem is that the function is not returning the correct value
-    
+
     const validateForm = ({
         adSoyad,
         tel,
@@ -107,12 +103,12 @@ const Kurye = () => {
         const birthDate = new Date(dogumTarihi);
         const currentDate = new Date();
         const age = currentDate.getFullYear() - birthDate.getFullYear();
-        
+
 
         const newErrors = {
             adSoyad: adSoyad.length < 5 || adSoyad.length === "",
             tel: tel.length < 13 || tel.includes("_"),
-            tc:  TCValidation(tc),   
+            tc: TCValidation(tc),
             dogumTarihi: dogumTarihi.length < 10 || age < 18,
             email: !/\S+@\S+\.\S+/.test(email),
             cinsiyet: cinsiyet === "" || cinsiyet === "0",
@@ -127,22 +123,38 @@ const Kurye = () => {
             kvkk: kvkk === false,
             aydinlatma: aydinlatma === false,
         };
-      setErrors(newErrors);
-      
-      return Object.values(newErrors).some((error) => error)
+        setErrors(newErrors);
+
+        return Object.values(newErrors).some((error) => error)
     };
 
 
     // Function to handle form submission
     const handleSubmit = (event) => {
-      // Process form data if there are no errors
+        // Process form data if there are no errors
 
-      event.preventDefault();
+        event.preventDefault();
         if (!validateForm(formData)) {
             // Your submission logic here
             console.log("Form submitted successfully:", formData);
-            setFormValid(true);
-            window.scrollTo(0, 600);
+
+
+            fetch('https://gatewayv2.dev.fiyuu.com.tr/carrier/new', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            }).then(function (response) {
+                return response.json();
+            }
+            ).then(function (data) {
+                console.log(data)
+                setFormValid(true);
+                window.scrollTo(0, 600);
+            }
+            ).catch(function (err) {
+                console.log(err)
+            } )
+
         } else {
             console.log("Form validation failed:", errors);
             setFormValid(false);
@@ -151,38 +163,38 @@ const Kurye = () => {
 
     };
 
-       const TCValidation = (value) => {
-            let total = 0;
-            for (let i = 0; i < 10; i++) {
-                total += parseInt(value[i]);
-            }
-
-            if (total % 10 !== parseInt(value[10])) {
-                return true;
-            }
+    const TCValidation = (value) => {
+        let total = 0;
+        for (let i = 0; i < 10; i++) {
+            total += parseInt(value[i]);
         }
+
+        if (total % 10 !== parseInt(value[10])) {
+            return true;
+        }
+    }
 
     const handleTCSubmit = (event) => {
-    const tcValue =  document.getElementById("tcSorgulama").value
+        const tcValue = document.getElementById("tcSorgulama").value
 
-    let total = 0;
-    for (let i = 0; i < 10; i++) {
-        total += parseInt(tcValue[i]);
-    }
-    if (tcValue.length !== 11 || total % 10 !== parseInt(tcValue[10])) {
-        setTCValid(false);
-
-        window.scrollTo(0, 600);
-        if (tcValue.length === 11 && !tcValue.includes("_")) {
-            setShowTCMessageset(true);
+        let total = 0;
+        for (let i = 0; i < 10; i++) {
+            total += parseInt(tcValue[i]);
         }
-    } else {
-        setTCValid(true);
-        setShowTCMessageset(false);
-        window.scrollTo(0, 900);
-    }
+        if (tcValue.length !== 11 || total % 10 !== parseInt(tcValue[10])) {
+            setTCValid(false);
 
-      
+            window.scrollTo(0, 600);
+            if (tcValue.length === 11 && !tcValue.includes("_")) {
+                setShowTCMessageset(true);
+            }
+        } else {
+            setTCValid(true);
+            setShowTCMessageset(false);
+            window.scrollTo(0, 900);
+        }
+
+
         event.preventDefault();
     }
 
@@ -253,9 +265,9 @@ const Kurye = () => {
                                                                 errors.tel ? "error-form-item" : "form-control"
                                                             }
                                                         />
-                                                        
+
                                                     </div>
-                                               
+
                                                     <div className="form-control-ctr">
                                                         <InputMask
                                                             type="tckn"
@@ -269,7 +281,7 @@ const Kurye = () => {
                                                                 errors.tc ? "error-form-item" : "form-control"
                                                             }
                                                         />
-                                                             {errors.tc && <small className="error-text">Geçersiz Kimlik Numarası</small>}
+                                                        {errors.tc && <small className="error-text">Geçersiz Kimlik Numarası</small>}
                                                     </div>
                                                     <div className="form-control-ctr">
                                                         <input
@@ -656,9 +668,9 @@ const Kurye = () => {
                                             placeholder="TC Kimlik No"
                                             id="tcSorgulama"
                                             name="tcSorgulama"
-                                            
+
                                             className={
-                                                tcValid || !showTCMessage ? "form-control-tc" : "error-form-item" 
+                                                tcValid || !showTCMessage ? "form-control-tc" : "error-form-item"
                                             }
                                         />
                                     </div>
@@ -672,7 +684,7 @@ const Kurye = () => {
                                         </span>
                                     </button>
                                 </form>
-                                {showTCMessage  && (
+                                {showTCMessage && (
                                     <div className="result" style={{ color: "#e61b80" }}>Daha önce başvuru yapantınız teşekkür ederiz. 24 saat içinde tarafınıza dönüş yapılacaktır.</div>
 
                                 )}
