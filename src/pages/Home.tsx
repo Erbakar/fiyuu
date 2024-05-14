@@ -74,7 +74,7 @@ const Home = () => {
                                     <h1 className="mb-3 hero-title">
                                         İş Ortağı Olmak İstiyorum
                                     </h1>
-                                    <NavLink to="/partner"
+                                    <NavLink  to="https://fiyuu.mi4biz.net/Customer/AnonymousIssueEntry.aspx?BusinessChannelID=MTBNNzFNTmlQMHhPdGg3REtRT2M2Zz090&q=eHFPUWJBODNzTWhwY09VVnpOZmR0TFllcVNiejMvdWJoZ09heHdhOUZiOElCSnBWWkkvRXh1ckJyQzJjTGhjR09XQVRFN01XTDJVNzFFRmIzMWc5Tnc9PQ2&catID=24887" target="blank"
                                         className="hero-btn d-flex m-0 justify-content-center align-items-center">
                                         <span className="text-center d-inline-block">
                                             Hemen Başvur
@@ -191,7 +191,7 @@ const Home = () => {
                                 <img src="./images/what-is-fiyuu-right.png" alt="" className="w-100" />
                             </div>
 
-                            <NavLink to="/partner"  className="btn-discover mb-5">
+                            <NavLink  to="https://fiyuu.mi4biz.net/Customer/AnonymousIssueEntry.aspx?BusinessChannelID=MTBNNzFNTmlQMHhPdGg3REtRT2M2Zz090&q=eHFPUWJBODNzTWhwY09VVnpOZmR0TFllcVNiejMvdWJoZ09heHdhOUZiOElCSnBWWkkvRXh1ckJyQzJjTGhjR09XQVRFN01XTDJVNzFFRmIzMWc5Tnc9PQ2&catID=24887" target="blank"  className="btn-discover mb-5">
                                 <span>
                                     Keşfet
                                 </span>

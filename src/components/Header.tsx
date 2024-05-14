@@ -37,7 +37,7 @@ const Header = () => (
                     </li>
                     <li className="nav-item">
                         <NavLink
-                            to="/partner"
+                             to="https://fiyuu.mi4biz.net/Customer/AnonymousIssueEntry.aspx?BusinessChannelID=MTBNNzFNTmlQMHhPdGg3REtRT2M2Zz090&q=eHFPUWJBODNzTWhwY09VVnpOZmR0TFllcVNiejMvdWJoZ09heHdhOUZiOElCSnBWWkkvRXh1ckJyQzJjTGhjR09XQVRFN01XTDJVNzFFRmIzMWc5Tnc9PQ2&catID=24887" target="blank"
                             className={({ isActive }) => clx('nav-link', {
                                 'active': isActive
                             })}
@@ -204,7 +204,7 @@ const Header = () => (
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/partner" className="nav-link" >
+                        <NavLink  to="https://fiyuu.mi4biz.net/Customer/AnonymousIssueEntry.aspx?BusinessChannelID=MTBNNzFNTmlQMHhPdGg3REtRT2M2Zz090&q=eHFPUWJBODNzTWhwY09VVnpOZmR0TFllcVNiejMvdWJoZ09heHdhOUZiOElCSnBWWkkvRXh1ckJyQzJjTGhjR09XQVRFN01XTDJVNzFFRmIzMWc5Tnc9PQ2&catID=24887" target="blank" className="nav-link" >
                             İş Ortağımız Olun
                         </NavLink>
                     </li>

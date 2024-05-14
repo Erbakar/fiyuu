@@ -437,8 +437,8 @@ const Kurye = () => {
                                                             <option value="0" defaultValue="0">
                                                                 Şirket tipi seçin
                                                             </option>
-                                                            <option value="var">Şahıs Şirketim var</option>
-                                                            <option value="yok">Şahıs şirketim yok</option>
+                                                            <option value="Var">Şahıs Şirketim Var</option>
+                                                            <option value="Yok">Şahıs şirketim Yok</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -470,16 +470,16 @@ const Kurye = () => {
                                                             <option value="Tiktok">Tiktok</option>
                                                             <option value="Facebook">Facebook</option>
                                                             <option value="Eleman">Eleman.net</option>
-                                                            <option value="sahibinden">Sahibinden</option>
+                                                            <option value="Sahibinden">Sahibinden</option>
                                                             <option value="24saatteis">24 Saatte İş</option>
                                                             <option value="yenibiris">Yeni Bir İş</option>
-                                                            <option value="bitoniş">Bitoniş</option>
+                                                            <option value="Bitoniş">Bitoniş</option>
                                                             <option value="Calisan-refereansi">
                                                                 Çalışan Referansı
                                                             </option>
-                                                            <option value="isin-olsun">İşin Olsun</option>
-                                                            <option value="secretcv">Secret CV</option>
-                                                            <option value="websitesi">Web Sitesi</option>
+                                                            <option value="Isin-olsun">İşin Olsun</option>
+                                                            <option value="Secretcv">Secret CV</option>
+                                                            <option value="Websitesi">Web Sitesi</option>
                                                             <option value="Kariyer">Kariyer.net</option>
                                                             <option value="KadınKurye">
                                                                 Kadın Kurye Getir Bonusu

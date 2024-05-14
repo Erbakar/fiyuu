@@ -34,7 +34,7 @@ const Footer = () => (
                         <div className="icon d-flex justify-content-center align-items-center">
                             <img src="./images/is-ortagi.png" alt="" />
                         </div>
-                        <NavLink to="/partner">
+                        <NavLink to="https://fiyuu.mi4biz.net/Customer/AnonymousIssueEntry.aspx?BusinessChannelID=MTBNNzFNTmlQMHhPdGg3REtRT2M2Zz090&q=eHFPUWJBODNzTWhwY09VVnpOZmR0TFllcVNiejMvdWJoZ09heHdhOUZiOElCSnBWWkkvRXh1ckJyQzJjTGhjR09XQVRFN01XTDJVNzFFRmIzMWc5Tnc9PQ2&catID=24887" target="blank">
                             <span>
                                 İş Ortağımız Olun
                             </span>
@@ -66,7 +66,7 @@ const Footer = () => (
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/partner">
+                            <NavLink  to="https://fiyuu.mi4biz.net/Customer/AnonymousIssueEntry.aspx?BusinessChannelID=MTBNNzFNTmlQMHhPdGg3REtRT2M2Zz090&q=eHFPUWJBODNzTWhwY09VVnpOZmR0TFllcVNiejMvdWJoZ09heHdhOUZiOElCSnBWWkkvRXh1ckJyQzJjTGhjR09XQVRFN01XTDJVNzFFRmIzMWc5Tnc9PQ2&catID=24887" target="blank">
                                 İş Ortağımız Olun
                             </NavLink>
                         </li>
