@@ -8,9 +8,12 @@ import React, { useState } from "react";
 import InputMask from "react-input-mask";
 import { CITIES } from "../constants";
 import cx from "classnames";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Kurye = () => {
     const cityRef = useRef(null);
     const [dateType, setDateType] = useState("text");
+    const [userMessenge, setUserMessenge] = useState("text");
     const [formValid, setFormValid] = useState(false);
     const [tcValid, setTCValid] = useState(true);
     const [showTCMessage, setShowTCMessageset] = useState(false);
@@ -18,41 +21,41 @@ const Kurye = () => {
     const [whereDidYouSeeUs, setWhereDidYouSeeUs] = useState("");
     const animate = useAnimation();
     const [formData, setFormData] = useState({
-        adSoyad: "",
-        tel: "",
-        tc: false,
-        dogumTarihi: "",
+        name: "",
+        gsm: "",
+        identityNumber: false,
+        birthdate: "",
         email: "",
-        cinsiyet: "",
-        calismaSekli: "",
-        il: "",
-        ilce: "",
-        ehliyetTipi: "",
-        sirketTipi: "",
-        referans: "",
-        referansAdSoyad: "",
+        gender: "",
+        workType: "",
+        province: "",
+        county: "",
+        drivingLicenceType: "",
+        companyType: "",
+        reference: "",
+        referenceName: "",
         gdpr: false,
-        kvkk: false,
-        aydinlatma: false,
+        clarification: false,
+        commercial: false,
     });
 
     const [errors, setErrors] = useState({
-        adSoyad: false,
-        tel: false,
-        tc: false,
-        dogumTarihi: false,
+        name: false,
+        gsm: false,
+        identityNumber: false,
+        birthdate: false,
         email: false,
-        cinsiyet: false,
-        calismaSekli: false,
-        il: false,
-        ilce: false,
-        ehliyetTipi: false,
-        sirketTipi: false,
-        referans: false,
-        referansAdSoyad: false,
+        gender: false,
+        workType: false,
+        province: false,
+        county: false,
+        drivingLicenceType: false,
+        companyType: false,
+        reference: false,
+        referenceName: false,
         gdpr: false,
-        kvkk: false,
-        aydinlatma: false,
+        clarification: false,
+        commercial: false,
     });
 
     // Function to handle input changes
@@ -62,7 +65,7 @@ const Kurye = () => {
         const newFormData = { ...formData, [name]: value };
         setFormData(newFormData);
 
-        if (name === "il") {
+        if (name === "province") {
             setSelectedDistrict(event.target.value);
         }
         validateForm(newFormData);
@@ -83,45 +86,45 @@ const Kurye = () => {
     // there is a problem with this function that I can't solve it yet , the problem is that the function is not returning the correct value
 
     const validateForm = ({
-        adSoyad,
-        tel,
-        tc,
-        dogumTarihi,
+        name,
+        gsm,
+        identityNumber,
+        birthdate,
         email,
-        cinsiyet,
-        calismaSekli,
-        il,
-        ilce,
-        ehliyetTipi,
-        sirketTipi,
-        referans,
-        referansAdSoyad,
+        gender,
+        workType,
+        province,
+        county,
+        drivingLicenceType,
+        companyType,
+        reference,
+        referenceName,
         gdpr,
-        kvkk,
-        aydinlatma,
+        clarification,
+        commercial,
     }) => {
-        const birthDate = new Date(dogumTarihi);
+        const birthDate = new Date(birthdate);
         const currentDate = new Date();
         const age = currentDate.getFullYear() - birthDate.getFullYear();
 
 
         const newErrors = {
-            adSoyad: adSoyad.length < 5 || adSoyad.length === "",
-            tel: tel.length < 13 || tel.includes("_"),
-            tc: TCValidation(tc),
-            dogumTarihi: dogumTarihi.length < 10 || age < 18,
+            name: name.length < 5 || name.length === "",
+            gsm: gsm.length < 13 || gsm.includes("_"),
+            identityNumber: TCValidation(identityNumber),
+            birthdate: birthdate.length < 10 || age < 18,
             email: !/\S+@\S+\.\S+/.test(email),
-            cinsiyet: cinsiyet === "" || cinsiyet === "0",
-            calismaSekli: calismaSekli === "" || calismaSekli === "0",
-            il: il === "" || il === "0",
-            ilce: ilce === "" || ilce === "0",
-            ehliyetTipi: ehliyetTipi === "" || ehliyetTipi === "0",
-            sirketTipi: sirketTipi === "" || sirketTipi === "0",
-            referans: referans === "" || referans === "0",
-            referansAdSoyad: (referans === "Calisan-refereansi" || referans === "KadınKurye") && referansAdSoyad.length < 5 || referansAdSoyad.length === "",
+            gender: gender === "" || gender === "0",
+            workType: workType === "" || workType === "0",
+            province: province === "" || province === "-1",
+            county: county === "" || county === "0",
+            drivingLicenceType: drivingLicenceType === "" || drivingLicenceType === "0",
+            companyType: companyType === "" || companyType === "0",
+            reference: reference === "" || reference === "0",
+            referenceName: (reference === "Calisan-refereansi" || reference === "KadınKurye") && referenceName.length < 5 || referenceName.length === "",
             gdpr: gdpr === false,
-            kvkk: kvkk === false,
-            aydinlatma: aydinlatma === false,
+            clarification: clarification === false,
+            commercial: commercial === false,
         };
         setErrors(newErrors);
 
@@ -136,30 +139,59 @@ const Kurye = () => {
         event.preventDefault();
         if (!validateForm(formData)) {
             // Your submission logic here
-            console.log("Form submitted successfully:", formData);
+            if (CITIES[formData.province]?.province) {
+                formData.province = CITIES[formData.province].province
+                formData.referenceName = formData.referenceName || " Referans Yok ";
+                console.log("Form submitted successfully:", formData);
+                const myHeaders = new Headers();
 
+                myHeaders.append("Content-Type", "application/json");
+                const raw = JSON.stringify({ formData });
+                const requestOptions = {
+                    method: "POST",
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: "follow"
 
-            fetch('https://gatewayv2.dev.fiyuu.com.tr/carrier/new', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            }).then(function (response) {
-                return response.json();
+                };
+                fetch('https://gatewayv2.dev.fiyuu.com.tr/carrier/new', requestOptions)
+                    .then((response) => response.json())
+                    .then((result) => {
+                        console.log(result.message)
+                        if (result.code === 100) {
+                            setFormValid(true);
+                            setUserMessenge(result.message);
+                            window.scrollTo(0, 600);
+                        } else {
+                            toast.warn(result.message, {
+                                position: "top-right",
+                                autoClose: 5000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: "dark",
+                                });
+                        }
+
+                    })
+                    .catch((error) => console.error(error));
             }
-            ).then(function (data) {
-                console.log(data)
-                setFormValid(true);
-                window.scrollTo(0, 600);
+            else {
+                toast.warn('Lütfen İl ve İlçe Seçiniz', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    });
             }
-            ).catch(function (err) {
-                console.log(err)
-            } )
-
-        } else {
-            console.log("Form validation failed:", errors);
-            setFormValid(false);
-            window.scrollTo(0, 900);
-        }
+    
+        } 
 
     };
 
@@ -226,7 +258,7 @@ const Kurye = () => {
                             <div className="jaf-inner-form w-100">
                                 {formValid ? (
 
-                                    <div className="result" style={{ color: "#e61b80" }}>Başvurunuz için teşekkür ederiz. 24 saat içinde tarafınıza dönüş yapılacaktır.</div>
+                                    <div className="result" style={{ color: "#e61b80" }}>{userMessenge}</div>
                                 ) : (
                                     <form
                                         onSubmit={handleSubmit}
@@ -243,26 +275,26 @@ const Kurye = () => {
                                                         <input
                                                             type="text"
                                                             placeholder="Ad Soyad"
-                                                            id="adSoyad"
-                                                            name="adSoyad"
-                                                            value={formData.adSoyad}
+                                                            id="name"
+                                                            name="name"
+                                                            value={formData.name}
                                                             onChange={handleInputChange}
                                                             className={
-                                                                errors.adSoyad ? "error-form-item" : "form-control"
+                                                                errors.name ? "error-form-item" : "form-control"
                                                             }
                                                         />
                                                     </div>
                                                     <div className="form-control-ctr">
                                                         <InputMask
-                                                            type="tel"
+                                                            type="gsm"
                                                             mask="999 999 99 99"
                                                             placeholder="Cep Telefonu"
-                                                            id="tel"
-                                                            name="tel"
-                                                            value={formData.tel}
+                                                            id="gsm"
+                                                            name="gsm"
+                                                            value={formData.gsm}
                                                             onChange={handleInputChange}
                                                             className={
-                                                                errors.tel ? "error-form-item" : "form-control"
+                                                                errors.gsm ? "error-form-item" : "form-control"
                                                             }
                                                         />
 
@@ -273,15 +305,15 @@ const Kurye = () => {
                                                             type="tckn"
                                                             mask="99999999999"
                                                             placeholder="TC Kimlik No"
-                                                            id="tc"
-                                                            name="tc"
-                                                            value={formData.tc}
+                                                            id="identityNumber"
+                                                            name="identityNumber"
+                                                            value={formData.identityNumber}
                                                             onChange={handleInputChange}
                                                             className={
-                                                                errors.tc ? "error-form-item" : "form-control"
+                                                                errors.identityNumber ? "error-form-item" : "form-control"
                                                             }
                                                         />
-                                                        {errors.tc && <small className="error-text">Geçersiz Kimlik Numarası</small>}
+                                                        {errors.identityNumber && <small className="error-text">Geçersiz Kimlik Numarası</small>}
                                                     </div>
                                                     <div className="form-control-ctr">
                                                         <input
@@ -289,12 +321,12 @@ const Kurye = () => {
                                                             onFocus={() => setDateType("date")}
                                                             onBlur={() => setDateType("text")}
                                                             placeholder="Doğum Tarihinizi Giriniz"
-                                                            id="dogumTarihi"
-                                                            name="dogumTarihi"
-                                                            value={formData.dogumTarihi}
+                                                            id="birthdate"
+                                                            name="birthdate"
+                                                            value={formData.birthdate}
                                                             onChange={handleInputChange}
                                                             className={
-                                                                errors.dogumTarihi
+                                                                errors.birthdate
                                                                     ? "error-form-item"
                                                                     : "form-control"
                                                             }
@@ -317,12 +349,12 @@ const Kurye = () => {
                                                     </div>
                                                     <div className="form-control-ctr">
                                                         <select
-                                                            id="cinsiyet"
-                                                            name="cinsiyet"
-                                                            value={formData.cinsiyet}
+                                                            id="gender"
+                                                            name="gender"
+                                                            value={formData.gender}
                                                             onChange={handleInputChange}
                                                             className={
-                                                                errors.cinsiyet
+                                                                errors.gender
                                                                     ? "error-form-item-select"
                                                                     : "form-select"
                                                             }
@@ -347,12 +379,12 @@ const Kurye = () => {
                                                 <div className="form-items-secondary">
                                                     <div className="form-control-ctr">
                                                         <select
-                                                            id="calismaSekli"
-                                                            name="calismaSekli"
-                                                            value={formData.calismaSekli}
+                                                            id="workType"
+                                                            name="workType"
+                                                            value={formData.workType}
                                                             onChange={handleInputChange}
                                                             className={
-                                                                errors.calismaSekli
+                                                                errors.workType
                                                                     ? "error-form-item-select"
                                                                     : "form-select"
                                                             }
@@ -360,36 +392,36 @@ const Kurye = () => {
                                                             <option value="0" defaultValue="0">
                                                                 Çalışma Zamanı
                                                             </option>
-                                                            <option value="tam_zamanli">Tam Zamanlı</option>
-                                                            <option value="yari_zamanli">Yarı Zamanlı</option>
+                                                            <option value="Tam zamanli">Tam Zamanlı</option>
+                                                            <option value="Yari zamanli">Yarı Zamanlı</option>
                                                         </select>
                                                     </div>
                                                     <div className="form-control-ctr">
                                                         <select
-                                                            id="il"
-                                                            name="il"
-                                                            value={formData.il}
+                                                            id="province"
+                                                            name="province"
+                                                            value={formData.province}
                                                             className={
-                                                                errors.il ? "error-form-item-select" : "form-select"
+                                                                errors.province ? "error-form-item-select" : "form-select"
                                                             }
                                                             onChange={handleInputChange}
                                                         >
                                                             <option value={-1}> İl Seçiniz</option>
                                                             {CITIES.map((city, index) => (
                                                                 <option key={index} value={index}>
-                                                                    {city.il}
+                                                                    {city.province}
                                                                 </option>
                                                             ))}
                                                         </select>
                                                     </div>
                                                     <div className="form-control-ctr">
                                                         <select
-                                                            id="ilce"
-                                                            name="ilce"
-                                                            value={formData.ilce}
+                                                            id="county"
+                                                            name="county"
+                                                            value={formData.county}
                                                             onChange={handleInputChange}
                                                             className={
-                                                                errors.ilce
+                                                                errors.county
                                                                     ? "error-form-item-select"
                                                                     : "form-select"
                                                             }
@@ -402,9 +434,9 @@ const Kurye = () => {
                                                             </option>
                                                             {selectedDistrict !== -1 &&
                                                                 CITIES[selectedDistrict].ilceleri.map(
-                                                                    (ilce, index) => (
-                                                                        <option key={index} value={index}>
-                                                                            {ilce}
+                                                                    (county, index) => (
+                                                                        <option key={index} value={county}>
+                                                                            {county}
                                                                         </option>
                                                                     )
                                                                 )}
@@ -414,12 +446,12 @@ const Kurye = () => {
                                                 <div className="form-items">
                                                     <div className="form-control-ctr">
                                                         <select
-                                                            id="ehliyetTipi"
-                                                            name="ehliyetTipi"
-                                                            value={formData.ehliyetTipi}
+                                                            id="drivingLicenceType"
+                                                            name="drivingLicenceType"
+                                                            value={formData.drivingLicenceType}
                                                             onChange={handleInputChange}
                                                             className={
-                                                                errors.ehliyetTipi
+                                                                errors.drivingLicenceType
                                                                     ? "error-form-item-select"
                                                                     : "form-select"
                                                             }
@@ -436,12 +468,12 @@ const Kurye = () => {
                                                     </div>
                                                     <div className="form-control-ctr">
                                                         <select
-                                                            id="sirketTipi"
-                                                            name="sirketTipi"
-                                                            value={formData.sirketTipi}
+                                                            id="companyType"
+                                                            name="companyType"
+                                                            value={formData.companyType}
                                                             onChange={handleInputChange}
                                                             className={
-                                                                errors.sirketTipi
+                                                                errors.companyType
                                                                     ? "error-form-item-select"
                                                                     : "form-select"
                                                             }
@@ -465,11 +497,11 @@ const Kurye = () => {
                                                 <div className="form-items w-100  d-flex">
                                                     <div className="form-control-ctr">
                                                         <select
-                                                            id="referans"
-                                                            name="referans"
-                                                            value={formData.referans}
+                                                            id="reference"
+                                                            name="reference"
+                                                            value={formData.reference}
                                                             className={
-                                                                errors.referans
+                                                                errors.reference
                                                                     ? "error-form-item-select"
                                                                     : "form-select"
                                                             }
@@ -494,24 +526,24 @@ const Kurye = () => {
                                                             <option value="Websitesi">Web Sitesi</option>
                                                             <option value="Kariyer">Kariyer.net</option>
                                                             <option value="KadınKuryeGetirKampanyasi">
-                                                                Kadın Kurye Getir Bonusu
+                                                                Kadın Kurye Getir Kampanyası
                                                             </option>
                                                         </select>
                                                     </div>
                                                 </div>
 
-                                                {(formData.referans === "Calisan-refereansi" ||
-                                                    formData.referans === "KadınKurye") && (
+                                                {(formData.reference === "Calisan-refereansi" ||
+                                                    formData.reference === "KadınKurye") && (
                                                         <div className="form-control-ctr">
                                                             <input
                                                                 type="text"
                                                                 placeholder="Ad Soyad"
-                                                                id="referansAdSoyad"
-                                                                name="referansAdSoyad"
-                                                                value={formData.referansAdSoyad}
+                                                                id="referenceName"
+                                                                name="referenceName"
+                                                                value={formData.referenceName}
                                                                 onChange={handleInputChange}
                                                                 className={
-                                                                    errors.referansAdSoyad
+                                                                    errors.referenceName
                                                                         ? "error-form-item"
                                                                         : "form-control"
                                                                 }
@@ -566,15 +598,15 @@ const Kurye = () => {
                                             <button
 
                                                 className={cx("disabledButton", {
-                                                    "error-form-item-button": errors.kvkk,
+                                                    "error-form-item-button": errors.clarification,
                                                 })}
                                                 type="button"
                                                 onClick={() => {
-                                                    setFormData({ ...formData, kvkk: !formData.kvkk });
-                                                    setErrors({ ...errors, kvkk: false });
+                                                    setFormData({ ...formData, clarification: !formData.clarification });
+                                                    setErrors({ ...errors, clarification: false });
                                                 }}
                                             >
-                                                {formData.kvkk ? (
+                                                {formData.clarification ? (
                                                     <img src="./images/button-selected.svg" alt="" />
                                                 ) : (
                                                     <img src="./images/button-disabled.svg" alt="" />
@@ -585,7 +617,7 @@ const Kurye = () => {
                                                     type="checkbox"
                                                     className="kvkkCheckbox"
                                                     style={{ display: "none" }}
-                                                    name="kvkk"
+                                                    name="clarification"
                                                     onChange={handleInputChange}
                                                 />
                                                 <label className="ms-4">
@@ -603,18 +635,18 @@ const Kurye = () => {
                                             <button
 
                                                 className={cx("disabledButton", {
-                                                    "error-form-item-button": errors.aydinlatma,
+                                                    "error-form-item-button": errors.commercial,
                                                 })}
                                                 type="button"
                                                 onClick={() => {
                                                     setFormData({
                                                         ...formData,
-                                                        aydinlatma: !formData.aydinlatma,
+                                                        commercial: !formData.commercial,
                                                     });
-                                                    setErrors({ ...errors, aydinlatma: false });
+                                                    setErrors({ ...errors, commercial: false });
                                                 }}
                                             >
-                                                {formData.aydinlatma ? (
+                                                {formData.commercial ? (
                                                     <img src="./images/button-selected.svg" alt="" />
                                                 ) : (
                                                     <img src="./images/button-disabled.svg" alt="" />
@@ -625,7 +657,7 @@ const Kurye = () => {
                                                     type="checkbox"
                                                     className="kvkkCheckbox"
                                                     style={{ display: "none" }}
-                                                    name="aydinlatma"
+                                                    name="commercial"
                                                     onChange={handleInputChange}
                                                 />
                                                 <label className="ms-4">
@@ -694,6 +726,18 @@ const Kurye = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+/>
         </div>
     );
 };

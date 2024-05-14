@@ -1,6 +1,6 @@
 export const CITIES = [
   {
-    il: "Adana",
+    province: "Adana",
     plaka: 1,
     ilceleri: [
       "Aladağ",
@@ -21,7 +21,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Adıyaman",
+    province: "Adıyaman",
     plaka: 2,
     ilceleri: [
       "Besni",
@@ -36,7 +36,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Afyonkarahisar",
+    province: "Afyonkarahisar",
     plaka: 3,
     ilceleri: [
       "Başmakçı",
@@ -60,7 +60,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Ağrı",
+    province: "Ağrı",
     plaka: 4,
     ilceleri: [
       "Diyadin",
@@ -74,7 +74,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Amasya",
+    province: "Amasya",
     plaka: 5,
     ilceleri: [
       "Göynücek",
@@ -87,7 +87,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Ankara",
+    province: "Ankara",
     plaka: 6,
     ilceleri: [
       "Altındağ",
@@ -118,7 +118,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Antalya",
+    province: "Antalya",
     plaka: 7,
     ilceleri: [
       "Akseki",
@@ -143,7 +143,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Aydın",
+    province: "Aydın",
     plaka: 9,
     ilceleri: [
       "Merkez",
@@ -167,7 +167,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Balıkesir",
+    province: "Balıkesir",
     plaka: 10,
     ilceleri: [
       "Altıeylül",
@@ -194,7 +194,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Bilecik",
+    province: "Bilecik",
     plaka: 11,
     ilceleri: [
       "Merkez",
@@ -208,7 +208,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Bingöl",
+    province: "Bingöl",
     plaka: 12,
     ilceleri: [
       "Merkez",
@@ -222,7 +222,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Bitlis",
+    province: "Bitlis",
     plaka: 13,
     ilceleri: [
       "Adilcevaz",
@@ -235,7 +235,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Bolu",
+    province: "Bolu",
     plaka: 14,
     ilceleri: [
       "Merkez",
@@ -250,7 +250,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Burdur",
+    province: "Burdur",
     plaka: 15,
     ilceleri: [
       "Ağlasun",
@@ -267,7 +267,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Bursa",
+    province: "Bursa",
     plaka: 16,
     ilceleri: [
       "Gemlik",
@@ -290,7 +290,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Çanakkale",
+    province: "Çanakkale",
     plaka: 17,
     ilceleri: [
       "Ayvacık",
@@ -308,7 +308,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Çankırı",
+    province: "Çankırı",
     plaka: 18,
     ilceleri: [
       "Merkez",
@@ -326,7 +326,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Çorum",
+    province: "Çorum",
     plaka: 19,
     ilceleri: [
       "Alaca",
@@ -346,7 +346,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Denizli",
+    province: "Denizli",
     plaka: 20,
     ilceleri: [
       "Acıpayam",
@@ -372,7 +372,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Diyarbakır",
+    province: "Diyarbakır",
     plaka: 21,
     ilceleri: [
       "Kocaköy",
@@ -395,7 +395,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Edirne",
+    province: "Edirne",
     plaka: 22,
     ilceleri: [
       "Merkez",
@@ -410,7 +410,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Elazığ",
+    province: "Elazığ",
     plaka: 23,
     ilceleri: [
       "Ağın",
@@ -427,7 +427,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Erzincan",
+    province: "Erzincan",
     plaka: 24,
     ilceleri: [
       "Çayırlı",
@@ -442,7 +442,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Erzurum",
+    province: "Erzurum",
     plaka: 25,
     ilceleri: [
       "Aşkale",
@@ -468,7 +468,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Eskişehir",
+    province: "Eskişehir",
     plaka: 26,
     ilceleri: [
       "Çifteler",
@@ -488,7 +488,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Gaziantep",
+    province: "Gaziantep",
     plaka: 27,
     ilceleri: [
       "Araban",
@@ -503,7 +503,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Giresun",
+    province: "Giresun",
     plaka: 28,
     ilceleri: [
       "Alucra",
@@ -525,7 +525,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Hatay",
+    province: "Hatay",
     plaka: 31,
     ilceleri: [
       "Altınözü",
@@ -546,7 +546,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Isparta",
+    province: "Isparta",
     plaka: 32,
     ilceleri: [
       "Atabey",
@@ -565,7 +565,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Mersin",
+    province: "Mersin",
     plaka: 33,
     ilceleri: [
       "Anamur",
@@ -584,7 +584,7 @@ export const CITIES = [
     ],
   },
   {
-    "il": "İstanbul",
+    "province": "İstanbul",
     "plaka": 34,
     "ilceleri": [
       "Adalar",
@@ -629,7 +629,7 @@ export const CITIES = [
     ]
   },
   {
-    il: "İzmir",
+    province: "İzmir",
     plaka: 35,
     ilceleri: [
       "Aliağa",
@@ -665,7 +665,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Kars",
+    province: "Kars",
     plaka: 36,
     ilceleri: [
       "Arpaçay",
@@ -679,7 +679,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Kastamonu",
+    province: "Kastamonu",
     plaka: 37,
     ilceleri: [
       "Abana",
@@ -705,7 +705,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Kayseri",
+    province: "Kayseri",
     plaka: 38,
     ilceleri: [
       "Bünyan",
@@ -727,7 +727,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Kırklareli",
+    province: "Kırklareli",
     plaka: 39,
     ilceleri: [
       "Babaeski",
@@ -741,7 +741,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Kırşehir",
+    province: "Kırşehir",
     plaka: 40,
     ilceleri: [
       "Çiçekdağı",
@@ -754,7 +754,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Kocaeli",
+    province: "Kocaeli",
     plaka: 41,
     ilceleri: [
       "Gebze",
@@ -772,7 +772,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Konya",
+    province: "Konya",
     plaka: 42,
     ilceleri: [
       "Akşehir",
@@ -809,7 +809,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Kütahya",
+    province: "Kütahya",
     plaka: 43,
     ilceleri: [
       "Altıntaş",
@@ -828,7 +828,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Malatya",
+    province: "Malatya",
     plaka: 44,
     ilceleri: [
       "Akçadağ",
@@ -848,7 +848,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Manisa",
+    province: "Manisa",
     plaka: 45,
     ilceleri: [
       "Akhisar",
@@ -872,7 +872,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Kahramanmaraş",
+    province: "Kahramanmaraş",
     plaka: 46,
     ilceleri: [
       "Afşin",
@@ -890,7 +890,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Mardin",
+    province: "Mardin",
     plaka: 47,
     ilceleri: [
       "Derik",
@@ -907,7 +907,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Muğla",
+    province: "Muğla",
     plaka: 48,
     ilceleri: [
       "Bodrum",
@@ -926,7 +926,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Nevşehir",
+    province: "Nevşehir",
     plaka: 50,
     ilceleri: [
       "Avanos",
@@ -940,12 +940,12 @@ export const CITIES = [
     ],
   },
   {
-    il: "Niğde",
+    province: "Niğde",
     plaka: 51,
     ilceleri: ["Bor", "Çamardı", "Merkez", "Ulukışla", "Altunhisar", "Çiftlik"],
   },
   {
-    il: "Ordu",
+    province: "Ordu",
     plaka: 52,
     ilceleri: [
       "Akkuş",
@@ -970,7 +970,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Rize",
+    province: "Rize",
     plaka: 53,
     ilceleri: [
       "Ardeşen",
@@ -988,7 +988,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Sakarya",
+    province: "Sakarya",
     plaka: 54,
     ilceleri: [
       "Akyazı",
@@ -1010,7 +1010,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Samsun",
+    province: "Samsun",
     plaka: 55,
     ilceleri: [
       "Alaçam",
@@ -1033,7 +1033,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Siirt",
+    province: "Siirt",
     plaka: 56,
     ilceleri: [
       "Baykan",
@@ -1046,7 +1046,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Sinop",
+    province: "Sinop",
     plaka: 57,
     ilceleri: [
       "Ayancık",
@@ -1061,7 +1061,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Sivas",
+    province: "Sivas",
     plaka: 58,
     ilceleri: [
       "Divriği",
@@ -1084,7 +1084,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Tekirdağ",
+    province: "Tekirdağ",
     plaka: 59,
     ilceleri: [
       "Çerkezköy",
@@ -1101,7 +1101,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Tokat",
+    province: "Tokat",
     plaka: 60,
     ilceleri: [
       "Almus",
@@ -1119,7 +1119,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Trabzon",
+    province: "Trabzon",
     plaka: 61,
     ilceleri: [
       "Akçaabat",
@@ -1143,7 +1143,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Şanlıurfa",
+    province: "Şanlıurfa",
     plaka: 63,
     ilceleri: [
       "Akçakale",
@@ -1162,12 +1162,12 @@ export const CITIES = [
     ],
   },
   {
-    il: "Uşak",
+    province: "Uşak",
     plaka: 64,
     ilceleri: ["Banaz", "Eşme", "Karahallı", "Sivaslı", "Ulubey", "Merkez"],
   },
   {
-    il: "Van",
+    province: "Van",
     plaka: 65,
     ilceleri: [
       "Başkale",
@@ -1186,7 +1186,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Yozgat",
+    province: "Yozgat",
     plaka: 66,
     ilceleri: [
       "Akdağmadeni",
@@ -1206,12 +1206,12 @@ export const CITIES = [
     ],
   },
   {
-    il: "Zonguldak",
+    province: "Zonguldak",
     plaka: 67,
     ilceleri: ["Çaycuma", "Devrek", "Ereğli", "Merkez", "Alaplı", "Gökçebey"],
   },
   {
-    il: "Aksaray",
+    province: "Aksaray",
     plaka: 68,
     ilceleri: [
       "Ağaçören",
@@ -1224,7 +1224,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Karaman",
+    province: "Karaman",
     plaka: 70,
     ilceleri: [
       "Ermenek",
@@ -1236,7 +1236,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Kırıkkale",
+    province: "Kırıkkale",
     plaka: 71,
     ilceleri: [
       "Delice",
@@ -1251,12 +1251,12 @@ export const CITIES = [
     ],
   },
   {
-    il: "Batman",
+    province: "Batman",
     plaka: 72,
     ilceleri: ["Merkez", "Beşiri", "Gercüş", "Kozluk", "Sason", "Hasankeyf"],
   },
   {
-    il: "Şırnak",
+    province: "Şırnak",
     plaka: 73,
     ilceleri: [
       "Beytüşşebap",
@@ -1269,7 +1269,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Yalova",
+    province: "Yalova",
     plaka: 77,
     ilceleri: [
       "Merkez",
@@ -1281,7 +1281,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Karabük",
+    province: "Karabük",
     plaka: 78,
     ilceleri: [
       "Eflani",
@@ -1293,7 +1293,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Osmaniye",
+    province: "Osmaniye",
     plaka: 80,
     ilceleri: [
       "Bahçe",
@@ -1306,7 +1306,7 @@ export const CITIES = [
     ],
   },
   {
-    il: "Düzce",
+    province: "Düzce",
     plaka: 81,
     ilceleri: [
       "Akçakoca",
