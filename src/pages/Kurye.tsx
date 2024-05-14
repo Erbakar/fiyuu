@@ -121,7 +121,7 @@ const Kurye = () => {
             drivingLicenceType: drivingLicenceType === "" || drivingLicenceType === "0",
             companyType: companyType === "" || companyType === "0",
             reference: reference === "" || reference === "0",
-            referenceName: (reference === "Calisan-refereansi" || reference === "KadınKurye") && referenceName.length < 5 || referenceName.length === "",
+            referenceName: (reference === "Calisan-refereansi" || reference === "KadınKuryeGetirKampanyasi") && referenceName.length < 5 || referenceName.length === "",
             gdpr: gdpr === false,
             clarification: clarification === false,
             commercial: commercial === false,
@@ -533,7 +533,7 @@ const Kurye = () => {
                                                 </div>
 
                                                 {(formData.reference === "Calisan-refereansi" ||
-                                                    formData.reference === "KadınKurye") && (
+                                                    formData.reference === "KadınKuryeGetirKampanyasi") && (
                                                         <div className="form-control-ctr">
                                                             <input
                                                                 type="text"
