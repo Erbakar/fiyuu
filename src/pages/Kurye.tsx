@@ -472,7 +472,7 @@ const Kurye = () => {
                                                             <option value="Eleman">Eleman.net</option>
                                                             <option value="Sahibinden">Sahibinden</option>
                                                             <option value="24saatteis">24 Saatte İş</option>
-                                                            <option value="yenibiris">Yeni Bir İş</option>
+                                                            <option value="Yenibiris">Yeni Bir İş</option>
                                                             <option value="Bitoniş">Bitoniş</option>
                                                             <option value="Calisan-refereansi">
                                                                 Çalışan Referansı
@@ -481,7 +481,7 @@ const Kurye = () => {
                                                             <option value="Secretcv">Secret CV</option>
                                                             <option value="Websitesi">Web Sitesi</option>
                                                             <option value="Kariyer">Kariyer.net</option>
-                                                            <option value="KadınKurye">
+                                                            <option value="KadınKuryeGetirKampanyasi">
                                                                 Kadın Kurye Getir Bonusu
                                                             </option>
                                                         </select>

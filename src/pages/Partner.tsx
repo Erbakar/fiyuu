@@ -33,19 +33,19 @@ const PAYMENT_OPTIONS = [
     },
     {
         name: 'Setcard Mobil Ödeme',
-        value: 'Setcard-Mobil-Ödeme',
+        value: 'Setcard-Mobil-Odeme',
 
         label: 'Setcard Mobil Ödeme'
     },
     {
-        name: 'Ticket Mobil',
-        value: 'Ticket-Mobil',
+        name: 'Ticket Mobil Ödeme',
+        value: 'Ticket-Mobil-Odeme',
 
-        label: 'Ticket Mobil'
+        label: 'Ticket Mobil Ödeme'
     },
     {
         name: 'Multinet Mobil Ödeme',
-        value: 'Multinet-Mobil-Ödeme',
+        value: 'Multinet-Mobil-Odeme',
 
         label: 'Multinet Mobil Ödeme'
     },
@@ -62,10 +62,10 @@ const PAYMENT_OPTIONS = [
         label: 'Metropol Mobil'
     },
     {
-        name: 'Metropol Card',
-        value: 'Metropol-Card',
+        name: 'Metropol',
+        value: 'Metropol',
 
-        label: 'Metropol Card'
+        label: 'Metropol'
     },
     {
         name: 'Smart Ticket',
@@ -373,10 +373,9 @@ const Partner = () => {
 
                                                     <div className="form-control-ctr">
 
-                                                        <InputMask
-                                                            type="text"
-                                                            mask="9999"
-                                                            placeholder="Ortalama Paket Sayısı"
+                                                        <input
+                                                            type="number"
+                                                            placeholder="Günlük Ortalama Paket Sipariş Sayısı "
                                                             id="paketSayisi"
                                                             name="paketSayisi"
                                                             value={formData.paketSayisi}
@@ -400,11 +399,10 @@ const Partner = () => {
                                                             }
                                                         >
                                                             <option value="0" defaultValue='0'>Kasa Sistemi</option>
-                                                            <option value="pos-entegrasyon">Pos Entegrasyon</option>
-                                                            <option value="Pc">Pc</option>
-                                                            <option value="Laptop">Laptop</option>
+                                                            <option value="Entegre-pos">Entegre Pos Sistemi</option>
+                                                            <option value="Pc">Pc / Laptop</option>
                                                             <option value="Tablet">Tablet</option>
-                                                            <option value="Tablet-Web">Tablet Web</option>
+                                                            <option value="Mobil-app">Mobil APP</option>
                                                         </select>
                                                     </div>
                                                     <div className="form-control-ctr">
@@ -426,7 +424,7 @@ const Partner = () => {
                                                             <option value="pizza">Pizza</option>
                                                             <option value="tavuk">Tavuk</option>
                                                             <option value="mantı-makarna">Mantı & Makarna</option>
-                                                            <option value="salata-saglik">Salata & Sağlık</option>
+                                                            <option value="salata-saglik">Salata & Fit</option>
                                                             <option value="tatlı">Tatlı</option>
                                                             <option value="dondurma">Dondurma</option>
                                                             <option value="kahvaltı">Kahvaltı</option>
@@ -453,6 +451,7 @@ const Partner = () => {
                                             className={
                                                 errors.odemeYontemleri ? "error-form-item-select-multi" : ''}
                                             placeholder="Ödeme Yöntemi"
+
                                             isMulti
                                             options={PAYMENT_OPTIONS}
                                         />
@@ -559,7 +558,7 @@ const Partner = () => {
                                             </div>
 
                                             <div className="form-control-ctr">
-                                                <InputMask type="text" mask="999" placeholder="Şube sayısı" id="subeSayisi" name="subeSayisi" value={formData.subeSayisi} onChange={handleInputChange} className={errors.subeSayisi ? "error-form-item" : "form-control"} />
+                                                <input type="number" placeholder="Şube sayısı" id="subeSayisi" name="subeSayisi" value={formData.subeSayisi} onChange={handleInputChange} className={errors.subeSayisi ? "error-form-item" : "form-control"} />
 
                                             </div>
                                             <div className="form-control-ctr">
