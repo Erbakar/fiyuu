@@ -57,20 +57,19 @@ const Kurye = () => {
   
     // Function to handle input changes
     const handleInputChange = (event) => {
-       
-       
         const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+
+        const newFormData = { ...formData, [name]: value };
+        setFormData(newFormData);
 
         //Emirhan formdata  geriden geliyor asagidaki console.loglari bakabilirsin data ayni degil
-        console.log("formData:", formData);
-        console.log("event:",  event.target.value);
+        console.log("formData:", newFormData);
         
     
         if (name === "il") {
             setSelectedDistrict(event.target.value);
         }
-        validateForm();
+        validateForm(newFormData);
     };
 
     useEffect(() => {
@@ -87,26 +86,24 @@ const Kurye = () => {
 
     // there is a problem with this function that I can't solve it yet , the problem is that the function is not returning the correct value
     
-    const validateForm = () => {
-
-        const {
-            adSoyad,
-            tel,
-            tc,
-            dogumTarihi,
-            email,
-            cinsiyet,
-            calismaSekli,
-            il,
-            ilce,
-            ehliyetTipi,
-            sirketTipi,
-            referans,
-            referansAdSoyad,
-            gdpr,
-            kvkk,
-            aydinlatma,
-        } =  formData;
+    const validateForm = ({
+        adSoyad,
+        tel,
+        tc,
+        dogumTarihi,
+        email,
+        cinsiyet,
+        calismaSekli,
+        il,
+        ilce,
+        ehliyetTipi,
+        sirketTipi,
+        referans,
+        referansAdSoyad,
+        gdpr,
+        kvkk,
+        aydinlatma,
+    }) => {
         const birthDate = new Date(dogumTarihi);
         const currentDate = new Date();
         const age = currentDate.getFullYear() - birthDate.getFullYear();
@@ -141,7 +138,7 @@ const Kurye = () => {
       // Process form data if there are no errors
 
       event.preventDefault();
-        if (!validateForm()) {
+        if (!validateForm(formData)) {
             // Your submission logic here
             console.log("Form submitted successfully:", formData);
             setFormValid(true);
