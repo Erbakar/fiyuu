@@ -37,7 +37,7 @@ const Header = () => (
                     </li>
                     <li className="nav-item">
                         <NavLink
-                             to="https://fiyuu.mi4biz.net/Customer/AnonymousIssueEntry.aspx?BusinessChannelID=MTBNNzFNTmlQMHhPdGg3REtRT2M2Zz090&q=eHFPUWJBODNzTWhwY09VVnpOZmR0TFllcVNiejMvdWJoZ09heHdhOUZiOElCSnBWWkkvRXh1ckJyQzJjTGhjR09XQVRFN01XTDJVNzFFRmIzMWc5Tnc9PQ2&catID=24887" target="blank"
+                            to="https://fiyuu.mi4biz.net/Customer/AnonymousIssueEntry.aspx?BusinessChannelID=MTBNNzFNTmlQMHhPdGg3REtRT2M2Zz090&q=eHFPUWJBODNzTWhwY09VVnpOZmR0TFllcVNiejMvdWJoZ09heHdhOUZiOElCSnBWWkkvRXh1ckJyQzJjTGhjR09XQVRFN01XTDJVNzFFRmIzMWc5Tnc9PQ2&catID=24887" target="blank"
                             className={({ isActive }) => clx('nav-link', {
                                 'active': isActive
                             })}
@@ -193,7 +193,7 @@ const Header = () => (
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav text-center p-0 mx-0 mt-5 mb-4">
-                    <li className="nav-item">
+                    <li className="nav-item" >
                         <NavLink to="/" className="nav-link" >
                             Anasayfa
                         </NavLink>
@@ -204,7 +204,7 @@ const Header = () => (
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink  to="https://fiyuu.mi4biz.net/Customer/AnonymousIssueEntry.aspx?BusinessChannelID=MTBNNzFNTmlQMHhPdGg3REtRT2M2Zz090&q=eHFPUWJBODNzTWhwY09VVnpOZmR0TFllcVNiejMvdWJoZ09heHdhOUZiOElCSnBWWkkvRXh1ckJyQzJjTGhjR09XQVRFN01XTDJVNzFFRmIzMWc5Tnc9PQ2&catID=24887" target="blank" className="nav-link" >
+                        <NavLink to="https://fiyuu.mi4biz.net/Customer/AnonymousIssueEntry.aspx?BusinessChannelID=MTBNNzFNTmlQMHhPdGg3REtRT2M2Zz090&q=eHFPUWJBODNzTWhwY09VVnpOZmR0TFllcVNiejMvdWJoZ09heHdhOUZiOElCSnBWWkkvRXh1ckJyQzJjTGhjR09XQVRFN01XTDJVNzFFRmIzMWc5Tnc9PQ2&catID=24887" target="blank" className="nav-link" >
                             İş Ortağımız Olun
                         </NavLink>
                     </li>
@@ -226,7 +226,7 @@ const Header = () => (
                     </span>
                 </a>
                 <ul className="social-icons p-0 m-0 d-flex justify-content-center align-items-center">
-          
+
                     <li>
                         <a href="mailto:kuryeik@fiyuu.com.tr" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 29 28"

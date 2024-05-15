@@ -10,6 +10,7 @@ import { CITIES } from "../constants";
 import cx from "classnames";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 const Kurye = () => {
     const cityRef = useRef(null);
     const [dateType, setDateType] = useState("text");
@@ -110,7 +111,7 @@ const Kurye = () => {
 
         const newErrors = {
             name: name.length < 5 || name.length === "",
-            gsm: gsm.length < 13 || gsm.includes("_"),
+            gsm: gsm.length < 10 || gsm.includes("_"),
             identityNumber: TCValidation(identityNumber),
             birthdate: birthdate.length < 10 || age < 18,
             email: !/\S+@\S+\.\S+/.test(email),
@@ -140,13 +141,22 @@ const Kurye = () => {
         if (!validateForm(formData)) {
             // Your submission logic here
             if (CITIES[formData.province]?.province) {
-                formData.province = CITIES[formData.province].province
-                formData.referenceName = formData.referenceName || " Referans Yok ";
-                console.log("Form submitted successfully:", formData);
-                const myHeaders = new Headers();
+                const data = { ...formData };
+                data.province = CITIES[data.province].province;
+                data.referenceName = data.referenceName || " Referans Yok ";
+                 const birthdate = new Date(data.birthdate).toLocaleDateString().replace(/\//g, ".");
+                 var parts = birthdate.split('.');
+                 data.birthdate = parts[1] + '.' + parts[0] + '.' + parts[2];
+                console.log('formData.birthdate' , data.birthdate);
 
+
+                data.gsm = formData.gsm.replace(/\s/g, "");
+      
+                
+                console.log("Form submitted successfully:", data);
+                const myHeaders = new Headers();
                 myHeaders.append("Content-Type", "application/json");
-                const raw = JSON.stringify({ formData });
+                const raw = JSON.stringify({ data });
                 const requestOptions = {
                     method: "POST",
                     headers: myHeaders,
@@ -392,8 +402,8 @@ const Kurye = () => {
                                                             <option value="0" defaultValue="0">
                                                                 Çalışma Zamanı
                                                             </option>
-                                                            <option value="Tam zamanli">Tam Zamanlı</option>
-                                                            <option value="Yari zamanli">Yarı Zamanlı</option>
+                                                            <option value="Tam Zamanlı">Tam Zamanlı</option>
+                                                            <option value="Yarı Zamanlı">Yarı Zamanlı</option>
                                                         </select>
                                                     </div>
                                                     <div className="form-control-ctr">
@@ -459,11 +469,11 @@ const Kurye = () => {
                                                             <option value="0" defaultValue="0">
                                                                 Ehliyet tipi seçin
                                                             </option>
-                                                            <option value="a">A</option>
-                                                            <option value="b">B</option>
-                                                            <option value="c">C</option>
-                                                            <option value="d">D</option>
-                                                            <option value="e">E</option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="C">C</option>
+                                                            <option value="D">D</option>
+                                                            <option value="E">E</option>
                                                         </select>
                                                     </div>
                                                     <div className="form-control-ctr">
@@ -481,8 +491,8 @@ const Kurye = () => {
                                                             <option value="0" defaultValue="0">
                                                                 Şirket tipi seçin
                                                             </option>
-                                                            <option value="Var">Şahıs Şirketim Var</option>
-                                                            <option value="Yok">Şahıs şirketim Yok</option>
+                                                            <option value="Şahıs Şirketim Var">Şahıs Şirketim Var</option>
+                                                            <option value="Şahıs Şirketim Yok">Şahıs şirketim Yok</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -586,7 +596,7 @@ const Kurye = () => {
                                                         to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Musteri_Acik_Riza_-Aydinlatma_Metni.pdf"
                                                         target="_blank"
                                                     >
-                                                        Aydınlatma Metni (işe alım süreçleri hakkında bilgi)
+                                                        Aydınlatma Metni
                                                     </NavLink>
                                                 </label>
                                             </span>
@@ -622,8 +632,7 @@ const Kurye = () => {
                                                 />
                                                 <label className="ms-4">
                                                     <NavLink to="/kisisel-verilerin-korunumu" target="blank">
-                                                        KVKK Onayı (Kişisel bilgilerimin Esnaf Kurye işe alım
-                                                        süreçlerinde kullanılmasını onaylıyorum.)
+                                                        KVKK Onayı 
                                                     </NavLink>
                                                 </label>
                                             </span>
@@ -666,8 +675,7 @@ const Kurye = () => {
                                                         to="https://fiyuu.com.tr/wp-content/uploads/2022/10/Kisisel-Verilerin-Korunmasi-ve-Islenmesi-Politikasi.pdf"
                                                         target="blank"
                                                     >
-                                                        Ticari Elektronik Bilgilendirme Metni (telefonlara giden
-                                                        mesajlar için onay)
+                                                        Ticari Elektronik Bilgilendirme Metni
                                                     </NavLink>
                                                 </label>
                                             </span>

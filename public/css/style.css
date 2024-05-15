@@ -2596,6 +2596,7 @@ ul {
 
 .job-application-form-ctr .jaf-inner-ctr {
   padding: 20px;
+  max-width: 100%;
 }
 
 .job-application-form-ctr .jaf-inner {
@@ -2873,7 +2874,17 @@ ul {
   .job-application-form-ctr .jaf-inner-form .kvkk-metni {
     padding: 75px 100px;
   }
+
 }
+@media (max-width: 992px) {
+  .job-application-form-ctr .jaf-inner-form .kvkk-onay {
+    padding-left:100px;
+    margin-bottom: 10px;
+  }
+
+}
+
+
 
 .job-application-form-ctr .jaf-inner-form .kvkk-metni p {
   color: rgba(73, 89, 128, 0.7);
