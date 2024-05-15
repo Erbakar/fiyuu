@@ -130,9 +130,11 @@ ul {
   .navbar .container-fluid .navbar-nav li a:hover {
     color: var(--primary-pink);
   }
+
   .navbar .container-fluid .navbar-nav li a.active {
     color: var(--primary-pink);
   }
+
   .navbar .container-fluid .navbar-nav li a.active::after {
     height: 4px;
     content: "";
@@ -144,6 +146,7 @@ ul {
     background: var(--primary-pink);
     width: 24px;
   }
+
   .navbar .container-fluid .navbar-nav li a:hover::after {
     height: 4px;
     content: "";
@@ -262,6 +265,12 @@ ul {
   object-fit: cover;
 }
 
+@media (max-width: 640px) {
+  .page-hero .hero-image img {
+    object-position: -360px;
+  }
+}
+
 .page-hero .hero-content {
   width: 100%;
   max-width: 1260px;
@@ -312,7 +321,7 @@ ul {
   border-radius: 90px;
   border: 1.5px solid var(--white);
   transition: .3s all ease;
-  background-color: var(--primary-blue) ;
+  background-color: var(--primary-blue);
 }
 
 .page-hero .hero-content .hero-btn span {
@@ -595,7 +604,8 @@ ul {
   z-index: 1;
   margin-bottom: 16px;
 }
- .result {
+
+.result {
   display: block;
   width: 100%;
   text-align: center;
@@ -605,12 +615,14 @@ ul {
   font-size: 20px;
   position: relative;
 }
- .result img {
+
+.result img {
   position: absolute;
   width: 100px;
   left: 0;
   top: -20px;
 }
+
 .what-is-fiyuu .section-title h3 {
   color: var(--primary-gray);
   font-size: 32px;
@@ -2763,7 +2775,7 @@ ul {
   color: var(--form-gray);
 }
 
-.job-application-form-ctr .jaf-inner-form .form-content .form-items .form-control-ctr .form-select   {
+.job-application-form-ctr .jaf-inner-form .form-content .form-items .form-control-ctr .form-select {
   height: 100%;
   padding: 16px;
   border-radius: 10px;
@@ -2779,9 +2791,11 @@ ul {
   background-position: right 6px center;
   background-size: 25px;
 }
-.css-13cymwt-control ,.css-t3ipsp-control {
+
+.css-13cymwt-control,
+.css-t3ipsp-control {
   height: 100%;
-  padding:8px 24px 8px 0  !important;
+  padding: 8px 24px 8px 0 !important;
   border-radius: 10px ! important;
   border: 2px solid #E0E0E0 !important;
   background: #FFF;
@@ -2795,9 +2809,12 @@ ul {
   background-position: right 6px center;
   background-size: 25px;
 }
-.error-form-item-select-multi .css-13cymwt-control , .error-form-item-select-multi .css-t3ipsp-control {
-  border: 2px solid  var(--primary-pink) !important;
+
+.error-form-item-select-multi .css-13cymwt-control,
+.error-form-item-select-multi .css-t3ipsp-control {
+  border: 2px solid var(--primary-pink) !important;
 }
+
 .css-1p3m7a8-multiValue {
   color: #fff;
   background-color: #6c9cf8 !important;
@@ -2805,27 +2822,40 @@ ul {
   padding: 2px 6px !important;
   margin: 2px !important;
 }
+
 .css-1y7rh0y-MultiValueGeneric2 {
-  color:  #fff !important;
+  color: #fff !important;
 }
-.css-1jqq78o-placeholder , .css-art2ul-ValueContainer2 , .css-feonkk-Input2{
+
+.css-1jqq78o-placeholder,
+.css-art2ul-ValueContainer2,
+.css-feonkk-Input2 {
   color: var(--form-gray) !important;
 }
 
-.css-1u9des2-indicatorSeparator ,  .css-1xc3v61-indicatorContainer , .css-15lsx6c-indicatorContainer , .css-4xgw5l-IndicatorsContainer2{
-  display:none !important;
+.css-1u9des2-indicatorSeparator,
+.css-1xc3v61-indicatorContainer,
+.css-15lsx6c-indicatorContainer,
+.css-4xgw5l-IndicatorsContainer2 {
+  display: none !important;
 }
-.css-1u9des2-indicatorSeparator ,  .css-1xc3v61-indicatorContainer , .css-15lsx6c-indicatorContainer , .css-4xgw5l-IndicatorsContainer2{
+
+.css-1u9des2-indicatorSeparator,
+.css-1xc3v61-indicatorContainer,
+.css-15lsx6c-indicatorContainer,
+.css-4xgw5l-IndicatorsContainer2 {
   opacity: 0;
 }
+
 .css-b62m3t-container {
   margin-top: -20px;
 }
+
 .error-form-item-select {
   height: 100%;
   padding: 16px;
   border-radius: 10px;
-  border: 2px solid  var(--primary-pink) !important;
+  border: 2px solid var(--primary-pink) !important;
   background: #FFF;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
   color: var(--form-gray) !important;
@@ -2876,9 +2906,10 @@ ul {
   }
 
 }
+
 @media (max-width: 992px) {
   .job-application-form-ctr .jaf-inner-form .kvkk-onay {
-    padding-left:100px;
+    padding-left: 100px;
     margin-bottom: 10px;
   }
 
@@ -2909,6 +2940,7 @@ ul {
   border-radius: 11px;
   margin-bottom: 2px;
 }
+
 .job-application-form-ctr .jaf-inner-form .kvkk-onay button.error-form-item-button {
   background-color: var(--primary-pink) !important;
 }
@@ -3610,6 +3642,7 @@ ul {
   animation-name: flipInY;
   animation-direction: reverse;
 }
+
 .error-form-item {
   border: 2px solid var(--primary-pink) !important;
   height: 100%;
@@ -3622,16 +3655,19 @@ ul {
   font-weight: 600;
   width: 100%;
 }
+
 .error-msg {
   color: var(--primary-pink) !important;
   font-size: 12px;
   font-weight: 600;
-  
+
 }
-.accordion .accordion-item  {
+
+.accordion .accordion-item {
   margin: -10px 0;
 }
-.accordion .accordion-item .accordion-header .accordion-button  {
+
+.accordion .accordion-item .accordion-header .accordion-button {
   color: var(--primary-pink);
   background-color: #f2f2f2;
   font-size: 16px;
@@ -3639,7 +3675,8 @@ ul {
   font-weight: 600;
   border-radius: 4px 4px 0 0;
 }
-.accordion-button::after{
+
+.accordion-button::after {
   position: relative;
 
   border-radius: 100%;
@@ -3650,10 +3687,12 @@ ul {
 .accordion .accordion-body {
   padding: 30px 20px;
 }
+
 .error-text {
   color: var(--primary-pink) !important;
   font-size: 12px;
   font-weight: 600;
   margin-top: -3px;
 }
+
 /*# sourceMappingURL=style.css.map */
