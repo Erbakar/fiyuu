@@ -10,7 +10,7 @@ import { CITIES } from "../constants";
 import cx from "classnames";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import ReCAPTCHA from "react-google-recaptcha";
 const Kurye = () => {
     const cityRef = useRef(null);
     const [dateType, setDateType] = useState("text");
@@ -20,6 +20,8 @@ const Kurye = () => {
     const [showTCMessage, setShowTCMessageset] = useState(false);
     const [selectedDistrict, setSelectedDistrict] = useState(-1);
     const [whereDidYouSeeUs, setWhereDidYouSeeUs] = useState("");
+    const [ReCAPTCHAValue, setReCAPTCHAValue] = useState("text");
+
     const animate = useAnimation();
     const [formData, setFormData] = useState({
         name: "",
@@ -63,12 +65,18 @@ const Kurye = () => {
     const handleInputChange = (event) => {
         const { name, value } = event.target;
 
+        
         const newFormData = { ...formData, [name]: value };
         setFormData(newFormData);
 
         if (name === "province") {
             setSelectedDistrict(event.target.value);
         }
+        if (name === "birthdate" && value ==='') {
+            setDateType("text")
+        }
+ 
+
         validateForm(newFormData);
     };
 
@@ -131,7 +139,10 @@ const Kurye = () => {
 
         return Object.values(newErrors).some((error) => error)
     };
-
+    function onChangeReCAPTCHA(value) {
+        console.log("Captcha value:", value);
+        setReCAPTCHAValue(value);
+    }
 
     // Function to handle form submission
     const handleSubmit = (event) => {
@@ -139,21 +150,29 @@ const Kurye = () => {
 
         event.preventDefault();
         if (!validateForm(formData)) {
+            if (ReCAPTCHAValue === "text") {
+                toast.error('Lütfen ReCAPTCHA Doğrulamasını Yapınız', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
+                return;
+            }
             // Your submission logic here
             if (CITIES[formData.province]?.province) {
                 const data = { ...formData };
                 data.province = CITIES[data.province].province;
-                data.referenceName = data.referenceName || " Referans Yok ";
-                 const birthdate = new Date(data.birthdate).toLocaleDateString().replace(/\//g, ".");
-                 var parts = birthdate.split('.');
-                 data.birthdate = parts[1] + '.' + parts[0] + '.' + parts[2];
-                console.log('formData.birthdate' , data.birthdate);
-
-
-                data.gsm = formData.gsm.replace(/\s/g, "");
-      
-                
-                console.log("Form submitted successfully:", data);
+                data.referenceName = data.referenceName || "Referans Yok";
+                const day =  new Date(data.birthdate).getDate();
+                const month = new Date(data.birthdate).getMonth()  < 9 ? `0${new Date(data.birthdate).getMonth() + 1}` : new Date(data.birthdate).getMonth() + 1;
+                const year = new Date(data.birthdate).getFullYear();
+                data.birthdate = `${day}.${month}.${year}`;  
+                data.gsm = data.gsm.replace(/\s/g, "");
                 const myHeaders = new Headers();
                 myHeaders.append("Content-Type", "application/json");
                 const raw = JSON.stringify({ data });
@@ -164,10 +183,10 @@ const Kurye = () => {
                     redirect: "follow"
 
                 };
+
                 fetch('https://gatewayv2.dev.fiyuu.com.tr/carrier/new', requestOptions)
                     .then((response) => response.json())
                     .then((result) => {
-                        console.log(result.message)
                         if (result.code === 100) {
                             setFormValid(true);
                             setUserMessenge(result.message);
@@ -241,6 +260,7 @@ const Kurye = () => {
     }
 
     return (
+
         <div className="job-application-form-ctr d-flex justify-content-center flex-column align-items-center">
             <div className="w-100 d-flex flex-column justify-content-center align-items-center">
                 <div className="page-banner-third w-100 d-flex justify-content-center align-items-center">
@@ -272,8 +292,10 @@ const Kurye = () => {
                                 ) : (
                                     <form
                                         onSubmit={handleSubmit}
+                                        
                                         className="w-100 d-flex justify-content-center flex-column align-items-center"
                                     >
+
                                         <div className="form-content w-100 row m-0 justify-content-between">
                                             <div className="col-12 col-lg-3 p-0 form-description mb-5 mb-lg-0">
                                                 <h3>Kişisel Bilgiler</h3>
@@ -327,9 +349,8 @@ const Kurye = () => {
                                                     </div>
                                                     <div className="form-control-ctr">
                                                         <input
-                                                            type={dateType}
+                                                            type='date'
                                                             onFocus={() => setDateType("date")}
-                                                            onBlur={() => setDateType("text")}
                                                             placeholder="Doğum Tarihinizi Giriniz"
                                                             id="birthdate"
                                                             name="birthdate"
@@ -632,7 +653,7 @@ const Kurye = () => {
                                                 />
                                                 <label className="ms-4">
                                                     <NavLink to="/kisisel-verilerin-korunumu" target="blank">
-                                                        KVKK Onayı 
+                                                        KVKK Onayı
                                                     </NavLink>
                                                 </label>
                                             </span>
@@ -680,12 +701,14 @@ const Kurye = () => {
                                                 </label>
                                             </span>
                                         </div>
-
+                                        <br />
+                                        <ReCAPTCHA
+                                            sitekey="6LdCTN0pAAAAAMieGGlcfsEbecDczxfdShWnxD3Z"
+                                            onChange={onChangeReCAPTCHA}
+                                        />
                                         <button
-                                            className="g-recaptcha submit-btn d-flex mt-5 justify-content-center align-items-center"
-                                            data-sitekey="6Lf6MsUpAAAAADM2SMMV1zeYGjRCHi-nc4-NSwvF"
-                                            data-callback="onSubmit"
-                                            data-action="submit"
+                                            className="submit-btn d-flex mt-5 justify-content-center align-items-center"
+                                            type="submit"
                                         >
                                             <span className="text-center d-inline-block">
                                                 Hemen Başvur
@@ -740,13 +763,13 @@ const Kurye = () => {
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
-                transition: Bounce
+                transition:Bounce
                 rtl={false}
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
                 theme="dark"
-                
+
             />
         </div>
     );

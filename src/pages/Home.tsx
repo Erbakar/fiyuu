@@ -28,6 +28,16 @@ const Home = () => {
         splideHero.mount();
     }, [])
 
+    function slideDown() {
+        console.log('scroll' , window.innerWidth);
+        if (window.innerWidth > 640) {
+            window.scrollTo(0, 800);
+        }else {
+            window.scrollTo(0, 600);
+        }
+     
+    }
+
     return (
         <div>
             <div className="page-hero d-flex justify-content-center align-items-center">
@@ -56,7 +66,7 @@ const Home = () => {
                                         </span>
                                     </NavLink>
 
-                                    <div className="arrow-down d-flex justify-content-center align-items-center">
+                                    <div className="arrow-down d-flex justify-content-center align-items-center" onClick={slideDown}>
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fillRule="evenodd" clipRule="evenodd"
@@ -81,7 +91,7 @@ const Home = () => {
                                         </span>
                                     </NavLink>
 
-                                    <div className="arrow-down d-flex justify-content-center align-items-center">
+                                    <div className="arrow-down d-flex justify-content-center align-items-center"  onClick={slideDown}>
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fillRule="evenodd" clipRule="evenodd"
