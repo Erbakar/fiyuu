@@ -75,8 +75,7 @@ function Earnings() {
                             <div className="col">
                                 <div className="select-ctr">
                                     <select className="form-select h-100" id="selectBox" value={cityValue} onChange={(e) => setCityValue(e.target.value)}>
-                                        <option defaultValue="deafult"  >Şehir seçiniz</option>
-                                        <option value="0">------</option>
+                                        <option defaultValue="deafult"  value="0" >Şehir seçiniz</option>
                                         <option value="54">İstanbul Avrupa</option>
                                         <option value="54">İstanbul Anadolu</option>
                                         <option value="54">Kocaeli</option>

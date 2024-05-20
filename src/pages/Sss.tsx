@@ -132,7 +132,7 @@ const About = () => {
                             </h1>
 
                             <p className="page-banner__card-text mt-3" >
-                                Aciklama gelecek
+                            fiyuu'da kurye olmakla ilgili merak ettiğin her şey burada!
                             </p>
 
                         </div>

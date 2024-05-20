@@ -616,6 +616,10 @@ ul {
   position: relative;
 }
 
+@media (max-width: 640px) {
+  .w100 {padding: 20px 0 !important;}
+}
+
 .result img {
   position: absolute;
   width: 100px;
@@ -2812,7 +2816,7 @@ ul {
 
 .error-form-item-select-multi .css-13cymwt-control,
 .error-form-item-select-multi .css-t3ipsp-control {
-  border: 2px solid var(--primary-pink) !important;
+  border: 1px solid var(--primary-pink) !important;
 }
 
 .css-1p3m7a8-multiValue {
@@ -2855,7 +2859,7 @@ ul {
   height: 100%;
   padding: 16px;
   border-radius: 10px;
-  border: 2px solid var(--primary-pink) !important;
+  border: 1px solid var(--primary-pink) !important;
   background: #FFF;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
   color: var(--form-gray) !important;
@@ -2961,6 +2965,11 @@ ul {
   border: 1px solid var(--white);
   transition: .3s all ease;
   background-color: var(--primary-pink);
+}
+
+.job-application-form-ctr .jaf-inner-form .submit-btn:disabled,
+.job-application-form-ctr .jaf-inner-form .submit-btn[disabled] {
+opacity: .7;
 }
 
 .job-application-form-ctr .jaf-inner-form .submit-btn span {
@@ -3644,7 +3653,7 @@ ul {
 }
 
 .error-form-item {
-  border: 2px solid var(--primary-pink) !important;
+  border: 1px solid var(--primary-pink) !important;
   height: 100%;
   padding: 16px;
   border-radius: 10px;
@@ -3693,6 +3702,44 @@ ul {
   font-size: 12px;
   font-weight: 600;
   margin-top: -3px;
+}
+
+.birthdate-label  label{
+display: none;
+}
+
+@media (max-width: 640px) {
+  .birthdate-label  {
+    margin-bottom: 20px;
+  }
+  
+  .birthdate-label  label{
+    font-size: 14px;
+    color: #6d6d6d;
+      display: block;
+      font-weight: 600;
+      padding-left: 14px;
+      margin-bottom: 2px;
+  }
+}
+
+.warning {
+  color: var(--primary-pink) !important;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid 2px var(--primary-pink);
+  padding: 20px;
+  border-radius: 8px;
+
+  
+}
+
+@media (max-width: 640px) {
+  .warning {
+    padding: 10px;
+    text-align: center;
+    
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

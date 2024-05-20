@@ -8,15 +8,15 @@ import React, { useState } from "react";
 import InputMask from "react-input-mask";
 import { CITIES } from "../constants";
 import cx from "classnames";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import ReCAPTCHA from "react-google-recaptcha";
 const Kurye = () => {
     const cityRef = useRef(null);
-    const [dateType, setDateType] = useState("text");
+    const [dateType, setDateType] = useState("date");
     const [userMessenge, setUserMessenge] = useState("text");
+    const [errorMessenge, setErrorMessenge] = useState("");
     const [formValid, setFormValid] = useState(false);
     const [tcValid, setTCValid] = useState(true);
+    const [spinnerShow, isSpinnerShow] = useState(false);
     const [showTCMessage, setShowTCMessageset] = useState(false);
     const [selectedDistrict, setSelectedDistrict] = useState(-1);
     const [whereDidYouSeeUs, setWhereDidYouSeeUs] = useState("");
@@ -75,15 +75,24 @@ const Kurye = () => {
         if (name === "birthdate" && value ==='') {
             setDateType("text")
         }
- 
+        if(name === 'identityNumber'){
+            if(!TCValidation(value)){
+                setErrors({...errors, identityNumber: false})
+            }
+            else{
+                setErrors({...errors, identityNumber: true})
+            }
+        }
 
-        validateForm(newFormData);
+       
     };
 
     useEffect(() => {
         animate();
         window.scrollTo(0, 0);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        if (window.innerWidth > 640) {
+            setDateType("text")
+        }
     }, []);
 
     useEffect(() => {
@@ -150,17 +159,10 @@ const Kurye = () => {
 
         event.preventDefault();
         if (!validateForm(formData)) {
+            
             if (ReCAPTCHAValue === "text") {
-                toast.error('Lütfen ReCAPTCHA Doğrulamasını Yapınız', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "dark",
-                });
+                setErrorMessenge ("Lütfen ReCAPTCHA Doğrulamasını Yapınız");
+                window.scrollTo(0, 600);
                 return;
             }
             // Your submission logic here
@@ -183,43 +185,34 @@ const Kurye = () => {
                     redirect: "follow"
 
                 };
-
+                isSpinnerShow(true);
                 fetch('https://gatewayv2.dev.fiyuu.com.tr/carrier/new', requestOptions)
                     .then((response) => response.json())
                     .then((result) => {
                         if (result.code === 100) {
                             setFormValid(true);
                             setUserMessenge(result.message);
+                            
                             window.scrollTo(0, 600);
                         } else {
-                            toast.error(result.message, {
-                                position: "top-right",
-                                autoClose: 5000,
-                                hideProgressBar: false,
-                                closeOnClick: true,
-                                pauseOnHover: true,
-                                draggable: true,
-                                progress: undefined,
-                                theme: "dark",
-                            });
+                            setErrorMessenge(result.message);
+                            window.scrollTo(0, 600);
                         }
-
+                        isSpinnerShow(false);
                     })
-                    .catch((error) => console.error(error));
+                    .catch((error) => {
+                        isSpinnerShow(false);
+                     });
             }
             else {
-                toast.error('Lütfen İl ve İlçe Seçiniz', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "dark",
-                });
+                setErrorMessenge ("Lütfen İl ve İlçe Seçiniz");
+                
+                window.scrollTo(0, 600);
             }
 
+        } else {
+            setErrorMessenge ("Lütfen Tüm Alanları Doldurunuz");
+            window.scrollTo(0, 600);
         }
 
     };
@@ -288,14 +281,15 @@ const Kurye = () => {
                             <div className="jaf-inner-form w-100">
                                 {formValid ? (
 
-                                    <div className="result" style={{ color: "#e61b80" }}>{userMessenge}</div>
+                                    <div className="result w100" style={{ color: "#e61b80" }}>{userMessenge}</div>
                                 ) : (
+                                    
                                     <form
                                         onSubmit={handleSubmit}
-                                        
+                                        style={{ position: "relative"}}  
                                         className="w-100 d-flex justify-content-center flex-column align-items-center"
                                     >
-
+                                           {errorMessenge  ? (  <div className="warning"> {errorMessenge} </div>) : null}  
                                         <div className="form-content w-100 row m-0 justify-content-between">
                                             <div className="col-12 col-lg-3 p-0 form-description mb-5 mb-lg-0">
                                                 <h3>Kişisel Bilgiler</h3>
@@ -306,7 +300,7 @@ const Kurye = () => {
                                                     <div className="form-control-ctr">
                                                         <input
                                                             type="text"
-                                                            placeholder="Ad Soyad"
+                                                            placeholder="Ad Soyad *"
                                                             id="name"
                                                             name="name"
                                                             value={formData.name}
@@ -320,7 +314,7 @@ const Kurye = () => {
                                                         <InputMask
                                                             type="gsm"
                                                             mask="999 999 99 99"
-                                                            placeholder="Cep Telefonu"
+                                                            placeholder="Cep Telefonu *"
                                                             id="gsm"
                                                             name="gsm"
                                                             value={formData.gsm}
@@ -336,7 +330,7 @@ const Kurye = () => {
                                                         <InputMask
                                                             type="tckn"
                                                             mask="99999999999"
-                                                            placeholder="TC Kimlik No"
+                                                            placeholder="TC Kimlik No *"
                                                             id="identityNumber"
                                                             name="identityNumber"
                                                             value={formData.identityNumber}
@@ -347,11 +341,13 @@ const Kurye = () => {
                                                         />
                                                         {errors.identityNumber && <small className="error-text">Geçersiz Kimlik Numarası</small>}
                                                     </div>
-                                                    <div className="form-control-ctr">
+                                                    <div className="form-control-ctr birthdate-label" >
+                                                        <label htmlFor="birthdate">Doğum Tarihinizi Giriniz *</label>
                                                         <input
-                                                            type='date'
-                                                            onFocus={() => setDateType("date")}
-                                                            placeholder="Doğum Tarihinizi Giriniz"
+                                                            style={{width: "100%"}}
+                                                            type={dateType}
+                                                            onClick={() => setDateType("date")}
+                                                            placeholder="Doğum Tarihinizi Giriniz *"
                                                             id="birthdate"
                                                             name="birthdate"
                                                             value={formData.birthdate}
@@ -368,7 +364,7 @@ const Kurye = () => {
                                                     <div className="form-control-ctr">
                                                         <input
                                                             type="email"
-                                                            placeholder="E-posta"
+                                                            placeholder="E-posta *"
                                                             id="email"
                                                             name="email"
                                                             value={formData.email}
@@ -391,7 +387,7 @@ const Kurye = () => {
                                                             }
                                                         >
                                                             <option value="0" defaultValue="0">
-                                                                Cinsiyet
+                                                                Cinsiyet *
                                                             </option>
                                                             <option value="Kadın">Kadın</option>
                                                             <option value="Erkek">Erkek</option>
@@ -421,7 +417,7 @@ const Kurye = () => {
                                                             }
                                                         >
                                                             <option value="0" defaultValue="0">
-                                                                Çalışma Zamanı
+                                                                Çalışma Zamanı *
                                                             </option>
                                                             <option value="Tam Zamanlı">Tam Zamanlı</option>
                                                             <option value="Yarı Zamanlı">Yarı Zamanlı</option>
@@ -437,7 +433,7 @@ const Kurye = () => {
                                                             }
                                                             onChange={handleInputChange}
                                                         >
-                                                            <option value={-1}> İl Seçiniz</option>
+                                                            <option value={-1}> İl Seçiniz *</option>
                                                             {CITIES.map((city, index) => (
                                                                 <option key={index} value={index}>
                                                                     {city.province}
@@ -461,7 +457,7 @@ const Kurye = () => {
                                                         >
                                                             <option value="0" defaultValue="0">
                                                                 {" "}
-                                                                İlçe Seçiniz
+                                                                İlçe Seçiniz *
                                                             </option>
                                                             {selectedDistrict !== -1 &&
                                                                 CITIES[selectedDistrict].ilceleri.map(
@@ -488,7 +484,7 @@ const Kurye = () => {
                                                             }
                                                         >
                                                             <option value="0" defaultValue="0">
-                                                                Ehliyet tipi seçin
+                                                                Ehliyet tipi seçin *
                                                             </option>
                                                             <option value="A">A</option>
                                                             <option value="B">B</option>
@@ -510,7 +506,7 @@ const Kurye = () => {
                                                             }
                                                         >
                                                             <option value="0" defaultValue="0">
-                                                                Şirket tipi seçin
+                                                                Şirket tipi seçin *
                                                             </option>
                                                             <option value="Şahıs Şirketim Var">Şahıs Şirketim Var</option>
                                                             <option value="Şahıs Şirketim Yok">Şahıs şirketim Yok</option>
@@ -539,32 +535,32 @@ const Kurye = () => {
                                                             onChange={handleInputChange}
                                                         >
                                                             <option value="0" defaultValue="0">
-                                                                Bizi Nereden Gördünüz
+                                                                Bizi Nereden Gördünüz *
                                                             </option>
                                                             <option value="Instagram">Instagram</option>
                                                             <option value="Tiktok">Tiktok</option>
                                                             <option value="Facebook">Facebook</option>
-                                                            <option value="Eleman">Eleman.net</option>
+                                                            <option value="Eleman.net">Eleman.net</option>
                                                             <option value="Sahibinden">Sahibinden</option>
-                                                            <option value="24saatteis">24 Saatte İş</option>
-                                                            <option value="Yenibiris">Yeni Bir İş</option>
+                                                            <option value="24 Saatte İş">24 Saatte İş</option>
+                                                            <option value="Yeni Bir İş">Yeni Bir İş</option>
                                                             <option value="Bitoniş">Bitoniş</option>
-                                                            <option value="Calisan-refereansi">
+                                                            <option value="Çalışan Referansı">
                                                                 Çalışan Referansı
                                                             </option>
-                                                            <option value="Isin-olsun">İşin Olsun</option>
-                                                            <option value="Secretcv">Secret CV</option>
-                                                            <option value="Websitesi">Web Sitesi</option>
-                                                            <option value="Kariyer">Kariyer.net</option>
-                                                            <option value="KadınKuryeGetirKampanyasi">
+                                                            <option value="İşin Olsun">İşin Olsun</option>
+                                                            <option value="Secret CV">Secret CV</option>
+                                                            <option value="Web Sitesi">Web Sitesi</option>
+                                                            <option value="Kariyer.net">Kariyer.net</option>
+                                                            <option value="Kadın Kurye Getir Kampanyası">
                                                                 Kadın Kurye Getir Kampanyası
                                                             </option>
                                                         </select>
                                                     </div>
                                                 </div>
 
-                                                {(formData.reference === "Calisan-refereansi" ||
-                                                    formData.reference === "KadınKuryeGetirKampanyasi") && (
+                                                {(formData.reference === "Çalışan Referansı" ||
+                                                    formData.reference === "Kadın Kurye Getir Kampanyası") && (
                                                         <div className="form-control-ctr">
                                                             <input
                                                                 type="text"
@@ -706,12 +702,15 @@ const Kurye = () => {
                                             sitekey="6LdCTN0pAAAAAMieGGlcfsEbecDczxfdShWnxD3Z"
                                             onChange={onChangeReCAPTCHA}
                                         />
+                                        <br />
+                                        
                                         <button
                                             className="submit-btn d-flex mt-5 justify-content-center align-items-center"
                                             type="submit"
+                                            disabled={spinnerShow}
                                         >
                                             <span className="text-center d-inline-block">
-                                                Hemen Başvur
+                                            {spinnerShow ? <img src="./images/spinner.gif" style={{ width: "20px" }} alt="" /> : null} Hemen Başvur
                                             </span>
                                         </button>
                                     </form>
@@ -743,7 +742,7 @@ const Kurye = () => {
                                         onClick={handleTCSubmit}
                                     >
                                         <span className="text-center d-inline-block">
-                                            Başvuru Sorgulama
+                                          Başvuru Sorgulama
                                         </span>
                                     </button>
                                 </form>
@@ -757,20 +756,6 @@ const Kurye = () => {
                     </div>
                 </div>
             </div>
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                transition:Bounce
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-
-            />
         </div>
     );
 };
