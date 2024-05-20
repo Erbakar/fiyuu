@@ -9,19 +9,20 @@ function Earnings() {
     const [avmValue, setAvmValue] = useState('');
     const [monthlyEarnings, setMonthlyEarnings] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-    // Hesaplama yapılacak
-    if (workStyle && cityValue && avmValue) {
-      const earnings = parseFloat(workStyle) * 26 * (parseFloat(cityValue) + parseFloat(avmValue));
-      setMonthlyEarnings(earnings.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&.'));
-    } else {
-      alert('Lütfen tüm seçenekleri belirleyin.');
-    }
-  };
+        // Hesaplama yapılacak
+        if (workStyle && cityValue && avmValue) {
+            const cityValue2 = cityValue.split('-')[1];
+            const earnings = parseFloat(workStyle) * 26 * (parseFloat(cityValue2) + parseFloat(avmValue));
+            setMonthlyEarnings(earnings.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&.'));
+        } else {
+            alert('Lütfen tüm seçenekleri belirleyin.');
+        }
+    };
 
-  return (
+    return (
         <div className="calculate-earnings w-100 d-flex justify-content-center align-items-center">
             <div
                 className="page-container d-flex flex-column flex-xl-row justify-content-center justify-content-xl-between align-items-center">
@@ -46,27 +47,27 @@ function Earnings() {
                     className="calculate-earnings__right d-flex flex-column justify-content-start align-items-start">
                     <h3>
                         Kazancını hesapla!
-                     </h3>
-     
+                    </h3>
+
                     <form id="calculate-earnings-form" onSubmit={handleSubmit}>
                         <div className="content mb-5">
 
 
                             <div className="col">
-                                <label className="form-check"  htmlFor="flexRadioDefault1">
+                                <label className="form-check" htmlFor="flexRadioDefault1">
                                     <input className="form-check-input" value="25" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onChange={(e) => setWorkStyle(e.target.value)} />
                                     <label className="defaultValuem-check-label">
                                         Rahat çalışırım
                                     </label>
                                 </label>
                                 <label className="form-check" htmlFor="flexRadioDefault2">
-                                    <input className="form-check-input" value="35" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onChange={(e) => setWorkStyle(e.target.value)}/>
+                                    <input className="form-check-input" value="35" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onChange={(e) => setWorkStyle(e.target.value)} />
                                     <label className="form-check-label">
                                         Hızlı çalışırım
                                     </label>
                                 </label>
                                 <label className="form-check" htmlFor="flexRadioDefault3">
-                                    <input className="form-check-input" value="45" type="radio" name="flexRadioDefault" id="flexRadioDefault3" onChange={(e) => setWorkStyle(e.target.value)}/>
+                                    <input className="form-check-input" value="45" type="radio" name="flexRadioDefault" id="flexRadioDefault3" onChange={(e) => setWorkStyle(e.target.value)} />
                                     <label className="form-check-label">
                                         Benden hızlısı yok
                                     </label>
@@ -75,78 +76,78 @@ function Earnings() {
                             <div className="col">
                                 <div className="select-ctr">
                                     <select className="form-select h-100" id="selectBox" value={cityValue} onChange={(e) => setCityValue(e.target.value)}>
-                                        <option defaultValue="deafult"  value="0" >Şehir seçiniz</option>
-                                        <option value="54">İstanbul Avrupa</option>
-                                        <option value="54">İstanbul Anadolu</option>
-                                        <option value="54">Kocaeli</option>
-                                        <option value="54">Sakarya</option>
-                                        <option value="48">Adana</option>
-                                        <option value="48">Ankara</option>
-                                        <option value="48">Antalya</option>
-                                        <option value="48">Aydın</option>
-                                        <option value="48">Balıkesir</option>
-                                        <option value="48">Bolu</option>
-                                        <option value="48">Bursa</option>
-                                        <option value="48">Denizli</option>
-                                        <option value="48">Diyarbakır</option>
-                                        <option value="48">Düzce</option>
-                                        <option value="48">Edirne</option>
-                                        <option value="48">Elazığ</option>
-                                        <option value="48">Erzurum</option>
-                                        <option value="48">Eskişehir</option>
-                                        <option value="48">Gaziantep</option>
-                                        <option value="48">İzmir</option>
-                                        <option value="48">Kayseri</option>
-                                        <option value="48">Konya</option>
-                                        <option value="48">Manisa</option>
-                                        <option value="48">Mersin</option>
-                                        <option value="48">Muğla</option>
-                                        <option value="48">Samsun</option>
-                                        <option value="48">Tekirdağ</option>
-                                        <option value="48">Trabzon</option>
-                                        <option value="48">Van</option>
-                                        <option value="48">Yalova</option>
-                                        <option value="40">Adıyaman</option>
-                                        <option value="40">Afyon</option>
-                                        <option value="40">Aksaray</option>
-                                        <option value="40">Amasya</option>
-                                        <option value="40">Batman</option>
-                                        <option value="40">Bilecik</option>
-                                        <option value="40">Bingöl</option>
-                                        <option value="40">Burdur</option>
-                                        <option value="40">Çanakkale</option>
-                                        <option value="40">Çankırı</option>
-                                        <option value="40">Çorum</option>
-                                        <option value="40">Erzincan</option>
-                                        <option value="40">Giresun</option>
-                                        <option value="40">Hatay</option>
-                                        <option value="40">Isparta</option>
-                                        <option value="40">Kahramanmaraş</option>
-                                        <option value="40">Karabük</option>
-                                        <option value="40">Karaman</option>
-                                        <option value="40">Kars</option>
-                                        <option value="40">Kastamonu</option>
-                                        <option value="40">Kırıkkale</option>
-                                        <option value="40">Kırklareli</option>
-                                        <option value="40">Kırşehir</option>
-                                        <option value="40">Kütahya</option>
-                                        <option value="40">Malatya</option>
-                                        <option value="40">Mardin</option>
-                                        <option value="40">Nevşehir</option>
-                                        <option value="40">Niğde</option>
-                                        <option value="40">Ordu</option>
-                                        <option value="40">Osmaniye</option>
-                                        <option value="40">Rize</option>
-                                        <option value="40">Siirt</option>
-                                        <option value="40">Sivas</option>
-                                        <option value="40">Sinop</option>
-                                        <option value="40">Şanlıurfa</option>
-                                        <option value="40">Şırnak</option>
-                                        <option value="40">Tokat</option>
-                                        <option value="40">Uşak</option>
-                                        <option value="40">Yozgat</option>
-                                        <option value="40">Zonguldak</option>
-                                        <option value="40">Bitlis</option>
+                                        <option defaultValue="deafult" value="0" >Şehir seçiniz</option>
+                                        <option value="Avrupa-54">İstanbul Avrupa</option>
+                                        <option value="Anadolu-54">İstanbul Anadolu</option>
+                                        <option value="Kocaeli-54">Kocaeli</option>
+                                        <option value="Sakarya-54">Sakarya</option>
+                                        <option value="Adana-48">Adana</option>
+                                        <option value="Ankara-48">Ankara</option>
+                                        <option value="Antalya-48">Antalya</option>
+                                        <option value="Aydın-48">Aydın</option>
+                                        <option value="Balıkesir-48">Balıkesir</option>
+                                        <option value="Bolu-48">Bolu</option>
+                                        <option value="Bursa-48">Bursa</option>
+                                        <option value="Denizli-48">Denizli</option>
+                                        <option value="Diyarbakır-48">Diyarbakır</option>
+                                        <option value="Düzce-48">Düzce</option>
+                                        <option value="Edirne-48">Edirne</option>
+                                        <option value="Elazığ-48">Elazığ</option>
+                                        <option value="Erzurum-48">Erzurum</option>
+                                        <option value="Eskişehir-48">Eskişehir</option>
+                                        <option value="Gaziantep-48">Gaziantep</option>
+                                        <option value="İzmir-48">İzmir</option>
+                                        <option value="Kayseri-48">Kayseri</option>
+                                        <option value="Konya-48">Konya</option>
+                                        <option value="Manisa-48">Manisa</option>
+                                        <option value="Mersin-48">Mersin</option>
+                                        <option value="Muğla-48">Muğla</option>
+                                        <option value="Samsun-48">Samsun</option>
+                                        <option value="Tekirdağ-48">Tekirdağ</option>
+                                        <option value="Trabzon-48">Trabzon</option>
+                                        <option value="Van-48">Van</option>
+                                        <option value="Yalova-48">Yalova</option>
+                                        <option value="Adıyaman-40">Adıyaman</option>
+                                        <option value="Afyon-40">Afyon</option>
+                                        <option value="Aksaray-40">Aksaray</option>
+                                        <option value="Amasya-40">Amasya</option>
+                                        <option value="Batman-40">Batman</option>
+                                        <option value="Bilecik-40">Bilecik</option>
+                                        <option value="Bingöl-40">Bingöl</option>
+                                        <option value="Burdur-40">Burdur</option>
+                                        <option value="Çanakkalev">Çanakkale</option>
+                                        <option value="Çankırı-40">Çankırı</option>
+                                        <option value="Çorum-40">Çorum</option>
+                                        <option value="Erzincan">Erzincan</option>
+                                        <option value="Giresun-40">Giresun</option>
+                                        <option value="Hatay">Hatay</option>
+                                        <option value="Isparta-40">Isparta</option>
+                                        <option value="Kahramanmaraş-40">Kahramanmaraş</option>
+                                        <option value="Karabük-40">Karabük</option>
+                                        <option value="Karaman-40">Karaman</option>
+                                        <option value="Kars-40">Kars</option>
+                                        <option value="Kastamonu-40">Kastamonu</option>
+                                        <option value="Kırıkkale-40">Kırıkkale</option>
+                                        <option value="Kırklareli-40">Kırklareli</option>
+                                        <option value="Kırşehir-40">Kırşehir</option>
+                                        <option value="Kütahya-40">Kütahya</option>
+                                        <option value="Malatya-40">Malatya</option>
+                                        <option value="Mardin-40">Mardin</option>
+                                        <option value="Nevşehir-40">Nevşehir</option>
+                                        <option value="Niğde-40">Niğde</option>
+                                        <option value="Ordu-40">Ordu</option>
+                                        <option value="Osmaniye-40">Osmaniye</option>
+                                        <option value="Rize-40">Rize</option>
+                                        <option value="Siirt-40">Siirt</option>
+                                        <option value="Sivas-40">Sivas</option>
+                                        <option value="Sinop-40">Sinop</option>
+                                        <option value="Şanlıurfa-40">Şanlıurfa</option>
+                                        <option value="Şırnak-40">Şırnak</option>
+                                        <option value="Tokat-40">Tokat</option>
+                                        <option value="Uşak-40">Uşak</option>
+                                        <option value="Yozgat-40">Yozgat</option>
+                                        <option value="Zonguldak-40">Zonguldak</option>
+                                        <option value="Bitlis-40">Bitlis</option>
 
                                     </select>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="23" viewBox="0 0 24 23"
@@ -176,7 +177,7 @@ function Earnings() {
 
                                 </div>
                                 <div className="w-100 d-flex justify-content-center align-items-center mt-2">
-                                    <button type="submit"  className="calculate-btn">
+                                    <button type="submit" className="calculate-btn">
                                         <span>
                                             Hemen hesapla :)
                                         </span>
@@ -186,7 +187,7 @@ function Earnings() {
 
                         </div>
                     </form>
-                  {monthlyEarnings && <div  className='result'><img src="./images/money-trans.gif" alt="" /> Tahmini Aylık Kazancınız <br /> <b>{monthlyEarnings}</b>TL</div>}
+                    {monthlyEarnings && <div className='result'><img src="./images/money-trans.gif" alt="" /> Tahmini Aylık Kazancınız <br /> <b>{monthlyEarnings}</b>TL</div>}
                 </div>
             </div>
         </div>
