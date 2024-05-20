@@ -1,33 +1,64 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAnimation } from "../hooks/useAnimation";
 import { NavLink } from "react-router-dom";
-type WorksItem = {
-    body: any;
 
-    slug: string
-}
 const Career = () => {
     const animate = useAnimation()
-    const [works, setWorks] = useState<WorksItem[] | null>(null)
-    useEffect(() => {
 
-        setTimeout(() => {
-            animate()
-            window.scrollTo(0, 0);
-        }, 100);
-
+ 
 
         const cachedVal = localStorage.getItem('works')
         // console.log(cachedVal);
-        console.log(works);
+        let works = null;
         if (cachedVal) {
-            setWorks(JSON.parse(cachedVal))
+            works = JSON.parse(cachedVal)
+            console.log(works);
         } else {
-            // ...
+            const loadNews = async () => {
+                try {
+                    console.log('loading');
+               
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                   
+    
+    
+                    let data = await fetch('https://api.storyblok.com/v2/cdn/stories/?version=draft&token=PU48xeT0YARVgQPLiYGmwAtt')
+                    const news = await data.json()
+                    let works2 = null;
+    
+    
+                    news.stories.forEach((element: any, idx: any) => {
+                        if (element.full_slug.indexOf('haber-ve-blog') < 0) {
+                            news.stories.splice(idx, 1)
+                            works2 = element.content.table.tbody;
+                        }
+                    });
+
+                    localStorage.setItem('news', JSON.stringify(news.stories));
+                    localStorage.setItem('works', JSON.stringify(works2));
+                    works = works2;
+                     console.log('works 2', works);
+                    window.location.reload();
+                    
+                    
+                } catch (error) {
+    
+                }
+            }
+            useEffect(() => {
+                loadNews()
+            }, [])
         }
-    }, [])
+        useEffect(() => {
+
+            setTimeout(() => {
+                animate()
+                window.scrollTo(0, 0);
+            }, 100);
+        }, [])
 
     return (
+        works &&
         <div className="career-ctr d-flex justify-content-center flex-column align-items-center">
             <div className="w-100 d-flex flex-column justify-content-center align-items-center">
                 <div className="page-banner w-100 d-flex justify-content-center align-items-center">
@@ -99,7 +130,7 @@ const Career = () => {
                                 </div>
 
                                 {
-                                    works?.map((item, index) => {
+                                    works?.map((item: any, index :number) => {
                                         return (
 
 

@@ -146,7 +146,6 @@ export const CITIES = [
     province: "Aydın",
     plaka: 9,
     ilceleri: [
-      "Merkez",
       "Bozdoğan",
       "Efeler",
       "Çine",
@@ -172,7 +171,6 @@ export const CITIES = [
     ilceleri: [
       "Altıeylül",
       "Ayvalık",
-      "Merkez",
       "Balya",
       "Bandırma",
       "Bigadiç",
@@ -881,7 +879,6 @@ export const CITIES = [
       "Onikişubat",
       "Elbistan",
       "Göksun",
-      "Merkez",
       "Pazarcık",
       "Türkoğlu",
       "Çağlayancerit",
@@ -1054,7 +1051,6 @@ export const CITIES = [
       "Durağan",
       "Erfelek",
       "Gerze",
-      "Merkez",
       "Türkeli",
       "Dikmen",
       "Saraydüzü",
