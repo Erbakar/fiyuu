@@ -382,7 +382,7 @@ ul {
 }
 
 .calculate-earnings {
-  background-image: url("../images/earning-calculate.png");
+  background-image: url("./images/earning-calculate.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1311,7 +1311,7 @@ ul {
   background: linear-gradient(127deg, #D3DDEC -11.86%, #FFEEDE 119.3%);
   width: 100%;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
-  background-image: url("../images/footer-card.png");
+  background-image: url("./images/footer-card.png");
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2790,7 +2790,7 @@ ul {
   font-size: 14px;
   font-weight: 600;
   appearance: none;
-  background-image: url("../images/arrow-select.svg");
+  background-image: url("./images/arrow-select.svg");
   background-repeat: no-repeat;
   background-position: right 6px center;
   background-size: 25px;
@@ -2808,7 +2808,7 @@ ul {
   font-size: 14px;
   font-weight: 600;
   appearance: none;
-  background-image: url("../images/arrow-select.svg");
+  background-image: url("./images/arrow-select.svg");
   background-repeat: no-repeat;
   background-position: right 6px center;
   background-size: 25px;
@@ -2866,7 +2866,7 @@ ul {
   font-size: 14px;
   font-weight: 600;
   appearance: none;
-  background-image: url("../images/arrow-select.svg");
+  background-image: url("./images/arrow-select.svg");
   background-repeat: no-repeat;
   background-position: right 16px center;
   background-size: 25px;
@@ -2875,7 +2875,7 @@ ul {
 
 .job-application-form-ctr .jaf-inner-form .form-content .form-items .form-control-ctr .form-select:focus {
   border-color: rgba(76, 135, 250, 0.8);
-  background-image: url("../images/arrow-select-2.svg");
+  background-image: url("./images/arrow-select-2.svg");
 }
 
 .job-application-form-ctr .jaf-inner-form .form-content .form-items .form-control-ctr .form-select::placeholder {

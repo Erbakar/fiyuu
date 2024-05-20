@@ -48,7 +48,7 @@ const Blog = () => {
                         </div>
 
                         <div className="page-banner__image mt-5 mt-lg-0">
-                            <img src="./images/blog-banner.png" alt="" data-animation="slideInLeft" />
+                            <img src="/images/blog-banner.png" alt="" data-animation="slideInLeft" />
                         </div>
                     </div>
                 </div>

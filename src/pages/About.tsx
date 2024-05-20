@@ -27,7 +27,7 @@ const About = () => {
                         </div>
     
                         <div className="page-banner__image mt-5 mt-lg-0" data-animation="slideInLeft">
-                            <img src="./images/hakkimizda.png" alt="" />
+                            <img src="/images/hakkimizda.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@ const About = () => {
                                 <div className="card-item d-flex justify-content-center align-items-center"
                                     data-animation="slideInRight" data-animation-delay="50ms">
                                     <div className="icon d-flex justify-content-center align-items-center me-4">
-                                        <img src="./images/what-is-fiyuu-1.png" alt="" />
+                                        <img src="/images/what-is-fiyuu-1.png" alt="" />
                                     </div>
                                     <div className="d-flex flex-column justify-content-start align-items-start">
                                         <span>
@@ -71,7 +71,7 @@ const About = () => {
                                 <div className="card-item d-flex justify-content-center align-items-center"
                                     data-animation="slideInDown" data-animation-delay="50ms">
                                     <div className="icon d-flex justify-content-center align-items-center me-4">
-                                        <img src="./images/what-is-fiyuu-2.png" alt="" />
+                                        <img src="/images/what-is-fiyuu-2.png" alt="" />
                                     </div>
                                     <div className="d-flex flex-column justify-content-start align-items-start">
                                         <span>
@@ -84,7 +84,7 @@ const About = () => {
                                 <div className="card-item d-flex justify-content-center align-items-center"
                                     data-animation="slideInUp" data-animation-delay="50ms">
                                     <div className="icon d-flex justify-content-center align-items-center me-4">
-                                        <img src="./images/what-is-fiyuu-3.png" alt="" />
+                                        <img src="/images/what-is-fiyuu-3.png" alt="" />
                                     </div>
                                     <div className="d-flex flex-column justify-content-start align-items-start">
                                         <span>
@@ -97,7 +97,7 @@ const About = () => {
                                 <div className="card-item d-flex justify-content-center align-items-center"
                                     data-animation="slideInLeft" data-animation-delay="50ms">
                                     <div className="icon d-flex justify-content-center align-items-center me-4">
-                                        <img src="./images/what-is-fiyuu-4.png" alt="" />
+                                        <img src="/images/what-is-fiyuu-4.png" alt="" />
                                     </div>
     
                                     <div className="d-flex flex-column justify-content-start align-items-start">
@@ -119,7 +119,7 @@ const About = () => {
                     <div className="page-container row m-0 w-100 justify-content-between align-items-start">
                         <div
                             className="order-2 order-lg-1 col-12 col-lg-3 expertise-img p-0 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
-                            <img src="./images/our-expertise.png" alt="" className="w-100" data-animation="slideInLeft"
+                            <img src="/images/our-expertise.png" alt="" className="w-100" data-animation="slideInLeft"
                                 data-animation-delay="50ms" />
                         </div>
                         <div className="order-1 order-lg-2 col-12 col-lg-7 p-0">
@@ -240,7 +240,7 @@ const About = () => {
                     <div className="page-container row m-0 w-100 justify-content-between align-items-start">
                         <div
                             className="order-2 order-lg-1 col-12 col-lg-3 expertise-img p-0 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
-                            <img src="./images/our-process.png" alt="" className="w-100" data-animation="slideInLeft"
+                            <img src="/images/our-process.png" alt="" className="w-100" data-animation="slideInLeft"
                                 data-animation-delay="50ms" />
                         </div>
                         <div className="order-1 order-lg-2 col-12 col-lg-7 p-0">
@@ -659,7 +659,7 @@ const About = () => {
                         </div>
                         <div data-animation="slideInLeft" data-animation-delay="50ms"
                             className="col-12 col-lg-5 advantages-img p-0 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
-                            <img src="./images/advantages.png" alt="" className="w-100" />
+                            <img src="/images/advantages.png" alt="" className="w-100" />
                         </div>
                     </div>
                 </div>

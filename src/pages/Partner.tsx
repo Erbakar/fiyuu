@@ -295,7 +295,7 @@ const Partner = () => {
                 <div className="page-banner-third w-100 d-flex justify-content-center align-items-center">
                     <div className="page-container d-flex flex-column justify-content-center align-items-center">
                         <div className="image d-flex justify-content-center align-items-center" data-animation="slideInUp">
-                            <img src="./images/business-partner-form.png" alt="" />
+                            <img src="/images/business-partner-form.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -732,9 +732,9 @@ const Partner = () => {
                                         }}
                                     >
                                         {formData.gdpr ? (
-                                            <img src="./images/button-selected.svg" alt="" />
+                                            <img src="/images/button-selected.svg" alt="" />
                                         ) : (
-                                            <img src="./images/button-disabled.svg" alt="" />
+                                            <img src="/images/button-disabled.svg" alt="" />
                                         )}
                                     </button>
                                     <span>
@@ -772,9 +772,9 @@ const Partner = () => {
                                         }}
                                     >
                                         {formData.kvkk ? (
-                                            <img src="./images/button-selected.svg" alt="" />
+                                            <img src="/images/button-selected.svg" alt="" />
                                         ) : (
-                                            <img src="./images/button-disabled.svg" alt="" />
+                                            <img src="/images/button-disabled.svg" alt="" />
                                         )}
                                     </button>
                                     <span>
@@ -812,9 +812,9 @@ const Partner = () => {
                                         }}
                                     >
                                         {formData.aydinlatma ? (
-                                            <img src="./images/button-selected.svg" alt="" />
+                                            <img src="/images/button-selected.svg" alt="" />
                                         ) : (
-                                            <img src="./images/button-disabled.svg" alt="" />
+                                            <img src="/images/button-disabled.svg" alt="" />
                                         )}
                                     </button>
                                     <span>

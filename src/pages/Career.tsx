@@ -77,7 +77,7 @@ const Career = () => {
 
                         <div className="page-banner__image mt-5 mt-lg-0" data-animation="slideInLeft"
                             data-animation-delay="50ms">
-                            <img src="./images/career.png" alt="" />
+                            <img src="/images/career.png" alt="" />
                         </div>
                     </div>
                 </div>

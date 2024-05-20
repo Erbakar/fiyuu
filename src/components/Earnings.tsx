@@ -30,7 +30,7 @@ function Earnings() {
                     className="calculate-earnings__left w-100 d-flex justify-content-start align-items-center mb-5 mb-xl-0">
                     <div>
                         <div className="icon justify-content-center align-items-center me-5">
-                            <img src="./images/motor.png" alt="" />
+                            <img src="/images/motor.png" alt="" />
                         </div>
                     </div>
                     <div className="d-flex content justify-content-start align-items-start flex-column ms-lg-2">
@@ -187,7 +187,7 @@ function Earnings() {
 
                         </div>
                     </form>
-                    {monthlyEarnings && <div className='result'><img src="./images/money-trans.gif" alt="" /> Tahmini Aylık Kazancınız <br /> <b>{monthlyEarnings}</b>TL</div>}
+                    {monthlyEarnings && <div className='result'><img src="/images/money-trans.gif" alt="" /> Tahmini Aylık Kazancınız <br /> <b>{monthlyEarnings}</b>TL</div>}
                 </div>
             </div>
         </div>

@@ -27,7 +27,7 @@ const Contact = () => {
                     </div>
 
                     <div className="page-banner__image mt-5 mt-lg-0" data-animation="slideInLeft">
-                        <img src="./images/contact-banner.png" alt=""/>
+                        <img src="/images/contact-banner.png" alt=""/>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@ const Contact = () => {
                                 Ayazağa Mahallesi Kemerburgaz Caddesi Vadi İstanbul Park Sitesi, 7A Blok No:7B İç Kapı
                                 No:26 Sarıyer/ İstanbul
                             </p>
-                            <a className="contact-item-phone mb-2" href="tel:08502207090">
+                            <a className="contact-item-phone mb-2" href="tel:05317637834">
                                 0850 220 70 90
                             </a>
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
@@ -100,7 +100,7 @@ const Contact = () => {
                             <p className="contact-item-address">
                                 Seyrantepe Mah. İbrahim Karaoğlanoğlu Cad. No:105F İstanbul Kağıthane
                             </p>
-                            <a className="contact-item-phone mb-2" href="tel:08502207090">
+                            <a className="contact-item-phone mb-2" href="tel:05317637834">
                                 0850 220 70 90
                             </a>
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
@@ -124,7 +124,7 @@ const Contact = () => {
                             <p className="contact-item-address">
                                 Mimar Semih Rüstem İs Merkezi Atatürk Cad. No:18 A Blok Kat:8-9 Seyhan / Adana
                             </p>
-                            <a className="contact-item-phone mb-2" href="tel:08502207090">
+                            <a className="contact-item-phone mb-2" href="tel:05317637834">
                                 0850 220 70 90
                             </a>
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
@@ -148,7 +148,7 @@ const Contact = () => {
                             <p className="contact-item-address">
                                 Metin Oktay Mah. Hınıs Cad. No:20/A Çankaya / Ankara
                             </p>
-                            <a className="contact-item-phone mb-2" href="tel:08502207090">
+                            <a className="contact-item-phone mb-2" href="tel:05317637834">
                                 0850 220 70 90
                             </a>
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
@@ -173,7 +173,7 @@ const Contact = () => {
                             <p className="contact-item-address">
                                 Altındağ Mah. 100. Yıl Bulvarı No:12/2 Muratpaşa / Antalya
                             </p>
-                            <a className="contact-item-phone mb-2" href="tel:08502207090">
+                            <a className="contact-item-phone mb-2" href="tel:05317637834">
                                 0850 220 70 90
                             </a>
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
@@ -195,7 +195,7 @@ const Contact = () => {
                             <p className="contact-item-address">
                                 Yunus Emre Mah. Şehit Volkan Koçyiğit Bulvarı Karabağlar / İzmir
                             </p>
-                            <a className="contact-item-phone mb-2" href="tel:08502207090">
+                            <a className="contact-item-phone mb-2" href="tel:05317637834">
                                 0850 220 70 90
                             </a>
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
@@ -218,7 +218,7 @@ const Contact = () => {
                             <p className="contact-item-address">
                                 Selahattin Eyyubi Mah. Beyhekim Cad. No: 89CB Selçuklu / Konya
                             </p>
-                            <a className="contact-item-phone mb-2" href="tel:08502207090">
+                            <a className="contact-item-phone mb-2" href="tel:05317637834">
                                 0850 220 70 90
                             </a>
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">
@@ -241,7 +241,7 @@ const Contact = () => {
                             <p className="contact-item-address">
                                 Mezopotamya Mah. 329. Sok. A Blok No:21 Kayapınar / Diyarbakır
                             </p>
-                            <a className="contact-item-phone mb-2" href="tel:08502207090">
+                            <a className="contact-item-phone mb-2" href="tel:05317637834">
                                 0850 220 70 90
                             </a>
                             <a className="contact-item-email mb-3" href="mailto:info@fiyuu.com.tr">

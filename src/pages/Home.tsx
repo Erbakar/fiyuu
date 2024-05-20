@@ -46,7 +46,7 @@ const Home = () => {
                         <ul className="splide__list">
                             <li className="splide__slide ">
                                 <div className="hero-image">
-                                    <img src="./images/hero.png" alt="" />
+                                    <img src="/images/hero.png" alt="" />
                                 </div>
                                 <div className="hero-content d-flex justify-content-start align-items-start flex-column">
                                     <h1 className="mb-3 hero-title" data-animation="slideInRight" data-animation-delay="50ms">
@@ -78,7 +78,7 @@ const Home = () => {
                             </li>
                             <li className="splide__slide">
                                 <div className="hero-image">
-                                    <img src="./images/hero-blue.png" alt="" />
+                                    <img src="/images/hero-blue.png" alt="" />
                                 </div>
                                 <div className="hero-content d-flex justify-content-start align-items-start flex-column">
                                     <h1 className="mb-3 hero-title">
@@ -148,7 +148,7 @@ const Home = () => {
                             <div data-animation="slideInRight" data-animation-delay="150ms"
                                 className="card-item d-flex justify-content-center align-items-center">
                                 <div className="icon d-flex justify-content-center align-items-center me-4">
-                                    <img src="./images/what-is-fiyuu-1.png" alt="" />
+                                    <img src="/images/what-is-fiyuu-1.png" alt="" />
                                 </div>
                                 <span>
                                     Esnek ve
@@ -158,7 +158,7 @@ const Home = () => {
                             <div data-animation="slideInDown" data-animation-delay="50ms"
                                 className="card-item d-flex justify-content-center align-items-center">
                                 <div className="icon d-flex justify-content-center align-items-center me-4">
-                                    <img src="./images/what-is-fiyuu-2.png" alt="" />
+                                    <img src="/images/what-is-fiyuu-2.png" alt="" />
                                 </div>
                                 <span>
                                     Online
@@ -168,7 +168,7 @@ const Home = () => {
                             <div data-animation="slideInUp" data-animation-delay="450ms"
                                 className="card-item d-flex justify-content-center align-items-center">
                                 <div className="icon d-flex justify-content-center align-items-center me-4">
-                                    <img src="./images/what-is-fiyuu-3.png" alt="" />
+                                    <img src="/images/what-is-fiyuu-3.png" alt="" />
                                 </div>
                                 <span>
                                     Hızlı ve Zamanında
@@ -177,7 +177,7 @@ const Home = () => {
                             <div data-animation="slideInLeft" data-animation-delay="50ms"
                                 className="card-item d-flex justify-content-center align-items-center">
                                 <div className="icon d-flex justify-content-center align-items-center me-4">
-                                    <img src="./images/what-is-fiyuu-4.png" alt="" />
+                                    <img src="/images/what-is-fiyuu-4.png" alt="" />
                                 </div>
                                 <span>
                                     Teslimat
@@ -198,7 +198,7 @@ const Home = () => {
                         <div data-animation="slideInUp" data-animation-delay="50ms"
                             className=" mt-2 w-100 d-flex justify-content-center flex-column align-items-center discover-content">
                             <div className="image w-100 d-flex mb-5 justify-content-center align-items-center">
-                                <img src="./images/what-is-fiyuu-right.png" alt="" className="w-100" />
+                                <img src="/images/what-is-fiyuu-right.png" alt="" className="w-100" />
                             </div>
 
                             <NavLink  to="https://fiyuu.mi4biz.net/Customer/AnonymousIssueEntry.aspx?BusinessChannelID=MTBNNzFNTmlQMHhPdGg3REtRT2M2Zz090&q=eHFPUWJBODNzTWhwY09VVnpOZmR0TFllcVNiejMvdWJoZ09heHdhOUZiOElCSnBWWkkvRXh1ckJyQzJjTGhjR09XQVRFN01XTDJVNzFFRmIzMWc5Tnc9PQ2&catID=24887" target="blank"  className="btn-discover mb-5">
@@ -209,7 +209,7 @@ const Home = () => {
                         </div>
 
                         <div className="w-100 d-flex justify-content-center align-items-center">
-                            <img src="./images/what-is-fiyuu-right-2.png" alt="" className="w-100" />
+                            <img src="/images/what-is-fiyuu-right-2.png" alt="" className="w-100" />
                         </div>
                     </div>
                 </div>
@@ -246,7 +246,7 @@ const Home = () => {
                         <div className="our-profession__content">
                             <div className="our-profession__item" data-animation="zoomIn" data-animation-delay="50ms">
                                 <div className="icon d-flex justify-content-center align-items-center me-5">
-                                    <img src="./images/our-profession-content-1.png" alt="" />
+                                    <img src="/images/our-profession-content-1.png" alt="" />
                                 </div>
                                 <div className="flex-column justify-content-start align-items-start d-flex">
                                     <h5>
@@ -259,7 +259,7 @@ const Home = () => {
                             </div>
                             <div className="our-profession__item" data-animation="zoomIn" data-animation-delay="50ms">
                                 <div className="icon d-flex justify-content-center align-items-center me-5">
-                                    <img src="./images/our-profession-content-2.png" alt="" />
+                                    <img src="/images/our-profession-content-2.png" alt="" />
                                 </div>
                                 <div className="flex-column justify-content-start align-items-start d-flex">
                                     <h5>
@@ -274,7 +274,7 @@ const Home = () => {
                             </div>
                             <div className="our-profession__item" data-animation="zoomIn" data-animation-delay="50ms">
                                 <div className="icon d-flex justify-content-center align-items-center me-5">
-                                    <img src="./images/our-profession-content-3.png" alt="" />
+                                    <img src="/images/our-profession-content-3.png" alt="" />
                                 </div>
                                 <div className="flex-column justify-content-start align-items-start d-flex">
                                     <h5>
@@ -291,7 +291,7 @@ const Home = () => {
 
                     </div>
                     <div className="our-profession__img" data-animation="slideInLeft" data-animation-delay="50ms">
-                        <img src="./images/our-profession-right.png" alt="" />
+                        <img src="/images/our-profession-right.png" alt="" />
                     </div>
                 </div>
             </div>

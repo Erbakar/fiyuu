@@ -138,7 +138,7 @@ const About = () => {
                         </div>
 
                         <div className="page-banner__image mt-5 mt-lg-0" data-animation="slideInLeft">
-                            <img src="./images/career.png" alt="" />
+                            <img src="/images/career.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -173,7 +173,7 @@ const About = () => {
                 <div className="our-technology  w-100 d-flex justify-content-center align-items-center">
                     <div className="page-container row m-0 w-100 justify-content-start align-items-start">
                         <h3 className="title mb-5" data-animation="zoomIn" data-animation-delay="50ms">
-                        <img src="./images/sss2.gif" alt="" /> Fiyuu Esnaf Kurye İşe Girişte Sıkça Sorulan Sorular     
+                        <img src="/images/sss2.gif" alt="" /> Fiyuu Esnaf Kurye İşe Girişte Sıkça Sorulan Sorular     
                         </h3>
 
                       

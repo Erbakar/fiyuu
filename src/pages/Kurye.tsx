@@ -263,7 +263,7 @@ const Kurye = () => {
                             data-animation="slideInUp"
                             data-animation-delay="50ms"
                         >
-                            <img src="./images/jaf-image.png" alt="" />
+                            <img src="/images/jaf-image.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -595,9 +595,9 @@ const Kurye = () => {
                                                 }}
                                             >
                                                 {formData.gdpr ? (
-                                                    <img src="./images/button-selected.svg" alt="" />
+                                                    <img src="/images/button-selected.svg" alt="" />
                                                 ) : (
-                                                    <img src="./images/button-disabled.svg" alt="" />
+                                                    <img src="/images/button-disabled.svg" alt="" />
                                                 )}
                                             </button>
                                             <span>
@@ -634,9 +634,9 @@ const Kurye = () => {
                                                 }}
                                             >
                                                 {formData.clarification ? (
-                                                    <img src="./images/button-selected.svg" alt="" />
+                                                    <img src="/images/button-selected.svg" alt="" />
                                                 ) : (
-                                                    <img src="./images/button-disabled.svg" alt="" />
+                                                    <img src="/images/button-disabled.svg" alt="" />
                                                 )}
                                             </button>
                                             <span>
@@ -673,9 +673,9 @@ const Kurye = () => {
                                                 }}
                                             >
                                                 {formData.commercial ? (
-                                                    <img src="./images/button-selected.svg" alt="" />
+                                                    <img src="/images/button-selected.svg" alt="" />
                                                 ) : (
-                                                    <img src="./images/button-disabled.svg" alt="" />
+                                                    <img src="/images/button-disabled.svg" alt="" />
                                                 )}
                                             </button>
                                             <span>
@@ -710,7 +710,7 @@ const Kurye = () => {
                                             disabled={spinnerShow}
                                         >
                                             <span className="text-center d-inline-block">
-                                            {spinnerShow ? <img src="./images/spinner.gif" style={{ width: "20px" }} alt="" /> : null} Hemen Başvur
+                                            {spinnerShow ? <img src="/images/spinner.gif" style={{ width: "20px" }} alt="" /> : null} Hemen Başvur
                                             </span>
                                         </button>
                                     </form>

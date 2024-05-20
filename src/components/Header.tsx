@@ -21,7 +21,7 @@ const Header = () => {
                             'active': isActive
                         })}
                     >
-                        <img src="./images/logo-header.png" alt="" />
+                        <img src="/images/logo-header.png" alt="" />
                     </NavLink>
                     <ul className="navbar-nav d-none d-lg-flex p-0 m-0">
                         <li className="nav-item">
@@ -78,10 +78,10 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-right d-none d-lg-flex justify-content-start align-items-center">
-                    <a href="https://wa.me/08502207090" className="whatsapp-btn">
-                        <img src="./images/wp-icon.svg" alt="" />
+                    <a href="https://wa.me/05317637834" className="whatsapp-btn">
+                        <img src="/images/wp-icon.svg" alt="" />
                     </a>
-                    <a href="https://wa.me/08502207090" className="btn-header me-5">
+                    <a href="https://wa.me/05317637834" className="btn-header me-5">
                         <span>
                             Whatsapp Hattı
                         </span>
